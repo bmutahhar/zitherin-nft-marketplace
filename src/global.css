@@ -1,0 +1,22 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background: white;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url("./assets/images/body-bg.png");
+    background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
+  
