@@ -2,7 +2,12 @@ import React from "react";
 import { Navbar, SectionOne } from "../components";
 
 const LandingPage = () => {
-  return <SectionOne />;
+  return (
+    <>
+    <Navbar/>
+    <SectionOne/>
+    </>
+  )
 };
 
 export default LandingPage;

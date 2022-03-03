@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const PolygonButton = styled.button`
-  margin-top: 4%;
   padding: 1.25rem 4rem;
   background: transparent linear-gradient(221deg, #007bff 0%, #e250e5 100%) 0%
     0% no-repeat padding-box;
