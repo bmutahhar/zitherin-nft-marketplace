@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const NavContainer = styled.div`
   width: 100%;
@@ -39,15 +40,14 @@ export const NavItems = styled.div`
   }
 `;
 
-export const NavItem = styled.div`
+export const NavItem = styled(Link)`
   color: white;
   padding: 2rem;
   cursor: pointer;
+  text-decoration: inherit;
   &:hover {
     color: #7052e2;
   }
-
- 
 `;
 
 export const NavBtnContainer = styled.div`

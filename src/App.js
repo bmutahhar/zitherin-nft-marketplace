@@ -1,13 +1,17 @@
 import "./global.css";
+import { Routes, Route } from "react-router-dom";
 import { LandingPage } from "./pages";
-import { PolygonButton, Roadmap } from "./components";
+import { Navbar } from "./components";
 
 export default function App() {
   return (
-    // <div className="App">
-    //   <PolygonButton>Trade Now</PolygonButton>
-    //   <Roadmap />
-    // </div>
-    <LandingPage />
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/marketplace" element={<LandingPage />} />
+        <Route path="/mint" element={<LandingPage />} />
+      </Routes>
+    </>
   );
 }
