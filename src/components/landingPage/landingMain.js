@@ -1,7 +1,7 @@
 import React from "react";
 import { SectionOne } from "./sections";
 import { PolygonButton } from "../../components";
-import { HeroContainer, HeroTitle, HeroContent, HeroButton } from "./hero";
+import { HeroContainer, HeroTitleLarge, HeroContent, HeroButton } from "./hero";
 import { StatsContainer, StatsCard, StatsNumber, StatsText } from "./stats";
 import { statsData } from "../../utils/constants/stats";
 
@@ -9,7 +9,7 @@ const LandingMain = () => {
   return (
     <SectionOne>
       <HeroContainer>
-        <HeroTitle>Welcome to Zitherin</HeroTitle>
+        <HeroTitleLarge>Welcome to Zitherin</HeroTitleLarge>
         <HeroContent>
           An RPG adventure game built on blockchain, using completely on-chain
           assets

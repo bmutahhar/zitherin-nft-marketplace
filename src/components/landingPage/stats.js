@@ -12,6 +12,7 @@ export const StatsContainer = styled.div`
   bottom: 0;
   @media only screen and (min-width: 925px) {
     border: 1px solid grey;
+    border-bottom:none;
     &::before {
       position: absolute;
       bottom: 0;
@@ -36,7 +37,7 @@ export const StatsContainer = styled.div`
 
 export const StatsCard = styled.div`
   /* CSS for standard full HD screens */
-  padding: 2rem 3.5rem;
+  padding: 2rem 3rem;
 
   /* Media query for screens greater than 2k */
   @media only screen and (min-width: 1920px) {
