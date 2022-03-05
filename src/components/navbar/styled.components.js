@@ -12,6 +12,9 @@ export const NavContainer = styled.div`
 export const NavLogo = styled.a`
   margin-right: auto;
   flex: 1;
+  @media only screen and (max-width: 768px) {
+    flex:auto;
+  }
 `;
 
 export const NavLogoImg = styled.img`
@@ -38,6 +41,10 @@ export const NavItems = styled.div`
       border-bottom: 2px solid #7052e2;
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const NavItem = styled(Link)`
@@ -52,4 +59,7 @@ export const NavItem = styled(Link)`
 
 export const NavBtnContainer = styled.div`
   flex: 1;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;

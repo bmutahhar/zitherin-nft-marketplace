@@ -1,32 +1,30 @@
 import React from "react";
-import { SectionOne } from "./sections";
 import { PolygonButton } from "../../components";
-import { HeroContainer, HeroTitleLarge, HeroContent, HeroButton } from "./hero";
-import { StatsContainer, StatsCard, StatsNumber, StatsText } from "./stats";
 import { statsData } from "../../utils/constants/stats";
+import * as Styled from "./styles";
 
 const LandingMain = () => {
   return (
-    <SectionOne>
-      <HeroContainer>
-        <HeroTitleLarge>Welcome to Zitherin</HeroTitleLarge>
-        <HeroContent>
+    <Styled.SectionOne>
+      <Styled.HeroContainerOne>
+        <Styled.HeroTitleLarge>Welcome to Zitherin</Styled.HeroTitleLarge>
+        <Styled.HeroContent>
           An RPG adventure game built on blockchain, using completely on-chain
           assets
-        </HeroContent>
-        <HeroButton>
+        </Styled.HeroContent>
+        <Styled.HeroButton>
           <PolygonButton>Trade Now</PolygonButton>
-        </HeroButton>
-      </HeroContainer>
-      <StatsContainer>
+        </Styled.HeroButton>
+      </Styled.HeroContainerOne>
+      <Styled.StatsContainer>
         {statsData.map((item) => (
-          <StatsCard key={item.id}>
-            <StatsNumber>{item.number}</StatsNumber>
-            <StatsText>{item.text}</StatsText>
-          </StatsCard>
+          <Styled.StatsCard key={item.id}>
+            <Styled.StatsNumber>{item.number}</Styled.StatsNumber>
+            <Styled.StatsText>{item.text}</Styled.StatsText>
+          </Styled.StatsCard>
         ))}
-      </StatsContainer>
-    </SectionOne>
+      </Styled.StatsContainer>
+    </Styled.SectionOne>
   );
 };
 

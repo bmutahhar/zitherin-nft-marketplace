@@ -1,12 +1,23 @@
 import styled from "styled-components";
 
-export const HeroContainer = styled.div`
+export const HeroContainerOne = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10rem;
-  border: 2px solid white;
+`;
+
+export const HeroContainerTwo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  @media only screen and (min-width: 1920px) {
+    margin-top: 10rem;
+    /* justify-content: space-around; */
+  }
 `;
 
 export const HeroTitleLarge = styled.h2`
@@ -15,7 +26,6 @@ export const HeroTitleLarge = styled.h2`
   letter-spacing: -0.5px;
   color: #f5f5f5;
   margin: 1rem;
-  border: 2px solid red;
   @media only screen and (min-width: 1920px) {
     font-size: 4.5rem;
   }
@@ -25,18 +35,16 @@ export const HeroTitleLarge = styled.h2`
 `;
 
 export const HeroTitleMedium = styled.h2`
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
   letter-spacing: -0.5px;
-  /* text-align:center; */
   color: #f5f5f5;
   margin: 1rem;
-  border: 2px solid red;
   @media only screen and (min-width: 1920px) {
     font-size: 4.5rem;
   }
   @media only screen and (max-width: 1200px) {
-    font-size: 3.25rem;
+    font-size: 2.5rem;
   }
 `;
 
