@@ -1,7 +1,7 @@
 import React from "react";
 import * as Styled from "./styles";
 import { backgroundImages } from "../../utils/constants/images";
-import { Roadmap } from "../../components";
+import { roadmapData } from "../../utils/constants/roadmap";
 
 const LandingRoadmap = () => {
   return (
@@ -10,145 +10,92 @@ const LandingRoadmap = () => {
         <Styled.HeroTitleMedium>Roadmap</Styled.HeroTitleMedium>
       </Styled.HeroContainerTwo>
       <Styled.RoadmapContainer>
-        <Styled.RoadmapItems>
-          <Styled.RoadMapItem top={55} left={10}>
-            <Styled.RoadmapBar />
-            <Styled.RoadmapText>
-              <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-              <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-            </Styled.RoadmapText>
-          </Styled.RoadMapItem>
-          <Styled.RoadMapItem top={50} left={20}>
-            <Styled.RoadmapBar />
-            <Styled.RoadmapText>
-              <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-              <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-            </Styled.RoadmapText>
-          </Styled.RoadMapItem>
-          <Styled.RoadMapItem top={45} left={31}>
-            <Styled.RoadmapBar />
-            <Styled.RoadmapText>
-              <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-              <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-            </Styled.RoadmapText>
-          </Styled.RoadMapItem>
-          <Styled.RoadMapItem top={40} left={41}>
-            <Styled.RoadmapBar />
-            <Styled.RoadmapText>
-              <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-              <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-            </Styled.RoadmapText>
-          </Styled.RoadMapItem>
-          <Styled.RoadMapItem top={35} left={51.5}>
-            <Styled.RoadmapBar />
-            <Styled.RoadmapText>
-              <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-              <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-            </Styled.RoadmapText>
-          </Styled.RoadMapItem>
-          <Styled.RoadMapItem top={30} left={62}>
-            <Styled.RoadmapBar />
-            <Styled.RoadmapText>
-              <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-              <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-            </Styled.RoadmapText>
-          </Styled.RoadMapItem>
-          <Styled.RoadMapItem top={25} left={72.5}>
-            <Styled.RoadmapBar />
-            <Styled.RoadmapText>
-              <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-              <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-            </Styled.RoadmapText>
-          </Styled.RoadMapItem>
-        </Styled.RoadmapItems>
-
         <Styled.BulletsContainer>
-          <Styled.Bullet left={0}>
+          <Styled.Bullet>
             <Styled.InnerCircle />
-            <Styled.Curve />
+            <Styled.Curve color={85} />
+            <Styled.RoadMapItem>
+              <Styled.RoadmapBar />
+              <Styled.RoadmapText>
+                <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
+                <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
+              </Styled.RoadmapText>
+            </Styled.RoadMapItem>
           </Styled.Bullet>
-          <Styled.Bullet left={8}>
+          <Styled.Bullet>
             <Styled.InnerCircle />
-            <Styled.Curve />
+            <Styled.Curve color={80} />
+            <Styled.RoadMapItem>
+              <Styled.RoadmapBar />
+              <Styled.RoadmapText>
+                <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
+                <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
+              </Styled.RoadmapText>
+            </Styled.RoadMapItem>
           </Styled.Bullet>
-          <Styled.Bullet left={16}>
+          <Styled.Bullet>
             <Styled.InnerCircle />
-            <Styled.Curve />
+            <Styled.Curve color={75} />
+            <Styled.RoadMapItem>
+              <Styled.RoadmapBar />
+              <Styled.RoadmapText>
+                <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
+                <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
+              </Styled.RoadmapText>
+            </Styled.RoadMapItem>
           </Styled.Bullet>
-          <Styled.Bullet left={24}>
+          <Styled.Bullet>
             <Styled.InnerCircle />
-            <Styled.Curve />
+            <Styled.Curve color={70} />
+            <Styled.RoadMapItem>
+              <Styled.RoadmapBar />
+              <Styled.RoadmapText>
+                <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
+                <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
+              </Styled.RoadmapText>
+            </Styled.RoadMapItem>
           </Styled.Bullet>
-          <Styled.Bullet left={32}>
+          <Styled.Bullet>
             <Styled.InnerCircle />
-            <Styled.Curve />
+            <Styled.Curve color={65} />
+            <Styled.RoadMapItem>
+              <Styled.RoadmapBar />
+              <Styled.RoadmapText>
+                <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
+                <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
+              </Styled.RoadmapText>
+            </Styled.RoadMapItem>
           </Styled.Bullet>
-          <Styled.Bullet left={40}>
+          <Styled.Bullet>
             <Styled.InnerCircle />
-            <Styled.Curve />
+            <Styled.Curve color={60} />
+            <Styled.RoadMapItem>
+              <Styled.RoadmapBar />
+              <Styled.RoadmapText>
+                <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
+                <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
+              </Styled.RoadmapText>
+            </Styled.RoadMapItem>
           </Styled.Bullet>
-          <Styled.Bullet left={48}>
+          <Styled.Bullet>
             <Styled.InnerCircle />
-            <Styled.Curve />
+            <Styled.Curve color={55} />
+            <Styled.RoadMapItem>
+              <Styled.RoadmapBar />
+              <Styled.RoadmapText>
+                <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
+                <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
+              </Styled.RoadmapText>
+            </Styled.RoadMapItem>
           </Styled.Bullet>
-          <Styled.Bullet left={56}>
+          <Styled.Bullet>
             <Styled.InnerCircle />
           </Styled.Bullet>
         </Styled.BulletsContainer>
       </Styled.RoadmapContainer>
 
-      {/* <Styled.RoadmapItems>
-        <Styled.RoadMapItem top={55} left={10}>
-          <Styled.RoadmapBar />
-          <Styled.RoadmapText>
-            <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-            <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-          </Styled.RoadmapText>
-        </Styled.RoadMapItem>
-        <Styled.RoadMapItem top={50} left={20}> 
-          <Styled.RoadmapBar />
-          <Styled.RoadmapText>
-            <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-            <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-          </Styled.RoadmapText>
-        </Styled.RoadMapItem>
-        <Styled.RoadMapItem top={45} left={31}>
-          <Styled.RoadmapBar />
-          <Styled.RoadmapText>
-            <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-            <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-          </Styled.RoadmapText>
-        </Styled.RoadMapItem>
-        <Styled.RoadMapItem top={40} left={41}>
-          <Styled.RoadmapBar />
-          <Styled.RoadmapText>
-            <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-            <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-          </Styled.RoadmapText>
-        </Styled.RoadMapItem>
-        <Styled.RoadMapItem top={35} left={51.5}>
-          <Styled.RoadmapBar />
-          <Styled.RoadmapText>
-            <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-            <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-          </Styled.RoadmapText>
-        </Styled.RoadMapItem>
-        <Styled.RoadMapItem top={30} left={62}>
-          <Styled.RoadmapBar />
-          <Styled.RoadmapText>
-            <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-            <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-          </Styled.RoadmapText>
-        </Styled.RoadMapItem>
-        <Styled.RoadMapItem top={25} left={72.5}>
-          <Styled.RoadmapBar />
-          <Styled.RoadmapText>
-            <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-            <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-          </Styled.RoadmapText>
-        </Styled.RoadMapItem> 
-      </Styled.RoadmapItems> */}
-
+     
+      <Styled.Space />
       <Styled.BgImageContainer>
         {/* <Styled.BulletsContainer>
           <Styled.BulletsImg src={backgroundImages.bullets} />

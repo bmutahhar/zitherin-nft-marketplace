@@ -30,7 +30,8 @@ export const SectionTwo = styled.section`
 
 export const SectionThree = styled.section`
   width: 100%;
-  border: 2px solid red;
+  /* border: 2px solid red; */
+  margin-top:2rem;
   background: transparent;
   position: relative;
   display:flex;

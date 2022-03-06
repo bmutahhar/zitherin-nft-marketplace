@@ -21,16 +21,26 @@ export const Overlay = styled.img`
   z-index: 1;
 `;
 
+export const Space = styled.div`
+  width: 80%;
+  min-height: 100px;
+  /* border: 2px solid white; */
+  transform: rotate(-17deg);
+  /* visibility:hidden; */
+`;
+
 export const RoadmapContainer = styled.div`
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  border: 2px solid red;
+  justify-content: flex-end;
+  /* border: 2px solid red; */
   width: 85%;
   position: absolute;
-  top: 15%;
-  transform: rotate(-15deg);
+  top: 20%;
+  transform: rotate(-17deg);
+  margin-bottom: 3rem;
 
   @media only screen and (min-width: 1920px) {
     top: 30%;
@@ -38,7 +48,7 @@ export const RoadmapContainer = styled.div`
 `;
 
 export const BulletsContainer = styled.div`
-  border: 2px solid green;
+  /* border: 2px solid green; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,9 +64,8 @@ export const RoadmapItems = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
-  border: 2px solid white;
+  /* border: 2px solid white; */
   width: 100%;
-  min-height: 200px;
   @media only screen and (min-width: 1920px) {
     justify-content: space-around;
   }
@@ -64,13 +73,20 @@ export const RoadmapItems = styled.div`
 
 export const RoadMapItem = styled.div`
   display: flex;
-  margin: 0 1.25vw;
-  border: 1px solid orange;
-  transform: rotate(15deg) translateX(-2.2rem);
-
+  position: absolute;
+  bottom: 1rem;
+  left: 1.75rem;
+  /* border: 1px solid orange; */
+  width: 150px;
+  transform: rotate(17deg);
   @media only screen and (min-width: 1920px) {
-    margin: 0;
-    transform: rotate(15deg) translateX(-3rem);
+    width: 200px;
+    left: 2rem;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    width: 100px;
+    left: 1.5rem;
   }
 `;
 
@@ -80,6 +96,11 @@ export const RoadmapBar = styled.div`
   background: linear-gradient(180deg, #ffffff 0%, #ffffff00 100%);
   @media only screen and (min-width: 1920px) {
     width: 0.75rem;
+    height: 8rem;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    height: 5rem;
   }
 `;
 
@@ -89,6 +110,7 @@ export const RoadmapText = styled.div`
   /* border: 1px solid cyan; */
   margin-left: 0.5rem;
   margin-top: 0.25rem;
+  width: 100%;
 `;
 
 export const RoadmapTitle = styled.h5`
@@ -98,6 +120,9 @@ export const RoadmapTitle = styled.h5`
   text-align: left;
   @media only screen and (min-width: 1920px) {
     font-size: 1.5rem;
+  }
+  @media only screen and (max-width: 1200px) {
+    font-size: 0.75rem;
   }
 `;
 
@@ -109,14 +134,18 @@ export const RoadmapSubtitle = styled.p`
   @media only screen and (min-width: 1920px) {
     font-size: 1.5rem;
   }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 0.75rem;
+  }
 `;
 
 export const Bullet = styled.div`
   border: 2px solid white;
   border-radius: 50%;
-  padding: 0.25rem;
-  width: 25px;
-  height: 25px;
+  padding: 6px;
+  width: 2rem;
+  height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,12 +160,23 @@ export const InnerCircle = styled.div`
 `;
 
 export const Curve = styled.div`
-  width: 12.5vw;
+  width: 12.25vw;
   height: 50px;
-  border: solid 4px #ed2a54;
-  border-color: #ed2a54 transparent transparent transparent;
+  /* border: solid 4px #ed2a54;
+  border-color: #ed2a54 transparent transparent transparent; */
+  border: solid 4px hsl(347, ${({ color }) => `${color}%`}, 55%);
+  border-color: hsl(347, ${({ color }) => `${color}%`}, 55%) transparent
+    transparent transparent;
   border-radius: 80%/50px 50px 0 0;
   position: absolute;
-  left: 0px;
+  left: 10px;
   z-index: -1;
+
+  @media only screen and (max-width: 1200px) {
+    width: 12.75vw;
+  }
+
+  @media only screen and (max-width: 925px) {
+    width: 12.8vw;
+  }
 `;
