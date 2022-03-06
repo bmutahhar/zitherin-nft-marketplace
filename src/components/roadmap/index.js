@@ -4,14 +4,20 @@ import { Container, Bullet, InnerCircle } from "./styled.components";
 const Roadmap = () => {
   return (
     <Container>
-      <Bullet isFirst>
+      <Bullet isLast>
         <InnerCircle />
-        <Bullet>
+        <Bullet >
           <InnerCircle />
           <Bullet>
             <InnerCircle />
-            <Bullet isLast>
+            <Bullet>
               <InnerCircle />
+              <Bullet>
+                <InnerCircle />
+                <Bullet isFirst>
+                  <InnerCircle />
+                </Bullet>
+              </Bullet>
             </Bullet>
           </Bullet>
         </Bullet>

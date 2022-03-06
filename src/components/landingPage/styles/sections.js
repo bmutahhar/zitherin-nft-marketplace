@@ -30,13 +30,39 @@ export const SectionTwo = styled.section`
 
 export const SectionThree = styled.section`
   width: 100%;
-  height: 100vh;
-  background: transparent;
   border: 2px solid red;
+  background: transparent;
   position: relative;
-  overflow-y:hidden;
-  /* background-image: url(${backgroundImages.clouds});
-  background-position: bottom;
-  background-size: contain ;
-  background-repeat: no-repeat; */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    left:0;
+    top:-80px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url(${backgroundImages.gradientLeft});
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right:0;
+    top:-80px;
+
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url(${backgroundImages.gradientRight});
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 `;

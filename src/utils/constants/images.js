@@ -5,6 +5,7 @@ import clouds from "../../assets/images/bg-3.png";
 import bgOverlay from "../../assets/images/bg-overlay.png";
 import gradientLeft from "../../assets/images/gradient-left.png";
 import gradientRight from "../../assets/images/gradient-right.png";
+import bullets from "../../assets/images/bullets.png";
 
 export const backgroundImages = {
   heroBg,
@@ -14,4 +15,5 @@ export const backgroundImages = {
   bgOverlay,
   gradientLeft,
   gradientRight,
+  bullets,
 };

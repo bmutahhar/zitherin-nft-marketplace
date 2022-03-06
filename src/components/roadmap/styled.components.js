@@ -43,6 +43,6 @@ export const Bullet = styled.div`
 export const InnerCircle = styled.div`
   border-radius: 50%;
   background: white;
-  width: 17px;
-  height: 17px;
+  width: 90%;
+  height: 90%;
 `;
