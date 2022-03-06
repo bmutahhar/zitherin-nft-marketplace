@@ -4,6 +4,7 @@ import { backgroundImages } from "../../utils/constants/images";
 import { roadmapData } from "../../utils/constants/roadmap";
 
 const LandingRoadmap = () => {
+  const startingCurveColorValue = 85;
   return (
     <Styled.SectionThree>
       <Styled.HeroContainerTwo>
@@ -11,90 +12,27 @@ const LandingRoadmap = () => {
       </Styled.HeroContainerTwo>
       <Styled.RoadmapContainer>
         <Styled.BulletsContainer>
-          <Styled.Bullet>
-            <Styled.InnerCircle />
-            <Styled.Curve color={85} />
-            <Styled.RoadMapItem>
-              <Styled.RoadmapBar />
-              <Styled.RoadmapText>
-                <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-                <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-              </Styled.RoadmapText>
-            </Styled.RoadMapItem>
-          </Styled.Bullet>
-          <Styled.Bullet>
-            <Styled.InnerCircle />
-            <Styled.Curve color={80} />
-            <Styled.RoadMapItem>
-              <Styled.RoadmapBar />
-              <Styled.RoadmapText>
-                <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-                <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-              </Styled.RoadmapText>
-            </Styled.RoadMapItem>
-          </Styled.Bullet>
-          <Styled.Bullet>
-            <Styled.InnerCircle />
-            <Styled.Curve color={75} />
-            <Styled.RoadMapItem>
-              <Styled.RoadmapBar />
-              <Styled.RoadmapText>
-                <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-                <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-              </Styled.RoadmapText>
-            </Styled.RoadMapItem>
-          </Styled.Bullet>
-          <Styled.Bullet>
-            <Styled.InnerCircle />
-            <Styled.Curve color={70} />
-            <Styled.RoadMapItem>
-              <Styled.RoadmapBar />
-              <Styled.RoadmapText>
-                <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-                <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-              </Styled.RoadmapText>
-            </Styled.RoadMapItem>
-          </Styled.Bullet>
-          <Styled.Bullet>
-            <Styled.InnerCircle />
-            <Styled.Curve color={65} />
-            <Styled.RoadMapItem>
-              <Styled.RoadmapBar />
-              <Styled.RoadmapText>
-                <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-                <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-              </Styled.RoadmapText>
-            </Styled.RoadMapItem>
-          </Styled.Bullet>
-          <Styled.Bullet>
-            <Styled.InnerCircle />
-            <Styled.Curve color={60} />
-            <Styled.RoadMapItem>
-              <Styled.RoadmapBar />
-              <Styled.RoadmapText>
-                <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-                <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-              </Styled.RoadmapText>
-            </Styled.RoadMapItem>
-          </Styled.Bullet>
-          <Styled.Bullet>
-            <Styled.InnerCircle />
-            <Styled.Curve color={55} />
-            <Styled.RoadMapItem>
-              <Styled.RoadmapBar />
-              <Styled.RoadmapText>
-                <Styled.RoadmapTitle>Lorem Ipsum</Styled.RoadmapTitle>
-                <Styled.RoadmapSubtitle>Milestone 1</Styled.RoadmapSubtitle>
-              </Styled.RoadmapText>
-            </Styled.RoadMapItem>
-          </Styled.Bullet>
+          {roadmapData.map((item, index) => (
+            <Styled.Bullet key={item.id}>
+              <Styled.InnerCircle />
+              <Styled.Curve color={startingCurveColorValue - index * 5} />
+              <Styled.RoadMapItem>
+                <Styled.RoadmapBar />
+                <Styled.RoadmapText>
+                  <Styled.RoadmapTitle>{item.title}</Styled.RoadmapTitle>
+                  <Styled.RoadmapSubtitle>
+                    {item.subtitle}
+                  </Styled.RoadmapSubtitle>
+                </Styled.RoadmapText>
+              </Styled.RoadMapItem>
+            </Styled.Bullet>
+          ))}
           <Styled.Bullet>
             <Styled.InnerCircle />
           </Styled.Bullet>
         </Styled.BulletsContainer>
       </Styled.RoadmapContainer>
 
-     
       <Styled.Space />
       <Styled.BgImageContainer>
         {/* <Styled.BulletsContainer>
