@@ -17,7 +17,8 @@ export const faqData = [
   {
     id: 3,
     icon: icons.add,
-    question: "Lorem Ipsum is simply dummy text of the printing",
+    question:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
     answer: "Lorem Ipsum is simply dummy text of the printing",
   },
   {

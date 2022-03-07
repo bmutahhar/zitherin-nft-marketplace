@@ -1,4 +1,5 @@
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 import {
   LandingMain,
   LandingCharacters,
@@ -9,11 +10,13 @@ import {
 } from "../components";
 
 const LandingPage = () => {
+  const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
   return (
     <>
       <LandingMain />
       <LandingCharacters />
-      <LandingRoadmap />
+      {/* <LandingRoadmap /> */}
+      {isMobileOrTablet ? <></> : <LandingRoadmap />}
       <LandingFAQ />
       <LandingSocial />
       <LandingFooter />

@@ -4,6 +4,11 @@ export const CharactersContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    border: 2px solid orange;
+    margin-top: 2rem;
+  }
 `;
 
 export const Column = styled.div`
@@ -15,6 +20,10 @@ export const Column = styled.div`
     position === "top" ? `flex-start` : `flex-end`};
   ${({ position }) =>
     position === "top" ? `padding-bottom:5rem;` : `padding-top:5rem;`}
+
+  @media only screen and (max-width: 768px) {
+    padding: 2rem 0;
+  }
 `;
 
 export const ShadowWrapper = styled.div`
@@ -140,7 +149,7 @@ export const CardContent = styled.div`
 
   @media only screen and (max-width: 900px) {
     padding: 0.25rem 0.5rem;
-    height:50px;
+    height: 50px;
   }
 `;
 
@@ -154,7 +163,7 @@ export const CardTitle = styled.h4`
 
   @media only screen and (max-width: 900px) {
     font-size: 0.9rem;
-    letter-spacing:3px;
+    letter-spacing: 3px;
   }
 `;
 
@@ -180,6 +189,6 @@ export const CardButton = styled.button`
   text-transform: uppercase;
   @media only screen and (max-width: 900px) {
     font-size: 0.75rem;
-    width:max-content;
+    width: max-content;
   }
 `;

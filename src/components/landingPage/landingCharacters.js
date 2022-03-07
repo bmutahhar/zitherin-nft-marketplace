@@ -1,10 +1,23 @@
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 import * as Styled from "./styles";
 import { charactersData } from "../../utils/constants/characters";
+import { statsData } from "../../utils/constants/stats";
 
 const LandingCharacters = () => {
+  const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
   return (
     <Styled.SectionTwo>
+      {isMobileOrTablet && (
+        <Styled.StatsContainer>
+          {statsData.map((item) => (
+            <Styled.StatsCard key={item.id}>
+              <Styled.StatsNumber>{item.number}</Styled.StatsNumber>
+              <Styled.StatsText>{item.text}</Styled.StatsText>
+            </Styled.StatsCard>
+          ))}
+        </Styled.StatsContainer>
+      )}
       <Styled.HeroContainerTwo>
         <Styled.HeroTitleMedium>
           Zitherin is an adventure RPG <br /> where players control every aspect

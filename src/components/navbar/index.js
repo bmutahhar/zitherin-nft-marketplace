@@ -3,6 +3,8 @@ import * as Styled from "./styled.components";
 import { PolygonButton } from "../buttons";
 import { useLocation } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
+import { backgroundImages } from "../../utils/constants/images";
+import { icons } from "../../utils/constants/icons";
 
 const Navbar = () => {
   const { pathname } = useLocation();
@@ -31,6 +33,7 @@ const Navbar = () => {
       <Styled.NavBtnContainer>
         <PolygonButton>Connect Wallet</PolygonButton>
       </Styled.NavBtnContainer>
+      <Styled.NavMenuIcon>{icons.mobileMenu}</Styled.NavMenuIcon>
     </Styled.NavContainer>
   );
 };

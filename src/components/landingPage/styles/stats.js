@@ -12,7 +12,7 @@ export const StatsContainer = styled.div`
   bottom: 0;
   @media only screen and (min-width: 925px) {
     border: 1px solid grey;
-    border-bottom:none;
+    border-bottom: none;
     &::before {
       position: absolute;
       bottom: 0;
@@ -33,6 +33,16 @@ export const StatsContainer = styled.div`
       background-color: #00161f;
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    position: initial;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    border-radius: 0;
+    background-color: transparent;
+    margin: 2rem 0;
+  }
 `;
 
 export const StatsCard = styled.div`
@@ -49,6 +59,14 @@ export const StatsCard = styled.div`
   }
   @media only screen and (max-width: 925px) {
     padding: 1rem 1.5rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
@@ -68,6 +86,10 @@ export const StatsNumber = styled.h4`
   @media only screen and (max-width: 925px) {
     font-size: 2.25rem;
   }
+  @media only screen and (max-width: 768px) {
+    font-size: 2rem;
+    padding: 0;
+  }
 `;
 
 export const StatsText = styled.div`
@@ -75,10 +97,15 @@ export const StatsText = styled.div`
   font-size: 1.25rem;
   font-weight: 300;
   padding: 0.5rem;
+  text-align: left;
   @media only screen and (min-width: 1920px) {
     font-size: 1.75rem;
   }
   @media only screen and (max-width: 925px) {
     font-size: 1rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 0;
   }
 `;

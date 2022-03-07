@@ -7,18 +7,27 @@ export const NavContainer = styled.nav`
   padding: 0rem 2rem;
   display: flex;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    flex: auto;
+    justify-content: space-between;
+    padding: 1rem;
+    border: none;
+  }
 `;
 
 export const NavLogo = styled.a`
   margin-right: auto;
   flex: 1;
   @media only screen and (max-width: 768px) {
-    flex: auto;
+    flex: 0;
   }
 `;
 
 export const NavLogoImg = styled.img`
   width: 125px;
+  @media only screen and (max-width: 768px) {
+    width: 80px;
+  }
 `;
 
 export const NavItems = styled.div`
@@ -61,5 +70,19 @@ export const NavBtnContainer = styled.div`
   flex: 1;
   @media only screen and (max-width: 768px) {
     display: none;
+  }
+`;
+
+export const NavMenuIcon = styled.div`
+  display: none;
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & svg {
+      width: 30px;
+      height: 30px;
+      color: white;
+    }
   }
 `;

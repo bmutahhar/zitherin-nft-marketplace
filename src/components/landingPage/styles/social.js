@@ -6,6 +6,12 @@ export const Socials = styled.div`
   width: 70%;
   /* border: 2px solid white; */
   margin: 4rem 2rem;
+  @media only screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+  }
 `;
 
 export const Social = styled.div`
@@ -25,6 +31,9 @@ export const SocialIcon = styled.div`
 
   @media only screen and (max-width: 900px) {
     width: 100px;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 50px;
   }
 `;
 

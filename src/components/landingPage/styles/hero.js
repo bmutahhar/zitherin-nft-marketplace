@@ -6,6 +6,9 @@ export const HeroContainerOne = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10rem;
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 5rem;
+  }
 `;
 
 export const HeroContainerTwo = styled.div`
@@ -16,7 +19,9 @@ export const HeroContainerTwo = styled.div`
   margin-top: 2rem;
   @media only screen and (min-width: 1920px) {
     margin-top: 8rem;
-    /* justify-content: space-around; */
+  }
+  @media only screen and (max-width: 768px) {
+    margin-top: 3rem;
   }
 `;
 
@@ -32,6 +37,11 @@ export const HeroTitleLarge = styled.h2`
   @media only screen and (max-width: 1200px) {
     font-size: 3.25rem;
   }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 2rem;
+    margin: 0;
+  }
 `;
 
 export const HeroTitleMedium = styled.h2`
@@ -45,6 +55,10 @@ export const HeroTitleMedium = styled.h2`
   }
   @media only screen and (max-width: 1200px) {
     font-size: 2.5rem;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -61,6 +75,10 @@ export const HeroContent = styled.p`
   /* @media only screen and (max-width: 1200px) {
     font-size: 1.25rem;
   } */
+  @media only screen and (max-width: 768px) {
+    font-size: 1rem;
+    margin: 0.5rem;
+  }
 `;
 
 export const HeroButton = styled.div`

@@ -25,11 +25,14 @@ export const Question = styled.div`
   }
 `;
 
-export const QuestionText = styled.h5`
+export const QuestionText = styled.p`
+  display: inline-flex;
   color: white;
   text-align: left;
   font-size: 1.75rem;
   font-weight: 300;
+  border: 2px solid white;
+  width: 90%;
 
   @media only screen and (min-width: 1920px) {
     font-size: 2.25rem;
@@ -38,12 +41,28 @@ export const QuestionText = styled.h5`
   @media only screen and (max-width: 1200px) {
     font-size: 1.5rem;
   }
+
+  @media only screen and (max-width: 900px) {
+    font-size: 1.25rem;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 export const QuestionIcon = styled.div`
   width: 50px;
   color: white;
+  border: 2px solid red;
   @media only screen and (max-width: 1200px) {
     width: 40px;
+  }
+
+  @media only screen and (max-width: 900px) {
+    width: 35px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 30px;
   }
 `;

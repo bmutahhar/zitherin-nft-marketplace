@@ -4,6 +4,10 @@ export const FooterTitle = styled.h4`
   font-size: 2.5rem;
   color: white;
   margin: 2rem;
+  @media only screen and (max-width: 768px) {
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
 `;
 
 export const NewsLetter = styled.div`
@@ -19,6 +23,9 @@ export const NewsLetter = styled.div`
   background: transparent;
   @media only screen and (max-width: 768px) {
     width: 60%;
+  }
+  @media only screen and (max-width: 500px) {
+    width: 90%;
   }
 `;
 
@@ -68,4 +75,8 @@ export const CopyRights = styled.p`
   color: rgba(245, 245, 245, 0.7);
   font-size: 1.5rem;
   margin: 5rem 2rem;
+  @media only screen and (max-width: 768px) {
+    font-size: 1rem;
+    margin: 2rem 1rem;
+  }
 `;

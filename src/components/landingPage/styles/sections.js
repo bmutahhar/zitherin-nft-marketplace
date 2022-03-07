@@ -8,14 +8,14 @@ export const SectionOne = styled.section`
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-color: rgba(0, 0, 0, 0.8);
-  background-blend-mode: lighten; */
-  /* border: 2px solid cyan; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+  @media only screen and (max-width: 768px) {
+    justify-content: flex-end;
+  }
 `;
 
 export const SectionTwo = styled.section`
@@ -26,6 +26,11 @@ export const SectionTwo = styled.section`
   width: 100%;
   height: 100vh;
   background: transparent;
+  border: 2px solid red;
+  @media only screen and (max-width: 768px) {
+    justify-content: flex-end;
+    height: max-content;
+  }
 `;
 
 export const SectionThree = styled.section`
@@ -77,6 +82,9 @@ export const SectionFour = styled.section`
   justify-content: center;
   background: #00161f;
   padding-bottom: 5rem;
+  @media only screen and (max-width: 768px) {
+    padding: 2rem 0;
+  }
 `;
 
 export const SectionFive = styled.section`
