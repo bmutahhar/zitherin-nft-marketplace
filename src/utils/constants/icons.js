@@ -6,6 +6,8 @@ import { ReactComponent as Discord } from "../../assets/icons/discord.svg";
 import { ReactComponent as Reddit } from "../../assets/icons/reddit.svg";
 import { ReactComponent as Twitter } from "../../assets/icons/twitter.svg";
 import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
+import { ReactComponent as SearchIcon } from "../../assets/icons/search.svg";
+import { ReactComponent as SettingsIcon } from "../../assets/icons/settings.svg";
 
 export const icons = {
   add: <AddIcon />,
@@ -16,4 +18,6 @@ export const icons = {
   twitter: <Twitter />,
   reddit: <Reddit />,
   closeIcon: <CloseIcon />,
+  searchIcon: <SearchIcon />,
+  settingsIcon: <SettingsIcon />,
 };

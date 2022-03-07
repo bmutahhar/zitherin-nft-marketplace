@@ -12,6 +12,7 @@ const LandingFooter = () => {
           id="email"
           name="email"
           type="email"
+          autoComplete="off"
         />
         <Styled.NewsLetterIcon>{icons.arrowRight}</Styled.NewsLetterIcon>
       </Styled.NewsLetter>

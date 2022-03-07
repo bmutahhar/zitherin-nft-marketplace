@@ -3,6 +3,8 @@ import Character2 from "../../assets/characters/Character-2.png";
 import Character3 from "../../assets/characters/Character-3.png";
 import Character4 from "../../assets/characters/Character-4.png";
 
+
+
 export const charactersData = [
   {
     id: 1,

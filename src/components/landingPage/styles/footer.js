@@ -23,7 +23,7 @@ export const NewsLetter = styled.div`
   background: transparent;
   @media only screen and (min-width: 1920px) {
     width: 30%;
-    height:90px;
+    height: 90px;
   }
 
   @media only screen and (max-width: 768px) {
@@ -78,6 +78,7 @@ export const NewsLetterIcon = styled.div`
 
 export const CopyRights = styled.p`
   color: rgba(245, 245, 245, 0.7);
+  font-weight: 300;
   font-size: 1.5rem;
   margin: 3rem 2rem;
   @media only screen and (max-width: 768px) {
