@@ -8,7 +8,7 @@ import { backgroundImages } from "../../utils/constants/images";
 import { icons } from "../../utils/constants/icons";
 
 const Navbar = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const { pathname } = useLocation();
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
 
