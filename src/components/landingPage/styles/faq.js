@@ -31,7 +31,6 @@ export const QuestionText = styled.p`
   text-align: left;
   font-size: 1.75rem;
   font-weight: 300;
-  border: 2px solid white;
   width: 90%;
 
   @media only screen and (min-width: 1920px) {
@@ -53,7 +52,6 @@ export const QuestionText = styled.p`
 export const QuestionIcon = styled.div`
   width: 50px;
   color: white;
-  border: 2px solid red;
   @media only screen and (max-width: 1200px) {
     width: 40px;
   }

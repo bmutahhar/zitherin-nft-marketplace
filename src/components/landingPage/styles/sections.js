@@ -26,7 +26,6 @@ export const SectionTwo = styled.section`
   width: 100%;
   height: 100vh;
   background: transparent;
-  border: 2px solid red;
   @media only screen and (max-width: 768px) {
     justify-content: flex-end;
     height: max-content;
@@ -35,7 +34,6 @@ export const SectionTwo = styled.section`
 
 export const SectionThree = styled.section`
   width: 100%;
-  /* border: 2px solid red; */
   margin-top: 2rem;
   background: transparent;
   position: relative;
@@ -56,6 +54,9 @@ export const SectionThree = styled.section`
     background-position: left;
     background-size: contain;
     background-repeat: no-repeat;
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
   }
   &::after {
     content: "";
@@ -70,6 +71,9 @@ export const SectionThree = styled.section`
     background-position: right;
     background-size: contain;
     background-repeat: no-repeat;
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
   }
 `;
 

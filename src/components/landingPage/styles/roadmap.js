@@ -35,7 +35,6 @@ export const RoadmapContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  /* border: 2px solid red; */
   width: 85%;
   position: absolute;
   top: 20%;
@@ -48,11 +47,13 @@ export const RoadmapContainer = styled.div`
 `;
 
 export const BulletsContainer = styled.div`
-  /* border: 2px solid green; */
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const BulletsImg = styled.img`
@@ -60,16 +61,17 @@ export const BulletsImg = styled.img`
   /* border: 1px solid pink; */
 `;
 
-export const RoadmapItems = styled.div`
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
-  /* border: 2px solid white; */
-  width: 100%;
-  @media only screen and (min-width: 1920px) {
-    justify-content: space-around;
-  }
-`;
+// export const RoadmapItems = styled.div`
+//   display: flex;
+//   align-items: flex-end;
+//   justify-content: space-around;
+//   /* border: 2px solid white; */
+//   width: 100%;
+//   @media only screen and (min-width: 1920px) {
+//     justify-content: space-around;
+
+//   }
+// `;
 
 export const RoadMapItem = styled.div`
   display: flex;
@@ -124,6 +126,10 @@ export const RoadmapTitle = styled.h5`
   @media only screen and (max-width: 1200px) {
     font-size: 0.75rem;
   }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 export const RoadmapSubtitle = styled.p`
@@ -137,6 +143,9 @@ export const RoadmapSubtitle = styled.p`
 
   @media only screen and (max-width: 1200px) {
     font-size: 0.75rem;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 0.85rem;
   }
 `;
 
@@ -179,4 +188,48 @@ export const Curve = styled.div`
   @media only screen and (max-width: 925px) {
     width: 12.8vw;
   }
+`;
+
+export const RoadmapMobileContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  /* padding-right: 1rem; */
+`;
+
+export const RoadMapMobileItem = styled.div`
+  background: #392877;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 12px;
+  width: 70%;
+  height: 100px;
+  position: relative;
+`;
+
+export const BulletMobile = styled.div`
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 6px;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: -12vw; ;
+`;
+
+export const Line = styled.span`
+  width: 2px;
+  height: 100px;
+  background: white;
+  position: absolute;
+  bottom: -100px;
 `;

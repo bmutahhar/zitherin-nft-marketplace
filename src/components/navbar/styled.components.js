@@ -84,5 +84,9 @@ export const NavMenuIcon = styled.div`
       height: 30px;
       color: white;
     }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;

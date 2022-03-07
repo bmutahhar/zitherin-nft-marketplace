@@ -6,7 +6,6 @@ export const CharactersContainer = styled.div`
   justify-content: center;
   @media only screen and (max-width: 768px) {
     flex-direction: column;
-    border: 2px solid orange;
     margin-top: 2rem;
   }
 `;
@@ -63,6 +62,10 @@ export const CardWrapper = styled.div`
     width: 144px;
     height: 184px;
   }
+  @media only screen and (max-width: 768px) {
+    width: 184px;
+    height: 224px;
+  }
 `;
 
 export const Card = styled.div`
@@ -102,6 +105,11 @@ export const Card = styled.div`
   @media only screen and (max-width: 900px) {
     width: 140px;
     height: 180px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 180px;
+    height: 220px;
   }
 `;
 
@@ -151,6 +159,11 @@ export const CardContent = styled.div`
     padding: 0.25rem 0.5rem;
     height: 50px;
   }
+
+  @media only screen and (max-width: 768px) {
+    padding: 1rem;
+    height: 50px;
+  }
 `;
 
 export const CardTitle = styled.h4`
@@ -160,6 +173,7 @@ export const CardTitle = styled.h4`
   text-transform: uppercase;
   letter-spacing: 5px;
   line-height: 1.2;
+  margin-bottom: 0.25rem;
 
   @media only screen and (max-width: 900px) {
     font-size: 0.9rem;

@@ -4,6 +4,7 @@ import {
   LandingMain,
   LandingCharacters,
   LandingRoadmap,
+  LandingRoadmapMobile,
   LandingFAQ,
   LandingSocial,
   LandingFooter,
@@ -16,7 +17,7 @@ const LandingPage = () => {
       <LandingMain />
       <LandingCharacters />
       {/* <LandingRoadmap /> */}
-      {isMobileOrTablet ? <></> : <LandingRoadmap />}
+      {isMobileOrTablet ? <LandingRoadmapMobile /> : <LandingRoadmap />}
       <LandingFAQ />
       <LandingSocial />
       <LandingFooter />
