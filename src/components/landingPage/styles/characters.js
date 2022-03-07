@@ -29,6 +29,12 @@ export const ShadowWrapper = styled.div`
   margin: 1rem 2rem;
   border-radius: 10px;
   box-shadow: 9px 8px 0px 0px #1a1e29;
+
+  &:hover{
+    transform:scale(1.1);
+    transition: 0.4s ease-in;
+  }
+
   @media only screen and (max-width: 1200px) {
     margin: 0.5rem 1rem;
   }

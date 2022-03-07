@@ -19,12 +19,24 @@ export const Social = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  /* border: 2px solid yellow; */
 `;
 
 export const SocialIcon = styled.div`
-  color: white;
-  width: 200px;
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+
+  &:hover{
+    cursor: pointer;
+    transform:scale(1.1);
+    transition: 0.2s ease-in;
+  }
+
+  @media only screen and (min-width: 1920px) {
+    width: 220px;
+  }
+  
   @media only screen and (max-width: 1200px) {
     width: 150px;
   }
@@ -33,7 +45,7 @@ export const SocialIcon = styled.div`
     width: 100px;
   }
   @media only screen and (max-width: 768px) {
-    width: 50px;
+    width: 125px;
   }
 `;
 

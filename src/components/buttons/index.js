@@ -9,7 +9,6 @@ export const PolygonButton = styled.button`
   border: none;
   cursor: pointer;
   color: white;
-  /* clip-path: polygon(8% 0, 90% 0, 100% 26%, 93% 100%, 10% 100%, 0 73%); */
   clip-path: polygon(8% 0, 91% 0, 100% 26%, 93% 100%, 10% 100%, 0 73%);
   font-size: 1.2rem;
 

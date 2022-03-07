@@ -1,8 +1,8 @@
-import { ReactComponent as Telegram } from "../../assets/icons/telegram-alt.svg";
+import { icons } from "./icons";
 
 export const socials = [
-  { id: 1, icon: <Telegram />, iconName: "Telegram" },
-  { id: 2, icon: <Telegram />, iconName: "Twitter" },
-  { id: 3, icon: <Telegram />, iconName: "Discord" },
-  { id: 4, icon: <Telegram />, iconName: "Reddit" },
+  { id: 1, icon: icons.telegram, iconName: "Telegram" },
+  { id: 2, icon: icons.twitter, iconName: "Twitter" },
+  { id: 3, icon: icons.discord, iconName: "Discord" },
+  { id: 4, icon: icons.reddit, iconName: "Reddit" },
 ];

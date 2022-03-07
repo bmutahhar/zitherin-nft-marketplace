@@ -60,7 +60,7 @@ export const NavItem = styled(Link)`
   color: white;
   padding: 2rem;
   cursor: pointer;
-  text-decoration: inherit;
+  text-decoration: none;
   &:hover {
     color: #7052e2;
   }

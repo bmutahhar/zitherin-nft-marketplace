@@ -15,6 +15,7 @@ export const SectionOne = styled.section`
   position: relative;
   @media only screen and (max-width: 768px) {
     justify-content: flex-end;
+    height: 90vh;
   }
 `;
 
