@@ -31,19 +31,19 @@ export const SectionTwo = styled.section`
 export const SectionThree = styled.section`
   width: 100%;
   /* border: 2px solid red; */
-  margin-top:2rem;
+  margin-top: 2rem;
   background: transparent;
   position: relative;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   z-index: 1;
   &::before {
     content: "";
     position: absolute;
-    left:0;
-    top:-80px;
+    left: 0;
+    top: -80px;
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -55,8 +55,8 @@ export const SectionThree = styled.section`
   &::after {
     content: "";
     position: absolute;
-    right:0;
-    top:-80px;
+    right: 0;
+    top: -80px;
 
     width: 100%;
     height: 100%;
@@ -66,4 +66,35 @@ export const SectionThree = styled.section`
     background-size: contain;
     background-repeat: no-repeat;
   }
+`;
+
+export const SectionFour = styled.section`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #00161f;
+  padding-bottom: 5rem;
+`;
+
+export const SectionFive = styled.section`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #00161f;
+  /* border: 2px solid red; */
+`;
+
+export const Footer = styled.footer`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #00161f;
+  margin-top: 2rem;
 `;

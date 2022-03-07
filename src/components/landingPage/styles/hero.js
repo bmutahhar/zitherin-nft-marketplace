@@ -15,7 +15,7 @@ export const HeroContainerTwo = styled.div`
   justify-content: space-between;
   margin-top: 2rem;
   @media only screen and (min-width: 1920px) {
-    margin-top: 10rem;
+    margin-top: 8rem;
     /* justify-content: space-around; */
   }
 `;

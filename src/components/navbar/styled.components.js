@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const NavContainer = styled.div`
+export const NavContainer = styled.nav`
   width: 100%;
   border-bottom: 1px solid grey;
   padding: 0rem 2rem;
@@ -13,7 +13,7 @@ export const NavLogo = styled.a`
   margin-right: auto;
   flex: 1;
   @media only screen and (max-width: 768px) {
-    flex:auto;
+    flex: auto;
   }
 `;
 

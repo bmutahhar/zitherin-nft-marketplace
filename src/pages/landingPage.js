@@ -1,5 +1,12 @@
 import React from "react";
-import { LandingMain, LandingCharacters, LandingRoadmap } from "../components";
+import {
+  LandingMain,
+  LandingCharacters,
+  LandingRoadmap,
+  LandingFAQ,
+  LandingSocial,
+  LandingFooter,
+} from "../components";
 
 const LandingPage = () => {
   return (
@@ -7,6 +14,9 @@ const LandingPage = () => {
       <LandingMain />
       <LandingCharacters />
       <LandingRoadmap />
+      <LandingFAQ />
+      <LandingSocial />
+      <LandingFooter />
     </>
   );
 };
