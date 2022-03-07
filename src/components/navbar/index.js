@@ -2,7 +2,6 @@ import React from "react";
 import * as Styled from "./styled.components";
 import { PolygonButton } from "../buttons";
 import { useLocation } from "react-router-dom";
-import logo from "../../assets/images/logo.png";
 import { backgroundImages } from "../../utils/constants/images";
 import { icons } from "../../utils/constants/icons";
 
@@ -11,7 +10,7 @@ const Navbar = () => {
   return (
     <Styled.NavContainer>
       <Styled.NavLogo>
-        <Styled.NavLogoImg src={logo} />
+        <Styled.NavLogoImg src={backgroundImages.logo} />
       </Styled.NavLogo>
       <Styled.NavItems>
         <Styled.NavItem to="/" className={pathname === "/" ? "active" : ""}>

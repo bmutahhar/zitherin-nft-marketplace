@@ -15,12 +15,17 @@ export const NewsLetter = styled.div`
   border-radius: 12px;
   margin: 2rem;
   padding: 1rem 2rem;
-  width: 30%;
-  height: 80px;
+  width: 40%;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: transparent;
+  @media only screen and (min-width: 1920px) {
+    width: 30%;
+    height:90px;
+  }
+
   @media only screen and (max-width: 768px) {
     width: 60%;
   }
@@ -74,7 +79,7 @@ export const NewsLetterIcon = styled.div`
 export const CopyRights = styled.p`
   color: rgba(245, 245, 245, 0.7);
   font-size: 1.5rem;
-  margin: 5rem 2rem;
+  margin: 3rem 2rem;
   @media only screen and (max-width: 768px) {
     font-size: 1rem;
     margin: 2rem 1rem;

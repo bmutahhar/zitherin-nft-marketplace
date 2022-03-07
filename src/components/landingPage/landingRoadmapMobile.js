@@ -1,10 +1,7 @@
 import React from "react";
 import * as Styled from "./styles";
-import { backgroundImages } from "../../utils/constants/images";
-import { roadmapData } from "../../utils/constants/roadmap";
 
 const LandingRoadmapMobile = () => {
-  const startingCurveColorValue = 85;
   return (
     <Styled.SectionThree>
       <Styled.HeroContainerTwo>

@@ -29,12 +29,12 @@ export const QuestionText = styled.p`
   display: inline-flex;
   color: white;
   text-align: left;
-  font-size: 1.75rem;
+  font-size: 1.55rem;
   font-weight: 300;
   width: 90%;
 
   @media only screen and (min-width: 1920px) {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
   }
 
   @media only screen and (max-width: 1200px) {
