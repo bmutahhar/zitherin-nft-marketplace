@@ -2,9 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 50%;
-  height: 60vh;
+  height: 75vh;
   margin: 2rem auto;
   /* border: 2px solid red; */
+
+  @media only screen and (min-width: 1920px) {
+    height: 60vh;
+  }
 `;
 
 export const ModalHeader = styled.div`
@@ -56,11 +60,13 @@ export const TabHeader = styled.div`
   /* border: 2px solid green; */
   border-top-right-radius: 1.75rem;
   padding: 1rem 3rem;
+  border:none;
   background: #130933;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.8);
   font-size: 1rem;
   font-weight: 600;
+  height:100%;
   position: relative;
   z-index: 0;
   &::before {
@@ -68,8 +74,7 @@ export const TabHeader = styled.div`
     position: absolute;
     background: #130933;
     /* background: blue; */
-    top: 0;
-    bottom: 0;
+    bottom:0px;
     left: -10%;
     z-index: -1;
     width: 50%;
@@ -135,45 +140,43 @@ export const AssetTitleContainer = styled.div`
 
 export const AssetTitle = styled.h6`
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
+
+  @media only screen and (min-width: 1920px) {
+    font-size: 2rem;
+  }
 `;
 
 export const AssetSubTitle = styled.span`
   color: #6efffa;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 600;
+  @media only screen and (min-width: 1920px) {
+    font-size: 1rem;
+  }
 `;
 
-export const TraitContainer = styled.div``;
+export const TraitContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 
-export const Trait = styled.div`
-  width: 95px;
-  height: 60px;
-  padding: 1rem 2rem;
-  margin: 0.5rem;
-  border-radius: 10px;
-  position: relative;
-  z-index: 0;
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    clip-path: polygon(
-      20% 0%,
-      80% 0%,
-      100% 9%,
-      100% 80%,
-      100% 100%,
-      0 100%,
-      0% 80%,
-      0 9%
-    );
-    background: #466bf7;
-    border-radius: 10px;
+export const AssetDescription = styled.p`
+  color: #f5f5f5;
+  font-size: 1rem;
+  text-align: left;
+  font-weight:300;
+  margin: 0.25rem 0;
+
+  @media only screen and (min-width: 1920px) {
+    font-size: 1.125rem;
   }
+`;
+
+export const BidsPriceContainer = styled.div`
+  height:100%;
+  width:100%;
+  border: 2px solid white;
 `;
