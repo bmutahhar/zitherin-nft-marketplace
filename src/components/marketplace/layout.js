@@ -50,12 +50,12 @@ export const Content = styled.div`
 
 export const BuyAssetsContainer = styled.div`
   width: 100%;
-  height: 50%;
+  /* height: 50%; */
   /* border: 2px solid white; */
 `;
 
 export const OwnAssetsContainer = styled.div`
   width: 100%;
-  height: 50%;
+  /* height: 50%; */
   /* border: 2px solid white; */
 `;

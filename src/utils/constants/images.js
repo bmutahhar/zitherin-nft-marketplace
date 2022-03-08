@@ -5,7 +5,11 @@ import clouds from "../../assets/images/bg-3.png";
 import bgOverlay from "../../assets/images/bg-overlay.png";
 import gradientLeft from "../../assets/images/gradient-left.png";
 import gradientRight from "../../assets/images/gradient-right.png";
-import bullets from "../../assets/images/bullets.png";
+import mask from "../../assets/images/mask.png";
+import axe from "../../assets/images/axe.png";
+import boots from "../../assets/images/boots.png";
+import gloves from "../../assets/images/gloves.png";
+import pants from "../../assets/images/pants.png";
 
 export const backgroundImages = {
   heroBg,
@@ -15,5 +19,9 @@ export const backgroundImages = {
   bgOverlay,
   gradientLeft,
   gradientRight,
-  bullets,
+  mask,
+  axe,
+  boots,
+  gloves,
+  pants,
 };
