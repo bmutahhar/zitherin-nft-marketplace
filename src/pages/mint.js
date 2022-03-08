@@ -1,8 +1,8 @@
 import React from "react";
-import { Bids } from "../pages";
+import { BidsModal } from "../pages";
 
 const Mint = () => {
-  return <Bids />;
+  return <BidsModal />;
 };
 
 export default Mint;

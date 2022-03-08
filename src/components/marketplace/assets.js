@@ -28,10 +28,10 @@ export const AssetWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   transition: 0.3s ease;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.1);
-    cursor: pointer;
   }
 
   @media only screen and (min-width: 1920px) {
