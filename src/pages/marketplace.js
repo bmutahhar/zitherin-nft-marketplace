@@ -13,6 +13,8 @@ import axe from "../assets/images/axe.png";
 import boots from "../assets/images/boots.png";
 import gloves from "../assets/images/gloves.png";
 import pants from "../assets/images/pants.png";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 export const Marketplace = () => {
   const tokens = [
@@ -133,6 +135,34 @@ export const Marketplace = () => {
       battle: "gTHC battle",
     },
   ];
+
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1920 },
+      items: 6,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    laptop: {
+      breakpoint: { max: 1920, min: 1440 },
+      items: 5,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    laptopMedium: {
+      breakpoint: { max: 1440, min: 1150 },
+      items: 4,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1150, min: 850 },
+      items: 3,
+      slidesToSlide: 2, // optional, default to 1.
+    },
+    tabletSmall: {
+      breakpoint: { max: 850, min: 768 },
+      items: 2,
+      slidesToSlide: 2, // optional, default to 1.
+    },
+  };
   return (
     <Styled.Container>
       <Styled.Main>
@@ -162,7 +192,17 @@ export const Marketplace = () => {
               <FilterButton>Filter</FilterButton>
             </Styled.Header>
             <Styled.AssetContainer>
-              <Styled.AssetContainerWrapper>
+              <Carousel
+                swipeable={true}
+                draggable={true}
+                infinite={false}
+                keyBoardControl={true}
+                responsive={responsive}
+                autoPlay={true}
+                arrows={false}
+                itemClass="carousel-item-margin"
+              >
+                {/* <Styled.AssetContainerWrapper> */}
                 {assets.map((item) => (
                   <Styled.AssetWrapper key={item.id}>
                     <Styled.AssetCard>
@@ -192,7 +232,8 @@ export const Marketplace = () => {
                     </Styled.AssetDetails>
                   </Styled.AssetWrapper>
                 ))}
-              </Styled.AssetContainerWrapper>
+                {/* </Styled.AssetContainerWrapper> */}
+              </Carousel>
             </Styled.AssetContainer>
           </Styled.BuyAssetsContainer>
           <Styled.OwnAssetsContainer>
@@ -207,7 +248,17 @@ export const Marketplace = () => {
               </Styled.Group>
             </Styled.Header>
             <Styled.AssetContainer>
-              <Styled.AssetContainerWrapper>
+              <Carousel
+                swipeable={true}
+                draggable={true}
+                infinite={false}
+                keyBoardControl={true}
+                responsive={responsive}
+                autoPlay={true}
+                arrows={false}
+                itemClass="carousel-item-margin"
+              >
+                {/* <Styled.AssetContainerWrapper> */}
                 {assets.map((item) => (
                   <Styled.AssetWrapper key={item.id}>
                     <Styled.AssetCard>
@@ -237,7 +288,8 @@ export const Marketplace = () => {
                     </Styled.AssetDetails>
                   </Styled.AssetWrapper>
                 ))}
-              </Styled.AssetContainerWrapper>
+              </Carousel>
+              {/* </Styled.AssetContainerWrapper> */}
             </Styled.AssetContainer>
           </Styled.OwnAssetsContainer>
         </Styled.Content>

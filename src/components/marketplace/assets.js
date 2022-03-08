@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const AssetContainer = styled.div`
   min-width: 100%;
   padding: 1rem 2rem;
-  overflow: hidden;
 `;
 
 export const AssetContainerWrapper = styled.div`
@@ -18,6 +17,7 @@ export const AssetContainerWrapper = styled.div`
 `;
 
 export const AssetWrapper = styled.div`
+  user-select: none;
   min-width: 240px;
   height: 280px;
   margin: 0 1rem;
@@ -47,6 +47,7 @@ export const AssetWrapper = styled.div`
 
 export const AssetCard = styled.div`
   margin: inherit;
+  user-select: none;
   width: 100%;
   height: 70%;
   margin: 0 1rem;
@@ -69,6 +70,7 @@ export const AssetCard = styled.div`
 
 export const Asset = styled.div`
   position: absolute;
+  user-select: none;
   top: -10px;
   left: 0;
   right: 0;
@@ -76,10 +78,12 @@ export const Asset = styled.div`
 
 export const AssetImg = styled.img`
   height: 100%;
+  user-select: none;
 `;
 
 export const AssetOverlay = styled.div`
   position: absolute;
+  user-select: none;
   top: 0;
   bottom: 0;
   left: 0;
@@ -89,9 +93,11 @@ export const AssetOverlay = styled.div`
 export const AssetOverlayImg = styled.img`
   height: 100%;
   width: 100%;
+  user-select: none;
 `;
 
 export const AssetDetails = styled.div`
+  user-select: none;
   width: 100%;
   height: 30%;
   border-bottom-left-radius: 12px;
@@ -107,6 +113,7 @@ export const AssetDetails = styled.div`
 
 export const DetailsRow = styled.div`
   width: 100%;
+  user-select: none;
   display: flex;
   align-items: center;
   justify-content: ${({ end }) => (end ? `flex-end` : `space-between`)};
@@ -114,17 +121,20 @@ export const DetailsRow = styled.div`
 
 export const FieldName = styled.span`
   color: white;
+  user-select: none;
   font-size: 0.875rem;
 `;
 
 export const Bids = styled.span`
   color: #0dc900;
   font-size: 0.875rem;
+  user-select: none;
 `;
 
 export const EthIcon = styled.span`
   display: inline-flex;
   width: 20px;
+  user-select: none;
   margin-right: 10px;
 `;
 
@@ -133,11 +143,13 @@ export const Price = styled.div`
   align-items: center;
   color: #537fee;
   font-size: 0.875rem;
+  user-select: none;
 `;
 
 export const UsdPrice = styled.span`
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.625rem;
+  user-select: none;
 `;
 
 export const AssetName = styled.span`
@@ -147,4 +159,5 @@ export const AssetName = styled.span`
   color: #ff94d5;
   padding-left: 1rem;
   border-left: 5px solid #ff94d5;
+  user-select: none;
 `;

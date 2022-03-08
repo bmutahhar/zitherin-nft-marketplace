@@ -47,7 +47,6 @@ export const Group = styled.span`
   @media only screen and (max-width: 900px) {
     flex-direction: column;
     gap: 10px;
-    border: 1px solid red;
     height: 100%;
   }
 `;
@@ -56,7 +55,6 @@ export const Header = styled.div`
   width: 100%;
   padding: 1rem 1rem 1rem 0;
   display: flex;
-  border: 1px solid white;
   align-items: center;
   justify-content: space-between;
   @media only screen and (max-width: 900px) {
@@ -73,6 +71,7 @@ export const Separator = styled.div`
 export const Content = styled.div`
   width: 80%;
   height: 100%;
+  margin-top: 1rem;
 `;
 
 export const BuyAssetsContainer = styled.div`
