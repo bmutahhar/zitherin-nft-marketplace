@@ -1,5 +1,6 @@
 import { ReactComponent as AddIcon } from "../../assets/icons/plus.svg";
 import { ReactComponent as ArrowRight } from "../../assets/icons/arrow-right.svg";
+import { ReactComponent as ArrowLeft } from "../../assets/icons/arrow-left.svg";
 import { ReactComponent as MobileMenu } from "../../assets/icons/menu.svg";
 import { ReactComponent as Telegram } from "../../assets/icons/telegram.svg";
 import { ReactComponent as Discord } from "../../assets/icons/discord.svg";
@@ -13,6 +14,7 @@ import { ReactComponent as EthIcon } from "../../assets/icons/eth.svg";
 export const icons = {
   add: <AddIcon />,
   arrowRight: <ArrowRight />,
+  arrowLeft: <ArrowLeft />,
   mobileMenu: <MobileMenu />,
   telegram: <Telegram />,
   discord: <Discord />,
