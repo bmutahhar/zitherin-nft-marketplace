@@ -14,6 +14,7 @@ export const AssetContainerWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   overflow-x: auto;
+  /* padding-bottom: 20px; */
 `;
 
 export const AssetWrapper = styled.div`
@@ -27,7 +28,6 @@ export const AssetWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   transition: 0.3s ease;
-  /* border: 1px solid white; */
 
   &:hover {
     transform: scale(1.1);
@@ -40,8 +40,8 @@ export const AssetWrapper = styled.div`
   }
 
   @media only screen and (max-width: 900px) {
-    min-width: 240px;
-    height: 280px;
+    min-width: 220px;
+    height: 260px;
   }
 `;
 
@@ -102,6 +102,7 @@ export const AssetDetails = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+  z-index: 5;
 `;
 
 export const DetailsRow = styled.div`

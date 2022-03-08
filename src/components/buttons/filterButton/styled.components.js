@@ -17,6 +17,10 @@ export const Button = styled.button`
     cursor: pointer;
     background: #26176e;
   }
+
+  @media only screen and (max-width: 900px) {
+    margin: 0 auto;
+  }
 `;
 
 export const ButtonIcon = styled.span`

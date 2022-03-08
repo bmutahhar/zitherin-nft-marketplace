@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const TokensContainer = styled.div`
   width: 20%;
-  max-height: 100%;
+  height: 100%;
   overflow: hidden;
   padding: 1rem 0;
 `;
 
 export const TokensWrapper = styled.div`
   width: 100%;
-  max-height: 100%;
+  height: 100%;
   overflow: auto;
   padding-right: 20px;
   box-sizing: content-box;

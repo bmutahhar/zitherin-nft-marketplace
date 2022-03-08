@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
+
+  @media only screen and (max-height: 1000px) {
+    height: 1000px;
+  }
 `;
 
 export const Title = styled.h5`
@@ -18,16 +22,16 @@ export const Title = styled.h5`
   }
 
   @media only screen and (max-width: 900px) {
-    margin: 0;
+    margin: 0 1rem;
   }
 `;
 
 export const Main = styled.div`
   width: 100%;
+  height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid grey;
 `;
 
 export const Group = styled.span`
@@ -42,10 +46,9 @@ export const Group = styled.span`
 
   @media only screen and (max-width: 900px) {
     flex-direction: column;
+    gap: 10px;
     border: 1px solid red;
     height: 100%;
-    gap: 5px;
-    /* padding: 1rem 0; */
   }
 `;
 
@@ -69,8 +72,7 @@ export const Separator = styled.div`
 
 export const Content = styled.div`
   width: 80%;
-  min-height: 100%;
-  border: 1px solid red;
+  height: 100%;
 `;
 
 export const BuyAssetsContainer = styled.div`
