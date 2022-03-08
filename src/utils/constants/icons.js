@@ -8,6 +8,7 @@ import { ReactComponent as Twitter } from "../../assets/icons/twitter.svg";
 import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
 import { ReactComponent as SearchIcon } from "../../assets/icons/search.svg";
 import { ReactComponent as SettingsIcon } from "../../assets/icons/settings.svg";
+import { ReactComponent as EthIcon } from "../../assets/icons/eth.svg";
 
 export const icons = {
   add: <AddIcon />,
@@ -20,4 +21,5 @@ export const icons = {
   closeIcon: <CloseIcon />,
   searchIcon: <SearchIcon />,
   settingsIcon: <SettingsIcon />,
+  eth: <EthIcon />,
 };

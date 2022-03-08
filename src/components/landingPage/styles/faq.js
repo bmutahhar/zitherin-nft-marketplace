@@ -34,7 +34,7 @@ export const QuestionText = styled.p`
   width: 90%;
 
   @media only screen and (min-width: 1920px) {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   @media only screen and (max-width: 1200px) {

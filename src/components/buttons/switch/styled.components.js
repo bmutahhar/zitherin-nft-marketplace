@@ -11,4 +11,7 @@ export const Text = styled.span`
   color: #f5f5f5;
   font-size: 1rem;
   margin: 0 1rem;
+  @media only screen and (max-width: 1200px) {
+    font-size: 0.875rem;
+  }
 `;

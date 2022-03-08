@@ -1,6 +1,7 @@
 import React from "react";
 import * as Styled from "../components/marketplace";
 import { Footer, Search, FilterButton, SwitchButton } from "../components";
+import { icons } from "../utils/constants/icons";
 import character1 from "../assets/characters/Character-1.png";
 import character2 from "../assets/characters/Character-2.png";
 import character3 from "../assets/characters/Character-3.png";
@@ -23,11 +24,114 @@ export const Marketplace = () => {
   ];
 
   const assets = [
-    { id: 1, asset: mask },
-    { id: 2, token: axe },
-    { id: 3, token: boots },
-    { id: 4, token: pants },
-    { id: 5, token: gloves },
+    {
+      id: 1,
+      asset: mask,
+      name: "Asset Name",
+      price: "4.000",
+      usd: 0.43,
+      bids: 10,
+      battle: "gTHC battle",
+    },
+    {
+      id: 2,
+      asset: axe,
+      name: "Asset Name",
+      price: "4.000",
+      usd: 0.43,
+      bids: 10,
+      battle: "gTHC battle",
+    },
+    {
+      id: 3,
+      asset: boots,
+      name: "Asset Name",
+      price: "4.000",
+      usd: 0.43,
+      bids: 10,
+      battle: "gTHC battle",
+    },
+    {
+      id: 4,
+      asset: pants,
+      name: "Asset Name",
+      price: "4.000",
+      usd: 0.43,
+      bids: 10,
+      battle: "gTHC battle",
+    },
+    {
+      id: 5,
+      asset: gloves,
+      name: "Asset Name",
+      price: "4.000",
+      usd: 0.43,
+      bids: 10,
+      battle: "gTHC battle",
+    },
+    {
+      id: 6,
+      asset: pants,
+      name: "Asset Name",
+      price: "4.000",
+      usd: 0.43,
+      bids: 10,
+      battle: "gTHC battle",
+    },
+    {
+      id: 7,
+      asset: gloves,
+      name: "Asset Name",
+      price: "4.000",
+      usd: 0.43,
+      bids: 10,
+      battle: "gTHC battle",
+    },
+    {
+      id: 8,
+      asset: boots,
+      name: "Asset Name",
+      price: "4.000",
+      usd: 0.43,
+      bids: 10,
+      battle: "gTHC battle",
+    },
+    {
+      id: 9,
+      asset: pants,
+      name: "Asset Name",
+      price: "4.000",
+      usd: 0.43,
+      bids: 10,
+      battle: "gTHC battle",
+    },
+    {
+      id: 10,
+      asset: gloves,
+      name: "Asset Name",
+      price: "4.000",
+      usd: 0.43,
+      bids: 10,
+      battle: "gTHC battle",
+    },
+    {
+      id: 11,
+      asset: pants,
+      name: "Asset Name",
+      price: "4.000",
+      usd: 0.43,
+      bids: 10,
+      battle: "gTHC battle",
+    },
+    {
+      id: 12,
+      asset: gloves,
+      name: "Asset Name",
+      price: "4.000",
+      usd: 0.43,
+      bids: 10,
+      battle: "gTHC battle",
+    },
   ];
   return (
     <Styled.Container>
@@ -58,11 +162,37 @@ export const Marketplace = () => {
               <FilterButton>Filter</FilterButton>
             </Styled.Header>
             <Styled.AssetContainer>
-              <Styled.AssetCard>
-                {/* <Styled.Asset>
-                  <Styled.AssetImg src={mask} />
-                </Styled.Asset> */}
-              </Styled.AssetCard>
+              <Styled.AssetContainerWrapper>
+                {assets.map((item) => (
+                  <Styled.AssetWrapper key={item.id}>
+                    <Styled.AssetCard>
+                      <Styled.Asset>
+                        <Styled.AssetImg src={item.asset} />
+                      </Styled.Asset>
+                      <Styled.AssetOverlay>
+                        <Styled.AssetOverlayImg src={overlay} />
+                      </Styled.AssetOverlay>
+                      <Styled.AssetName>{item.name}</Styled.AssetName>
+                    </Styled.AssetCard>
+                    <Styled.AssetDetails>
+                      <Styled.DetailsRow>
+                        <Styled.FieldName>{item.battle}</Styled.FieldName>
+                        <Styled.Bids>{item.bids} Bids</Styled.Bids>
+                      </Styled.DetailsRow>
+                      <Styled.DetailsRow>
+                        <Styled.FieldName>Price</Styled.FieldName>
+                        <Styled.Price>
+                          <Styled.EthIcon>{icons.eth}</Styled.EthIcon>
+                          {item.price} ETH
+                        </Styled.Price>
+                      </Styled.DetailsRow>
+                      <Styled.DetailsRow end={1}>
+                        <Styled.UsdPrice>${item.usd} USD</Styled.UsdPrice>
+                      </Styled.DetailsRow>
+                    </Styled.AssetDetails>
+                  </Styled.AssetWrapper>
+                ))}
+              </Styled.AssetContainerWrapper>
             </Styled.AssetContainer>
           </Styled.BuyAssetsContainer>
           <Styled.OwnAssetsContainer>
@@ -76,6 +206,39 @@ export const Marketplace = () => {
                 <FilterButton>Filter</FilterButton>
               </Styled.Group>
             </Styled.Header>
+            <Styled.AssetContainer>
+              <Styled.AssetContainerWrapper>
+                {assets.map((item) => (
+                  <Styled.AssetWrapper key={item.id}>
+                    <Styled.AssetCard>
+                      <Styled.Asset>
+                        <Styled.AssetImg src={item.asset} />
+                      </Styled.Asset>
+                      <Styled.AssetOverlay>
+                        <Styled.AssetOverlayImg src={overlay} />
+                      </Styled.AssetOverlay>
+                      <Styled.AssetName>{item.name}</Styled.AssetName>
+                    </Styled.AssetCard>
+                    <Styled.AssetDetails>
+                      <Styled.DetailsRow>
+                        <Styled.FieldName>{item.battle}</Styled.FieldName>
+                        <Styled.Bids>{item.bids} Bids</Styled.Bids>
+                      </Styled.DetailsRow>
+                      <Styled.DetailsRow>
+                        <Styled.FieldName>Price</Styled.FieldName>
+                        <Styled.Price>
+                          <Styled.EthIcon>{icons.eth}</Styled.EthIcon>
+                          {item.price} ETH
+                        </Styled.Price>
+                      </Styled.DetailsRow>
+                      <Styled.DetailsRow end={1}>
+                        <Styled.UsdPrice>${item.usd} USD</Styled.UsdPrice>
+                      </Styled.DetailsRow>
+                    </Styled.AssetDetails>
+                  </Styled.AssetWrapper>
+                ))}
+              </Styled.AssetContainerWrapper>
+            </Styled.AssetContainer>
           </Styled.OwnAssetsContainer>
         </Styled.Content>
       </Styled.Main>
