@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 70%;
-  height: 100%;
+  height: 90vh;
   margin: 2rem auto;
   /* border: 2px solid red; */
 
@@ -73,6 +73,7 @@ export const ActionIcon = styled.span`
 
 export const TabHeader = styled.div`
   display: flex;
+  /* border:5px solid red; */
   align-items: center;
   justify-content: center;
   border-top-right-radius: 1.75rem;
@@ -91,11 +92,12 @@ export const TabHeader = styled.div`
     position: absolute;
     background: #130933;
     /* background: blue; */
-    bottom: 0px;
+    bottom: 0;
+    top:0;
     left: -10%;
     z-index: -1;
     width: 50%;
-    height: 100%;
+    height: 99%;
     /* border: 1px solid red; */
     transform: skew(-30deg);
     @media only screen and (max-width: 768px) {
@@ -116,7 +118,7 @@ export const TabHeader = styled.div`
     justify-content: space-between;
     border-top-left-radius: 1.75rem;
     width: 100%;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     padding: 1rem 2rem;
   }
 `;
@@ -340,7 +342,8 @@ export const Bid = styled.div`
   align-items: center;
   justify-content: space-between;
   @media only screen and (max-width: 1200px) {
-    padding: 0.5rem;
+    padding: 0.75rem 0.5rem;
+    margin: 0.125rem 0.25rem;
   }
 `;
 

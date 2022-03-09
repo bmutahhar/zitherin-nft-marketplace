@@ -13,6 +13,8 @@ const modalStyles = {
     bottom: 0,
     backgroundColor: "rgba(0, 0, 0, 0.7)",
     zIndex: 9999,
+    width: "100%",
+    height: "100vh",
   },
   content: {
     position: "absolute",
@@ -23,6 +25,8 @@ const modalStyles = {
     border: "none",
     borderRadius: 0,
     display: "flex",
+    flexDirection:"column",
+    alignItems:"center",
     justifyContent: "center",
     background: "rgba(0, 0, 0, 0.7)",
     overflow: "auto",
