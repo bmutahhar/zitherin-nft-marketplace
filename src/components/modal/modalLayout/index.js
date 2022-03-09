@@ -1,5 +1,5 @@
 import React from "react";
-import * as Styled from "../styles";
+import * as Styled from "./styled.components";
 import { icons } from "../../../utils/constants/icons";
 import Modal from "react-modal";
 import { useMediaQuery } from "react-responsive";

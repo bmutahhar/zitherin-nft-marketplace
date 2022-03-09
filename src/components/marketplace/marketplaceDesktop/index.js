@@ -8,7 +8,6 @@ import {
   FilterButton,
   SwitchButton,
   Asset,
-  OwnAssetModal,
 } from "../../../components";
 import { assets, tokens } from "../../../mock";
 import { backgroundImages } from "../../../utils/constants/images";
@@ -43,7 +42,6 @@ const responsive = {
 
 export const MarketplaceDesktop = (props) => {
   return (
-    <>
       <Styled.Container>
         <Styled.Main>
           <Styled.TokensContainer>
@@ -83,7 +81,11 @@ export const MarketplaceDesktop = (props) => {
                   itemClass="carousel-item-margin"
                 >
                   {assets.map((item) => (
-                    <Asset key={item.id} asset={item} onClick={props.onClick} />
+                    <Asset
+                      key={item.id}
+                      asset={item}
+                      onClick={props.handleNonOwnAssetClick}
+                    />
                   ))}
                 </Carousel>
               </Styled.AssetContainer>
@@ -111,7 +113,11 @@ export const MarketplaceDesktop = (props) => {
                   itemClass="carousel-item-margin"
                 >
                   {assets.map((item) => (
-                    <Asset key={item.id} asset={item} onClick={props.onClick} />
+                    <Asset
+                      key={item.id}
+                      asset={item}
+                      onClick={props.handleOwnAssetClick}
+                    />
                   ))}
                 </Carousel>
               </Styled.AssetContainer>
@@ -120,12 +126,7 @@ export const MarketplaceDesktop = (props) => {
         </Styled.Main>
         <Footer />
       </Styled.Container>
-      <OwnAssetModal
-        isOpen={props.isModalOpen}
-        closeHandler={props.closeModal}
-        modalData={props.modalData}
-      />
-    </>
+     
   );
 };
 

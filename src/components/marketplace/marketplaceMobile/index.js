@@ -5,13 +5,11 @@ import {
   Search,
   Asset,
   Footer,
-  OwnAssetModal,
 } from "../../../components";
 import { assets } from "../../../mock";
 import { icons } from "../../../utils/constants/icons";
 
 const MarketplaceMobile = (props) => {
-  console.log(props)
   return (
     <>
       <Styled.Container>
@@ -19,7 +17,7 @@ const MarketplaceMobile = (props) => {
         <Search fullWidth={true} rightIcon={<FilterButton />} />
         <Styled.AssetsContainer>
           {assets.map((asset) => (
-            <Asset asset={asset} key={asset.id} onClick={props.onClick} />
+            <Asset asset={asset} key={asset.id} onClick={props.handleNonOwnAssetClick} />
           ))}
         </Styled.AssetsContainer>
         <Styled.TokensOpener>
@@ -30,16 +28,11 @@ const MarketplaceMobile = (props) => {
         <Search fullWidth={true} rightIcon={<FilterButton />} />
         <Styled.AssetsContainer>
           {assets.map((asset) => (
-            <Asset asset={asset} key={asset.id} onClick={props.onClick} />
+            <Asset asset={asset} key={asset.id} onClick={props.handleOwnAssetClick} />
           ))}
         </Styled.AssetsContainer>
         <Footer />
       </Styled.Container>
-      <OwnAssetModal
-        isOpen={props.isModalOpen}
-        closeHandler={props.closeModal}
-        modalData={props.modalData}
-      />
     </>
   );
 };

@@ -1,4 +1,4 @@
-export { PolygonButton } from "./buttons";
+export { PolygonButton, PlainButton } from "./buttons";
 export { default as FilterButton } from "./buttons/filterButton";
 export { default as SwitchButton } from "./buttons/switch";
 

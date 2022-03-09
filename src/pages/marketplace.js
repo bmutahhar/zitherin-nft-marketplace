@@ -1,40 +1,83 @@
 import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { MarketplaceDesktop, MarketplaceMobile } from "../components";
+import {
+  MarketplaceDesktop,
+  MarketplaceMobile,
+  OwnAssetModal,
+  NonOwnAssetModal,
+} from "../components";
 
 const Marketplace = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalData, setModalData] = useState(null);
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setModalData(null);
+
+  const [isOwnAssetModalOpen, setIsOwnAssetModalOpen] = useState(false);
+  const [ownAssetModalData, setOwnAssetModalData] = useState(null);
+
+  const [isNonOwnAssetModalOpen, setIsNonOwnAssetModalOpen] = useState(true);
+  const [nonOwnAssetModalData, setNonOwnAssetModalData] = useState(null);
+
+  const closeOwnAssetModal = () => {
+    setIsOwnAssetModalOpen(false);
+    setOwnAssetModalData(null);
   };
 
   const handleOwnAssetClick = (item) => {
-    console.log("item: ",item);
-    if (!modalData) {
-      setModalData(item);
-      setIsModalOpen(true);
+    if (!ownAssetModalData) {
+      setOwnAssetModalData(item);
+      setIsOwnAssetModalOpen(true);
     }
   };
+
+  const closeNonOwnAssetModal = () => {
+    setIsNonOwnAssetModalOpen(false);
+    setNonOwnAssetModalData(null);
+  };
+
+  const handleNonOwnAssetClick = (item) => {
+    console.log("item: ", item);
+    if (!nonOwnAssetModalData) {
+      setNonOwnAssetModalData(item);
+      setIsNonOwnAssetModalOpen(true);
+    }
+  };
+
   if (isMobileOrTablet) {
     return (
-      <MarketplaceMobile
-        isModalOpen={isModalOpen}
-        closeModal={closeModal}
-        onClick={handleOwnAssetClick}
-        modalData={modalData}
-      />
+      <>
+        <MarketplaceMobile
+          handleOwnAssetClick={handleOwnAssetClick}
+          handleNonOwnAssetClick={handleNonOwnAssetClick}
+        />
+        <OwnAssetModal
+          isOpen={isOwnAssetModalOpen}
+          closeHandler={closeOwnAssetModal}
+          modalData={ownAssetModalData}
+        />
+        <NonOwnAssetModal
+          isOpen={isNonOwnAssetModalOpen}
+          closeHandler={closeNonOwnAssetModal}
+          modalData={nonOwnAssetModalData}
+        />
+      </>
     );
   }
   return (
-    <MarketplaceDesktop
-      isModalOpen={isModalOpen}
-      closeModal={closeModal}
-      onClick={handleOwnAssetClick}
-      modalData={modalData}
-    />
+    <>
+      <MarketplaceDesktop
+        handleOwnAssetClick={handleOwnAssetClick}
+        handleNonOwnAssetClick={handleNonOwnAssetClick}
+      />
+      <OwnAssetModal
+        isOpen={isOwnAssetModalOpen}
+        closeHandler={closeOwnAssetModal}
+        modalData={ownAssetModalData}
+      />
+      <NonOwnAssetModal
+        isOpen={isNonOwnAssetModalOpen}
+        closeHandler={closeNonOwnAssetModal}
+        modalData={nonOwnAssetModalData}
+      />
+    </>
   );
 };
 

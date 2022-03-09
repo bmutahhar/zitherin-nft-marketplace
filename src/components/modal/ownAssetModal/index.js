@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { ModalLayout, TraitMiniCard } from "../../../components";
-import * as Styled from "../styles";
+import * as Styled from "./styled.components";
 import { icons } from "../../../utils/constants/icons";
 
 const OwnAssetModal = (props) => {
-  
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const { modalData } = props;
 
   const changeTabHandler = (index) => setActiveTabIndex(index);
-  console.log("Modal Props: ",props)
-  if (modalData){
+  if (modalData) {
     return (
       <ModalLayout isOpen={props.isOpen} closeHandler={props.closeHandler}>
         <Styled.AssetImgPortion>
@@ -79,8 +77,8 @@ const OwnAssetModal = (props) => {
         </Styled.AssetDetailsPortion>
       </ModalLayout>
     );
-                }
-    return <></>
+  }
+  return <></>;
 };
 
 export default OwnAssetModal;
