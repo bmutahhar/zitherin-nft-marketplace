@@ -29,7 +29,7 @@ export const QuestionText = styled.p`
   display: inline-flex;
   color: white;
   text-align: left;
-  font-size: 1.55rem;
+  font-size: 1.5rem;
   font-weight: 300;
   width: 90%;
 

@@ -8,6 +8,9 @@ export { default as Footer } from "./footer";
 export { default as Search } from "./search";
 export * from "./modal";
 
+export { default as Asset } from "./marketplace/asset";
+export { default as MarketplaceDesktop } from "./marketplace/marketplaceDesktop";
+
 export { default as LandingMain } from "./landingPage/landingMain";
 export { default as LandingCharacters } from "./landingPage/landingCharacters";
 export { default as LandingRoadmap } from "./landingPage/landingRoadmap";

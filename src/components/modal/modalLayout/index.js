@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import * as Styled from "./styles";
-import { icons } from "../../utils/constants/icons";
+import React from "react";
+import * as Styled from "../styles";
+import { icons } from "../../../utils/constants/icons";
 import Modal from "react-modal";
 import { useMediaQuery } from "react-responsive";
 
@@ -12,6 +12,7 @@ const modalStyles = {
     right: 0,
     bottom: 0,
     backgroundColor: "rgba(0, 0, 0, 0.7)",
+    zIndex:9999,
   },
   content: {
     position: "absolute",
@@ -21,7 +22,6 @@ const modalStyles = {
     bottom: 0,
     border: "none",
     display: "flex",
-    // flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     background: "rgba(0, 0, 0, 0.7)",
@@ -35,7 +35,7 @@ const ModalLayout = (props) => {
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
-    <Modal isOpen={props.isOpen} style={modalStyles}>
+    <Modal isOpen={props.isOpen} closeTimeoutMS={300} style={modalStyles}>
       <Styled.Container>
         <Styled.ModalHeader>
           {!isMobileOrTablet && (

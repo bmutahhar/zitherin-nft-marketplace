@@ -297,16 +297,13 @@ export const ScrollBox = styled.div`
   background: #22184a;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem;
   padding-right: 0;
   @media only screen and (min-width: 1920px) {
     height: 200px;
   }
   @media only screen and (max-width: 1200px) {
     height: 150px;
-  }
-
-  @media only screen and (max-width: 1200px) {
     padding: 0.5rem;
   }
 `;
@@ -318,7 +315,6 @@ export const Bids = styled.div`
   background: #22184a;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-
   display: flex;
   flex-direction: column;
   align-items: center;

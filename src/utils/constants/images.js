@@ -10,6 +10,7 @@ import axe from "../../assets/images/axe.png";
 import boots from "../../assets/images/boots.png";
 import gloves from "../../assets/images/gloves.png";
 import pants from "../../assets/images/pants.png";
+import tokenOverly from "../../assets/images/token-overlay.png"
 
 export const backgroundImages = {
   heroBg,
@@ -24,4 +25,5 @@ export const backgroundImages = {
   boots,
   gloves,
   pants,
+  tokenOverly
 };

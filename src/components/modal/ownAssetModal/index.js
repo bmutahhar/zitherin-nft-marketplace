@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { ModalLayout, TraitMiniCard } from "../components";
-import * as Styled from "../components/modal/styles";
-import { icons } from "../utils/constants/icons";
+import { ModalLayout, TraitMiniCard } from "../../../components";
+import * as Styled from "../styles";
+import { icons } from "../../../utils/constants/icons";
 
-const BidsModal = (props) => {
+const OwnAssetModal = (props) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const { modalData } = props;
 
@@ -81,4 +81,4 @@ const BidsModal = (props) => {
     return <></>
 };
 
-export default BidsModal;
+export default OwnAssetModal;

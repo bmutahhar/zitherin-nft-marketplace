@@ -1,20 +1,4 @@
-import styled from "styled-components";
-
-export const AssetContainer = styled.div`
-  min-width: 100%;
-  padding: 1rem 2rem;
-`;
-
-export const AssetContainerWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  overflow-x: auto;
-  /* padding-bottom: 20px; */
-`;
+import styled from 'styled-components';
 
 export const AssetWrapper = styled.div`
   user-select: none;

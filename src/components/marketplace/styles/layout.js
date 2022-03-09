@@ -85,3 +85,8 @@ export const OwnAssetsContainer = styled.div`
   /* height: 50%; */
   /* border: 2px solid white; */
 `;
+
+export const AssetContainer = styled.div`
+  min-width: 100%;
+  padding: 1rem 2rem;
+`;
