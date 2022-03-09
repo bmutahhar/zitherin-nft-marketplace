@@ -7,6 +7,13 @@ export const Footer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: 768px){
+    height: 30%;
+  }
+  @media only screen and (max-width: 400px){
+    height: 50%;
+  }
 `;
 
 export const FooterText = styled.p`
@@ -16,4 +23,9 @@ export const FooterText = styled.p`
   @media only screen and (min-width: 1920px) {
     font-size: 1.5rem;
   }
+
+  @media only screen and (max-width: 768px){
+    font-size: 0.875rem;
+  }
+  
 `;

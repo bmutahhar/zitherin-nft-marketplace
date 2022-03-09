@@ -35,7 +35,9 @@ export const Body = styled.div`
   align-items: center;
   justify-content: space-between;
   @media only screen and (max-width: 768px) {
-    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-radius: 0;
     flex-direction: column;
     height: auto;
   }

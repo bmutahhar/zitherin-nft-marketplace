@@ -10,6 +10,9 @@ import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
 import { ReactComponent as SearchIcon } from "../../assets/icons/search.svg";
 import { ReactComponent as SettingsIcon } from "../../assets/icons/settings.svg";
 import { ReactComponent as EthIcon } from "../../assets/icons/eth.svg";
+import { ReactComponent as ArrowDoubleUp } from "../../assets/icons/arrow-double-up.svg";
+import { ReactComponent as Plus } from "../../assets/icons/plus.svg";
+import { ReactComponent as Minus } from "../../assets/icons/minus.svg";
 
 export const icons = {
   add: <AddIcon />,
@@ -24,4 +27,7 @@ export const icons = {
   searchIcon: <SearchIcon />,
   settingsIcon: <SettingsIcon />,
   eth: <EthIcon />,
+  plus: <Plus />,
+  minus: <Minus />,
+  arrowDoubleUp: <ArrowDoubleUp />,
 };

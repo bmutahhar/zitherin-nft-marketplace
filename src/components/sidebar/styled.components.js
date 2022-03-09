@@ -17,7 +17,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   background: #00161f;
-  z-index: 99;
+  z-index: 999;
   display: flex;
   flex-direction: column;
   align-items: center;

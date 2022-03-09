@@ -12,7 +12,7 @@ const modalStyles = {
     right: 0,
     bottom: 0,
     backgroundColor: "rgba(0, 0, 0, 0.7)",
-    zIndex:9999,
+    zIndex: 9999,
   },
   content: {
     position: "absolute",
@@ -21,13 +21,14 @@ const modalStyles = {
     right: 0,
     bottom: 0,
     border: "none",
+    borderRadius: 0,
     display: "flex",
-    alignItems: "center",
     justifyContent: "center",
     background: "rgba(0, 0, 0, 0.7)",
     overflow: "auto",
     WebkitOverflowScrolling: "touch",
     outline: "none",
+    padding: 0,
   },
 };
 Modal.setAppElement("#root");

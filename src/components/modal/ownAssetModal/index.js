@@ -4,10 +4,12 @@ import * as Styled from "../styles";
 import { icons } from "../../../utils/constants/icons";
 
 const OwnAssetModal = (props) => {
+  
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const { modalData } = props;
 
   const changeTabHandler = (index) => setActiveTabIndex(index);
+  console.log("Modal Props: ",props)
   if (modalData){
     return (
       <ModalLayout isOpen={props.isOpen} closeHandler={props.closeHandler}>

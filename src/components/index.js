@@ -10,6 +10,7 @@ export * from "./modal";
 
 export { default as Asset } from "./marketplace/asset";
 export { default as MarketplaceDesktop } from "./marketplace/marketplaceDesktop";
+export { default as MarketplaceMobile } from "./marketplace/marketplaceMobile";
 
 export { default as LandingMain } from "./landingPage/landingMain";
 export { default as LandingCharacters } from "./landingPage/landingCharacters";

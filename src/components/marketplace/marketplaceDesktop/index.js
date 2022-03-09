@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import * as Styled from "../styles";
+import * as Styled from "./styles";
 import {
   Footer,
   Search,
   FilterButton,
   SwitchButton,
   Asset,
-  OwnAssetModal
+  OwnAssetModal,
 } from "../../../components";
 import { assets, tokens } from "../../../mock";
 import { backgroundImages } from "../../../utils/constants/images";
@@ -41,22 +41,7 @@ const responsive = {
   },
 };
 
-export const MarketplaceDesktop = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalData, setModalData] = useState(null);
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setModalData(null);
-  };
-
-  const handleOwnAssetClick = (item) => {
-    if (!modalData) {
-      setModalData(item);
-      setIsModalOpen(true);
-      console.log(item);
-    }
-  };
-
+export const MarketplaceDesktop = (props) => {
   return (
     <>
       <Styled.Container>
@@ -98,11 +83,7 @@ export const MarketplaceDesktop = () => {
                   itemClass="carousel-item-margin"
                 >
                   {assets.map((item) => (
-                    <Asset
-                      key={item.id}
-                      asset={item}
-                      onClick={() => handleOwnAssetClick(item)}
-                    />
+                    <Asset key={item.id} asset={item} onClick={props.onClick} />
                   ))}
                 </Carousel>
               </Styled.AssetContainer>
@@ -130,11 +111,7 @@ export const MarketplaceDesktop = () => {
                   itemClass="carousel-item-margin"
                 >
                   {assets.map((item) => (
-                    <Asset
-                      key={item.id}
-                      asset={item}
-                      onClick={() => handleOwnAssetClick(item)}
-                    />
+                    <Asset key={item.id} asset={item} onClick={props.onClick} />
                   ))}
                 </Carousel>
               </Styled.AssetContainer>
@@ -144,9 +121,9 @@ export const MarketplaceDesktop = () => {
         <Footer />
       </Styled.Container>
       <OwnAssetModal
-        isOpen={isModalOpen}
-        closeHandler={closeModal}
-        modalData={modalData}
+        isOpen={props.isModalOpen}
+        closeHandler={props.closeModal}
+        modalData={props.modalData}
       />
     </>
   );

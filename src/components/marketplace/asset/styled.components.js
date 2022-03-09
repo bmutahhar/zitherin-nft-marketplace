@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const AssetWrapper = styled.div`
   user-select: none;
@@ -27,6 +27,28 @@ export const AssetWrapper = styled.div`
     min-width: 220px;
     height: 260px;
   }
+
+  @media only screen and (max-width: 768px) {
+    min-width: 200px;
+    width: 200px;
+    height: 240px;
+    &:hover {
+    transform: none;
+  }
+  }
+
+  @media only screen and (max-width: 500px) {
+    min-width: 160px;
+    width: 160px;
+    height: 200px;
+    margin: 0;
+  } 
+  @media only screen and (max-width: 400px) {
+    min-width: 200px;
+    width: 200px;
+    height: 240px;
+    margin: 0;
+  }
 `;
 
 export const AssetCard = styled.div`
@@ -50,6 +72,10 @@ export const AssetCard = styled.div`
     background: #1b1444;
     clip-path: polygon(24% 0, 100% 0%, 100% 100%, 0 100%, 0 27%);
   }
+
+  @media only screen and (max-width: 768px) {
+    height: 60%;
+  }
 `;
 
 export const Asset = styled.div`
@@ -58,11 +84,21 @@ export const Asset = styled.div`
   top: -10px;
   left: 0;
   right: 0;
+  @media only screen and (max-width: 768px) {
+    top: 0;
+  }
 `;
 
 export const AssetImg = styled.img`
   height: 100%;
   user-select: none;
+  @media only screen and (max-width: 768px) {
+    height: 100px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    height: 150px;
+  }
 `;
 
 export const AssetOverlay = styled.div`
@@ -93,6 +129,10 @@ export const AssetDetails = styled.div`
   justify-content: space-between;
   padding: 1rem;
   z-index: 5;
+
+  @media only screen and (max-width: 768px) {
+    height: 40%;
+  }
 `;
 
 export const DetailsRow = styled.div`
@@ -107,12 +147,18 @@ export const FieldName = styled.span`
   color: white;
   user-select: none;
   font-size: 0.875rem;
+  @media only screen and (max-width: 500px) {
+    font-size: 0.675rem;
+  }
 `;
 
 export const Bids = styled.span`
   color: #0dc900;
   font-size: 0.875rem;
   user-select: none;
+  @media only screen and (max-width: 500px) {
+    font-size: 0.75rem;
+  }
 `;
 
 export const EthIcon = styled.span`
@@ -120,6 +166,10 @@ export const EthIcon = styled.span`
   width: 20px;
   user-select: none;
   margin-right: 10px;
+  @media only screen and (max-width: 500px) {
+    margin-right: 5px;
+    width:12px;
+  }
 `;
 
 export const Price = styled.div`
@@ -128,12 +178,18 @@ export const Price = styled.div`
   color: #537fee;
   font-size: 0.875rem;
   user-select: none;
+  @media only screen and (max-width: 500px) {
+    font-size: 0.75rem;
+  }
 `;
 
 export const UsdPrice = styled.span`
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.625rem;
   user-select: none;
+  @media only screen and (max-width: 500px) {
+    font-size: 0.5rem;
+  }
 `;
 
 export const AssetName = styled.span`
@@ -144,4 +200,7 @@ export const AssetName = styled.span`
   padding-left: 1rem;
   border-left: 5px solid #ff94d5;
   user-select: none;
+  @media only screen and (max-width: 500px) {
+    font-size: 0.75rem;
+  }
 `;

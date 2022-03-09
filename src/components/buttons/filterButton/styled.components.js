@@ -21,9 +21,21 @@ export const Button = styled.button`
   @media only screen and (max-width: 900px) {
     margin: 0 auto;
   }
+
+  @media only screen and (max-width: 768px) {
+    padding: 0.25rem 1rem;
+    margin: 0.25rem;
+  }
 `;
 
 export const ButtonIcon = styled.span`
   width: 25px;
   margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+
+  @media only screen and (max-width: 768px) {
+    margin: 0;
+  }
 `;
