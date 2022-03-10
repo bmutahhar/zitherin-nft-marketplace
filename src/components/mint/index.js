@@ -1,33 +1,38 @@
 import React, { useState } from "react";
-import * as Styled from "./styled.components";
-import { PlainButton } from "../../components";
-import { icons } from "../../utils/constants/icons";
+import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
+import * as Styled from "./styled.components";
+import { icons } from "../../utils/constants/icons";
+import { mintCharacters } from "../../mock";
+import { backgroundImages } from "../../utils/constants/images";
 
 const MintNonModal = (props) => {
   const [counter, setCounter] = useState(1);
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
+  const navigate = useNavigate();
 
   const increment = () => setCounter((prev) => prev + 1);
   const decrement = () => setCounter((prev) => prev - 1);
+
+  const goBack = () => navigate(-1);
 
   return (
     <Styled.Container>
       <Styled.NonModalWrapper>
         <Styled.ModalHeader>
           {!isMobileOrTablet && (
-            <Styled.ActionButton onClick={props.closeHandler}>
+            <Styled.ActionButton onClick={goBack}>
               <Styled.ActionIcon>{icons.arrowLeft}</Styled.ActionIcon>
               Go back
             </Styled.ActionButton>
           )}
           <Styled.TabHeader>
             {isMobileOrTablet && (
-              <Styled.ActionIcon onClick={props.closeHandler}>
+              <Styled.ActionIcon onClick={goBack}>
                 {icons.arrowLeft}
               </Styled.ActionIcon>
             )}
-            <Styled.TabHeaderText>Asset Details</Styled.TabHeaderText>
+            <Styled.TabHeaderText>Mint a Hero</Styled.TabHeaderText>
           </Styled.TabHeader>
         </Styled.ModalHeader>
         <Styled.Body>
@@ -40,15 +45,29 @@ const MintNonModal = (props) => {
             <Styled.IncrementIcon onClick={decrement}>
               {icons.minus}
             </Styled.IncrementIcon>
-            <Styled.IncrementCounter>{counter}</Styled.IncrementCounter>
+            <Styled.IncrementCounter>{counter} Heroes</Styled.IncrementCounter>
             <Styled.IncrementIcon onClick={increment}>
               {icons.plus}
             </Styled.IncrementIcon>
           </Styled.IncrementContainer>
+
+          <Styled.CharacterContainer>
+            {mintCharacters.map((item) => (
+              <Styled.CharacterCard key={item.id}>
+                <Styled.Character>
+                  <Styled.CharacterImg src={item.character} />
+                </Styled.Character>
+                <Styled.Overlay>
+                  <Styled.OverlayImg src={backgroundImages.tokenOverly} />
+                </Styled.Overlay>
+              </Styled.CharacterCard>
+            ))}
+          </Styled.CharacterContainer>
+
           <Styled.AssetTitleContainer>
             <Styled.AssetTitle>Total = 3 Matic</Styled.AssetTitle>
           </Styled.AssetTitleContainer>
-          <PlainButton>Buy Now</PlainButton>
+          <Styled.MintButton>Mint</Styled.MintButton>
         </Styled.Body>
       </Styled.NonModalWrapper>
     </Styled.Container>

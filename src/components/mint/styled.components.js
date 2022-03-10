@@ -1,17 +1,22 @@
 import styled from "styled-components";
+import { PlainButton } from "../buttons";
 
 export const NonModalWrapper = styled.div`
   width: 70%;
   height: 90vh;
   margin: 2rem auto;
-  /* border: 2px solid red; */
+  /* border: 2px solid white; */
 
   @media only screen and (min-width: 1920px) {
-    height: 60vh;
+    height: 70vh;
     width: 50%;
   }
+
+  @media only screen and (max-width: 900px) {
+    height: auto;
+  }
   @media only screen and (max-width: 768px) {
-    height: 95vh;
+    /* height: 95vh; */
     width: 100%;
   }
 `;
@@ -44,6 +49,7 @@ export const Body = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+  padding-bottom: 2rem;
   @media only screen and (max-width: 768px) {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -83,7 +89,7 @@ export const ActionIcon = styled.span`
 
 export const TabHeader = styled.div`
   display: flex;
-  /* border:5px solid red; */
+  /* border: 5px solid red; */
   align-items: center;
   justify-content: center;
   border-top-right-radius: 1.75rem;
@@ -135,6 +141,7 @@ export const TabHeader = styled.div`
 
 export const TabHeaderText = styled.span`
   margin: 0 auto;
+  text-transform: uppercase;
 `;
 
 export const AssetTitleContainer = styled.div`
@@ -143,11 +150,12 @@ export const AssetTitleContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  border: 1px solid red;
-  width: 90%;
+  /* border: 1px solid red; */
+  width: 85%;
   padding: 1rem;
   @media only screen and (max-width: 768px) {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
+    padding: 0;
   }
 `;
 
@@ -180,8 +188,9 @@ export const AssetSubTitle = styled.span`
 
 export const IncrementContainer = styled.div`
   width: 85%;
+  /* border: 1px solid red; */
+  padding: 1rem;
   background: #121238;
-  padding: 0.75rem;
   display: flex;
   align-items: center;
   border-radius: 0.75rem;
@@ -195,7 +204,7 @@ export const IncrementContainer = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    width: 100%;
+    width: 85%;
     padding: 0.5rem;
     border-radius: 0.5rem;
   }
@@ -209,6 +218,7 @@ export const IncrementCounter = styled.span`
   color: white;
   font-size: 1.25rem;
   font-weight: 600;
+  text-transform: uppercase;
 
   @media only screen and (max-width: 768px) {
     font-size: 1rem;
@@ -233,5 +243,95 @@ export const IncrementIcon = styled.span`
   @media only screen and (max-width: 768px) {
     width: 20px;
     padding: 0.25rem;
+  }
+`;
+
+export const CharacterContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 1rem;
+  width: 85%;
+  align-items: center;
+  justify-items: center;
+  /* border: 1px solid red; */
+  @media only screen and (max-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+    margin: 1rem 0;
+  }
+`;
+
+export const CharacterCard = styled.div`
+  width: 160px;
+  height: 200px;
+  position: relative;
+  z-index: 0;
+  transition: 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #1b1444;
+    clip-path: polygon(24% 0, 100% 0%, 100% 100%, 0 100%, 0 27%);
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  @media only screen and (min-width: 1920px) {
+    width: 180px;
+    height: 220px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    width: 120px;
+    height: 160px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 100px;
+    height: 140px;
+  }
+`;
+
+export const Character = styled.div`
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+`;
+
+export const CharacterImg = styled.img`
+  width: 100%;
+`;
+
+export const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+
+  @media only screen and (max-width: 1200px) {
+    top: 10px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    top: 15px;
+  }
+`;
+
+export const OverlayImg = styled.img`
+  width: 100%;
+`;
+
+export const MintButton = styled(PlainButton)`
+  margin-bottom: 1rem;
+
+  @media only screen and (max-width: 768px) {
+    width: 85%;
   }
 `;

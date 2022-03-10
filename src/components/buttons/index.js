@@ -24,6 +24,7 @@ export const PolygonButton = styled.button`
 `;
 
 export const PlainButton = styled(PolygonButton)`
+  clip-path: polygon(3% 0, 98% 0, 100% 25%, 97% 100%, 2% 100%, 0 70%);
   padding: 0;
   background: #f2b317;
   padding: 0.75rem 1rem;
@@ -31,12 +32,18 @@ export const PlainButton = styled(PolygonButton)`
   color: #121238;
   font-weight: 600;
 
+  &:hover {
+    cursor: pointer;
+    background: #d49a0f;
+    transition: 0.3s ease;
+  }
+
   @media only screen and (max-width: 768px) {
-    width:50%;
-    margin-bottom:1rem;
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
   @media only screen and (max-width: 400px) {
-    width:100%;
+    width: 100%;
   }
 `;

@@ -36,6 +36,10 @@ export const AssetDetailsPortion = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 0 1rem;
+
+  @media only screen and (max-width: 1200px) {
+    justify-content: flex-start;
+  }
   @media only screen and (max-width: 768px) {
     width: 90%;
     padding: 1rem 0;
@@ -114,7 +118,7 @@ export const AssetCryptoPrice = styled.span`
     font-size: 1.5rem;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 900px) {
     font-size: 1rem;
   }
 `;
@@ -167,7 +171,7 @@ export const IncrementCounter = styled.span`
   font-size: 1.25rem;
   font-weight: 600;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 900px) {
     font-size: 1rem;
   }
 `;
