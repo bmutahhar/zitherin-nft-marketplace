@@ -1,6 +1,19 @@
 import styled from "styled-components";
 import { PlainButton } from "../buttons";
 
+export const Container = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media only screen and (min-width: 1920px) {
+    align-items: flex-start;
+    height: 90vh;
+  }
+`;
+
 export const NonModalWrapper = styled.div`
   width: 70%;
   height: 90vh;
@@ -10,6 +23,7 @@ export const NonModalWrapper = styled.div`
   @media only screen and (min-width: 1920px) {
     height: 70vh;
     width: 50%;
+    margin-top: 5rem;
   }
 
   @media only screen and (max-width: 900px) {
@@ -19,14 +33,6 @@ export const NonModalWrapper = styled.div`
     /* height: 95vh; */
     width: 100%;
   }
-`;
-
-export const Container = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 export const ModalHeader = styled.div`

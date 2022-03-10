@@ -2,6 +2,8 @@ export { PolygonButton, PlainButton } from "./buttons";
 export { default as FilterButton } from "./buttons/filterButton";
 export { default as SwitchButton } from "./buttons/switch";
 
+export { default as ProtectedRoute } from "./ProtectedRoute";
+
 export { default as Navbar } from "./navbar";
 export { default as Sidebar } from "./sidebar";
 export { default as Footer } from "./footer";
