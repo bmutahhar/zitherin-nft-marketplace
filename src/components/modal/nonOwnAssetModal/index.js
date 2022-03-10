@@ -12,10 +12,6 @@ const NonOwnAssetModal = (props) => {
   const increment = () => setCounter((prev) => prev + 1);
   const decrement = () => setCounter((prev) => prev - 1);
 
-  useEffect(() => {
-    return () => setCounter(1);
-  }, []);
-
   if (modalData) {
     return (
       <ModalLayout isOpen={props.isOpen} closeHandler={props.closeHandler}>

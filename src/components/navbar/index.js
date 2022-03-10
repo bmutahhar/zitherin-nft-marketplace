@@ -70,7 +70,7 @@ const Navbar = () => {
           <Avatar
             name={username}
             round
-            size={70}
+            size={50}
             color="#392877"
             fontSize={16}
           />

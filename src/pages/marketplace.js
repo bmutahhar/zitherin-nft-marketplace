@@ -34,7 +34,6 @@ const Marketplace = () => {
   };
 
   const handleNonOwnAssetClick = (item) => {
-    console.log("item: ", item);
     if (!nonOwnAssetModalData) {
       setNonOwnAssetModalData(item);
       setIsNonOwnAssetModalOpen(true);
@@ -48,16 +47,20 @@ const Marketplace = () => {
           handleOwnAssetClick={handleOwnAssetClick}
           handleNonOwnAssetClick={handleNonOwnAssetClick}
         />
-        <OwnAssetModal
-          isOpen={isOwnAssetModalOpen}
-          closeHandler={closeOwnAssetModal}
-          modalData={ownAssetModalData}
-        />
-        <NonOwnAssetModal
-          isOpen={isNonOwnAssetModalOpen}
-          closeHandler={closeNonOwnAssetModal}
-          modalData={nonOwnAssetModalData}
-        />
+        {isOwnAssetModalOpen && (
+          <OwnAssetModal
+            isOpen={isOwnAssetModalOpen}
+            closeHandler={closeOwnAssetModal}
+            modalData={ownAssetModalData}
+          />
+        )}
+        {isNonOwnAssetModalOpen && (
+          <NonOwnAssetModal
+            isOpen={isNonOwnAssetModalOpen}
+            closeHandler={closeNonOwnAssetModal}
+            modalData={nonOwnAssetModalData}
+          />
+        )}
       </>
     );
   }
@@ -67,16 +70,20 @@ const Marketplace = () => {
         handleOwnAssetClick={handleOwnAssetClick}
         handleNonOwnAssetClick={handleNonOwnAssetClick}
       />
-      <OwnAssetModal
-        isOpen={isOwnAssetModalOpen}
-        closeHandler={closeOwnAssetModal}
-        modalData={ownAssetModalData}
-      />
-      <NonOwnAssetModal
-        isOpen={isNonOwnAssetModalOpen}
-        closeHandler={closeNonOwnAssetModal}
-        modalData={nonOwnAssetModalData}
-      />
+      {isOwnAssetModalOpen && (
+        <OwnAssetModal
+          isOpen={isOwnAssetModalOpen}
+          closeHandler={closeOwnAssetModal}
+          modalData={ownAssetModalData}
+        />
+      )}
+      {isNonOwnAssetModalOpen && (
+        <NonOwnAssetModal
+          isOpen={isNonOwnAssetModalOpen}
+          closeHandler={closeNonOwnAssetModal}
+          modalData={nonOwnAssetModalData}
+        />
+      )}
     </>
   );
 };

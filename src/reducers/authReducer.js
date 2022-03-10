@@ -1,5 +1,5 @@
 const initState = {
-  isConnected: false,
+  isConnected: true,
   username: "",
 };
 
