@@ -4,6 +4,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
@@ -16,7 +17,7 @@ export const Container = styled.div`
 export const NonModalWrapper = styled.div`
   width: 70%;
   height: 90vh;
-  margin: 2rem auto;
+  margin: 2rem auto 1rem;
   /* border: 2px solid white; */
 
   @media only screen and (min-width: 1920px) {
@@ -46,15 +47,13 @@ export const Body = styled.div`
   height: 90%;
   width: 100%;
   background: #392877;
-  border: 2px solid white;
   border-top-left-radius: 1.75rem;
   border-bottom-left-radius: 1.75rem;
   border-bottom-right-radius: 1.75rem;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between; */
-  /* padding: 1rem; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1rem;
   /* padding-bottom: 2rem; */
   @media only screen and (max-width: 768px) {
     border-bottom-left-radius: 0;
@@ -77,11 +76,12 @@ export const ActionButton = styled.button`
   border: none;
   outline: none;
   color: white;
-  font-size: 1.25rem;
+  font-size: 0.875rem;
   letter-spacing: 1px;
 
   &:hover {
     cursor: pointer;
+    color:rgba(255,255,255,0.8);
   }
 
   @media only screen and (max-width: 1200px) {
@@ -90,8 +90,8 @@ export const ActionButton = styled.button`
 `;
 
 export const ActionIcon = styled.span`
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -158,24 +158,111 @@ export const TabHeaderText = styled.span`
 
 export const Table = styled.table`
   width: 100%;
-  border: 2px solid red;
+  /* border: 2px solid red; */
+  border-collapse: collapse;
+  /* table-layout:fixed; */
+  thead tr {
+    border: none;
+  }
 `;
 
 export const TableRow = styled.tr`
-  width: 100%;
-  border: 2px solid green;
-  padding: 2rem;
+border-bottom: 1px solid grey;
+
+&:last-of-type{
+  border:none;
+}
 `;
 
-export const THead = styled.thead`
-  /* width: 100%; */
-  border: 2px solid blue;
-  padding: 2rem;
-`;
+export const THead = styled.thead``;
 
-export const TBody = styled.tbody``;
+export const TBody = styled.tbody`
+  /* border: 2px solid red; */
+`;
 
 export const TH = styled.th`
   color: #bb50ff;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
+  padding: 1rem 0.5rem 1rem 0.25rem;
+  font-weight: 500;
+  text-align: left;
+  text-transform:capitalize;
+`;
+
+export const TD = styled.td`
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 1.5rem 0.5rem 1.5rem 0.25rem;
+  color: white;
+  text-align: left;
+  &:last-of-type {
+    color: #6efffa;
+    &:hover {
+      cursor: pointer;
+      color: #26c7c1;
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 0.75rem;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 0.625rem;
+  }
+`;
+
+export const PaginationRow = styled.div`
+  width: 70%;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom:1rem;
+`;
+
+export const ArrowButtons = styled.button`
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  background: #392877;
+  color: white;
+  border-radius: 10px;
+  margin: 0 0.25rem;
+
+  &:hover{
+    cursor:pointer;
+    background:#211451;
+    transition: 0.3s ease-in-out;
+  }
+`;
+
+export const ArrowIcon = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+`;
+
+export const PageNum = styled.span`
+  background: #011117;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight:300;
+  color:white;
+  padding: 0.75rem 1.875rem;
+  margin: 0 0.5rem;
+  border-radius: 10px;
+  border: 1px solid #392877;
+`;
+
+export const PageCount = styled(PageNum)`
+  border: none;
+  background: transparent;
+  border-radius: 0;
+  padding:0.25rem;
+  /* border: 1px solid red; */
 `;

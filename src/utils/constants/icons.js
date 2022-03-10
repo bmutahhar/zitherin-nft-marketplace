@@ -1,6 +1,8 @@
 import { ReactComponent as AddIcon } from "../../assets/icons/plus.svg";
 import { ReactComponent as ArrowRight } from "../../assets/icons/arrow-right.svg";
+import { ReactComponent as ArrowRightFilled } from "../../assets/icons/arrow-right-filled.svg";
 import { ReactComponent as ArrowLeft } from "../../assets/icons/arrow-left.svg";
+import { ReactComponent as ArrowLeftFilled } from "../../assets/icons/arrow-left-filled.svg";
 import { ReactComponent as MobileMenu } from "../../assets/icons/menu.svg";
 import { ReactComponent as Telegram } from "../../assets/icons/telegram.svg";
 import { ReactComponent as Discord } from "../../assets/icons/discord.svg";
@@ -17,7 +19,9 @@ import { ReactComponent as Minus } from "../../assets/icons/minus.svg";
 export const icons = {
   add: <AddIcon />,
   arrowRight: <ArrowRight />,
+  arrowRightFilled: <ArrowRightFilled />,
   arrowLeft: <ArrowLeft />,
+  arrowLeftFilled: <ArrowLeftFilled />,
   mobileMenu: <MobileMenu />,
   telegram: <Telegram />,
   discord: <Discord />,
