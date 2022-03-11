@@ -1,11 +1,6 @@
 import React from "react";
 import * as Styled from "./styled.components";
-import {
-  FilterButton,
-  Search,
-  Asset,
-  Footer,
-} from "../../../components";
+import { FilterButton, Search, Asset, Footer } from "../../../components";
 import { assets } from "../../../mock";
 import { icons } from "../../../utils/constants/icons";
 
@@ -14,10 +9,17 @@ const MarketplaceMobile = (props) => {
     <>
       <Styled.Container>
         <Styled.Title>Assets to Buy</Styled.Title>
-        <Search fullWidth={true} rightIcon={<FilterButton />} />
+        <Search
+          fullWidth={true}
+          rightIcon={<FilterButton onClick={props.handleFilterButtonClick} />}
+        />
         <Styled.AssetsContainer>
           {assets.map((asset) => (
-            <Asset asset={asset} key={asset.id} onClick={props.handleNonOwnAssetClick} />
+            <Asset
+              asset={asset}
+              key={asset.id}
+              onClick={props.handleNonOwnAssetClick}
+            />
           ))}
         </Styled.AssetsContainer>
         <Styled.TokensOpener>
@@ -25,10 +27,17 @@ const MarketplaceMobile = (props) => {
           Tokens
         </Styled.TokensOpener>
         <Styled.Title>My Assets</Styled.Title>
-        <Search fullWidth={true} rightIcon={<FilterButton />} />
+        <Search
+          fullWidth={true}
+          rightIcon={<FilterButton onClick={props.handleFilterButtonClick} />}
+        />
         <Styled.AssetsContainer>
           {assets.map((asset) => (
-            <Asset asset={asset} key={asset.id} onClick={props.handleOwnAssetClick} />
+            <Asset
+              asset={asset}
+              key={asset.id}
+              onClick={props.handleOwnAssetClick}
+            />
           ))}
         </Styled.AssetsContainer>
         <Footer />

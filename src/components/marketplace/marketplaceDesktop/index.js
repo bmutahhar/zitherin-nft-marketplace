@@ -42,91 +42,92 @@ const responsive = {
 
 export const MarketplaceDesktop = (props) => {
   return (
-      <Styled.Container>
-        <Styled.Main>
-          <Styled.TokensContainer>
-            <Styled.Title>Tokens</Styled.Title>
-            <Styled.TokensWrapper>
-              {tokens.map((item) => (
-                <Styled.TokenCard key={item.id}>
-                  <Styled.Character>
-                    <Styled.CharacterImg src={item.token} />
-                  </Styled.Character>
-                  <Styled.Overlay>
-                    <Styled.OverlayImg src={backgroundImages.tokenOverly} />
-                  </Styled.Overlay>
-                </Styled.TokenCard>
-              ))}
-            </Styled.TokensWrapper>
-          </Styled.TokensContainer>
-          <Styled.Separator />
-          <Styled.Content>
-            <Styled.BuyAssetsContainer>
-              <Styled.Header>
-                <Styled.Group>
-                  <Styled.Title>Assets to Buy</Styled.Title>
-                  <Search />
-                </Styled.Group>
-                <FilterButton>Filter</FilterButton>
-              </Styled.Header>
-              <Styled.AssetContainer>
-                <Carousel
-                  swipeable={true}
-                  draggable={true}
-                  infinite={false}
-                  keyBoardControl={true}
-                  responsive={responsive}
-                  autoPlay={true}
-                  removeArrowOnDeviceType={["tabletSmall"]}
-                  itemClass="carousel-item-margin"
-                >
-                  {assets.map((item) => (
-                    <Asset
-                      key={item.id}
-                      asset={item}
-                      onClick={props.handleNonOwnAssetClick}
-                    />
-                  ))}
-                </Carousel>
-              </Styled.AssetContainer>
-            </Styled.BuyAssetsContainer>
-            <Styled.OwnAssetsContainer>
-              <Styled.Header>
-                <Styled.Group>
-                  <Styled.Title>My Assets</Styled.Title>
-                  <Search />
-                </Styled.Group>
-                <Styled.Group>
-                  <SwitchButton label="Show assets of current token" />
-                  <FilterButton>Filter</FilterButton>
-                </Styled.Group>
-              </Styled.Header>
-              <Styled.AssetContainer>
-                <Carousel
-                  swipeable={true}
-                  draggable={true}
-                  infinite={false}
-                  keyBoardControl={true}
-                  responsive={responsive}
-                  autoPlay={true}
-                  removeArrowOnDeviceType={["tabletSmall"]}
-                  itemClass="carousel-item-margin"
-                >
-                  {assets.map((item) => (
-                    <Asset
-                      key={item.id}
-                      asset={item}
-                      onClick={props.handleOwnAssetClick}
-                    />
-                  ))}
-                </Carousel>
-              </Styled.AssetContainer>
-            </Styled.OwnAssetsContainer>
-          </Styled.Content>
-        </Styled.Main>
-        <Footer />
-      </Styled.Container>
-     
+    <Styled.Container>
+      <Styled.Main>
+        <Styled.TokensContainer>
+          <Styled.Title>Tokens</Styled.Title>
+          <Styled.TokensWrapper>
+            {tokens.map((item) => (
+              <Styled.TokenCard key={item.id}>
+                <Styled.Character>
+                  <Styled.CharacterImg src={item.token} />
+                </Styled.Character>
+                <Styled.Overlay>
+                  <Styled.OverlayImg src={backgroundImages.tokenOverly} />
+                </Styled.Overlay>
+              </Styled.TokenCard>
+            ))}
+          </Styled.TokensWrapper>
+        </Styled.TokensContainer>
+        <Styled.Separator />
+        <Styled.Content>
+          <Styled.BuyAssetsContainer>
+            <Styled.Header>
+              <Styled.Group>
+                <Styled.Title>Assets to Buy</Styled.Title>
+                <Search />
+              </Styled.Group>
+              <FilterButton onClick={props.handleFilterButtonClick}>
+                Filter
+              </FilterButton>
+            </Styled.Header>
+            <Styled.AssetContainer>
+              <Carousel
+                swipeable={true}
+                draggable={true}
+                infinite={false}
+                keyBoardControl={true}
+                responsive={responsive}
+                autoPlay={true}
+                removeArrowOnDeviceType={["tabletSmall"]}
+                itemClass="carousel-item-margin"
+              >
+                {assets.map((item) => (
+                  <Asset
+                    key={item.id}
+                    asset={item}
+                    onClick={props.handleNonOwnAssetClick}
+                  />
+                ))}
+              </Carousel>
+            </Styled.AssetContainer>
+          </Styled.BuyAssetsContainer>
+          <Styled.OwnAssetsContainer>
+            <Styled.Header>
+              <Styled.Group>
+                <Styled.Title>My Assets</Styled.Title>
+                <Search />
+              </Styled.Group>
+              <Styled.Group>
+                <SwitchButton label="Show assets of current token" />
+                <FilterButton  onClick={props.handleFilterButtonClick}>Filter</FilterButton>
+              </Styled.Group>
+            </Styled.Header>
+            <Styled.AssetContainer>
+              <Carousel
+                swipeable={true}
+                draggable={true}
+                infinite={false}
+                keyBoardControl={true}
+                responsive={responsive}
+                autoPlay={true}
+                removeArrowOnDeviceType={["tabletSmall"]}
+                itemClass="carousel-item-margin"
+              >
+                {assets.map((item) => (
+                  <Asset
+                    key={item.id}
+                    asset={item}
+                    onClick={props.handleOwnAssetClick}
+                  />
+                ))}
+              </Carousel>
+            </Styled.AssetContainer>
+          </Styled.OwnAssetsContainer>
+        </Styled.Content>
+      </Styled.Main>
+      <Footer />
+    </Styled.Container>
   );
 };
 

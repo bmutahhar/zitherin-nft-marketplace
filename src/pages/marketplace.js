@@ -5,6 +5,7 @@ import {
   MarketplaceMobile,
   OwnAssetModal,
   NonOwnAssetModal,
+  FilterModal,
 } from "../components";
 
 const Marketplace = () => {
@@ -15,6 +16,8 @@ const Marketplace = () => {
 
   const [isNonOwnAssetModalOpen, setIsNonOwnAssetModalOpen] = useState(true);
   const [nonOwnAssetModalData, setNonOwnAssetModalData] = useState(null);
+
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
 
   const closeOwnAssetModal = () => {
     setIsOwnAssetModalOpen(false);
@@ -40,12 +43,19 @@ const Marketplace = () => {
     }
   };
 
+  const handleFilterButtonClick = () => {
+    setIsFilterModalOpen(true);
+  };
+
+  const closeFilterModal = () => setIsFilterModalOpen(false);
+
   if (isMobileOrTablet) {
     return (
       <>
         <MarketplaceMobile
           handleOwnAssetClick={handleOwnAssetClick}
           handleNonOwnAssetClick={handleNonOwnAssetClick}
+          handleFilterButtonClick={handleFilterButtonClick}
         />
         {isOwnAssetModalOpen && (
           <OwnAssetModal
@@ -61,6 +71,12 @@ const Marketplace = () => {
             modalData={nonOwnAssetModalData}
           />
         )}
+        {isFilterModalOpen && (
+          <FilterModal
+            isOpen={isFilterModalOpen}
+            closeHandler={closeFilterModal}
+          />
+        )}
       </>
     );
   }
@@ -69,6 +85,7 @@ const Marketplace = () => {
       <MarketplaceDesktop
         handleOwnAssetClick={handleOwnAssetClick}
         handleNonOwnAssetClick={handleNonOwnAssetClick}
+        handleFilterButtonClick={handleFilterButtonClick}
       />
       {isOwnAssetModalOpen && (
         <OwnAssetModal
@@ -82,6 +99,12 @@ const Marketplace = () => {
           isOpen={isNonOwnAssetModalOpen}
           closeHandler={closeNonOwnAssetModal}
           modalData={nonOwnAssetModalData}
+        />
+      )}
+      {isFilterModalOpen && (
+        <FilterModal
+          isOpen={isFilterModalOpen}
+          closeHandler={closeFilterModal}
         />
       )}
     </>
