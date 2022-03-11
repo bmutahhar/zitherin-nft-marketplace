@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  /* border:1px solid white; */
 
   @media only screen and (min-width: 1920px) {
     align-items: flex-start;
@@ -30,8 +31,8 @@ export const NonModalWrapper = styled.div`
     height: auto;
   }
   @media only screen and (max-width: 768px) {
-    /* height: 95vh; */
-    width: 100%;
+    height: 95vh;
+    width: 90%;
   }
 `;
 
@@ -57,9 +58,7 @@ export const Body = styled.div`
   padding: 1rem;
   padding-bottom: 2rem;
   @media only screen and (max-width: 768px) {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-radius: 0;
+    border-top-left-radius: 0;
     flex-direction: column;
     height: auto;
   }
@@ -321,13 +320,16 @@ export const CharacterImg = styled.img`
 
 export const Overlay = styled.div`
   position: absolute;
-  top: 0;
+  top: 5px;
+  left:0;
+  right:0;
+
 
   @media only screen and (max-width: 1200px) {
     top: 10px;
   }
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 768px) {
     top: 15px;
   }
 `;

@@ -74,7 +74,7 @@ export const UserName = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin: 1rem;
   color: white;
 `;

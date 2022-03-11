@@ -45,7 +45,7 @@ const Sidebar = ({ toggleSiderbar }) => {
         </Styled.NavItem>
         {isConnected && (
           <Styled.NavItem
-            to="/activities"
+            onClick={() => navigateTo("/activities")}
             className={pathname === "/activities" ? "active" : ""}
           >
             Activities

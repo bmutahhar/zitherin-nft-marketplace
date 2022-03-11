@@ -64,6 +64,11 @@ export const NavItem = styled(Link)`
   &:hover {
     color: #7052e2;
   }
+
+  @media only screen and (max-width:900px){
+    padding:1.25rem 1rem;
+    font-size:0.875rem;
+  }
 `;
 
 export const NavBtnContainer = styled.div`
@@ -107,4 +112,7 @@ export const UserName = styled.span`
   justify-content: center;
   margin: 0 1rem;
   color: white;
+  @media only screen and (max-width:900px){
+    font-size:0.875rem;
+  }
 `;

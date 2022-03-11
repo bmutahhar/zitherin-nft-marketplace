@@ -17,7 +17,7 @@ export const Container = styled.div`
 export const NonModalWrapper = styled.div`
   width: 70%;
   height: 90vh;
-  margin: 2rem auto 1rem;
+  margin: 3rem auto 1rem;
   /* border: 2px solid white; */
 
   @media only screen and (min-width: 1920px) {
@@ -26,13 +26,9 @@ export const NonModalWrapper = styled.div`
     margin-top: 5rem;
   }
 
-  @media only screen and (max-width: 900px) {
+  /* @media only screen and (max-width: 900px) {
     height: auto;
-  }
-  @media only screen and (max-width: 768px) {
-    /* height: 95vh; */
-    width: 100%;
-  }
+  } */
 `;
 
 export const ModalHeader = styled.div`
@@ -251,7 +247,7 @@ export const Separator = styled.hr`
 
 export const PaginationRow = styled.div`
   width: 70%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   align-items: center;
   justify-content: flex-end;
