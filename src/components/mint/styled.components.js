@@ -201,6 +201,7 @@ export const IncrementContainer = styled.div`
   align-items: center;
   border-radius: 0.75rem;
   margin-bottom: 1rem;
+  user-select: none;
   @media only screen and (min-width: 1920px) {
     margin-bottom: 1rem;
   }
@@ -259,6 +260,7 @@ export const CharacterContainer = styled.div`
   width: 85%;
   align-items: center;
   justify-items: center;
+  user-select:none;
   /* border: 1px solid red; */
   @media only screen and (max-width: 900px) {
     grid-template-columns: 1fr 1fr;
@@ -267,8 +269,8 @@ export const CharacterContainer = styled.div`
 `;
 
 export const CharacterCard = styled.div`
-  width: 160px;
-  height: 200px;
+  width: 140px;
+  height: 180px;
   position: relative;
   z-index: 0;
   transition: 0.3s ease;

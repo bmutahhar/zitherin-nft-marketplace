@@ -24,4 +24,4 @@ export { default as MarketplaceMobile } from "./marketplace/marketplaceMobile";
 
 export { default as MintNonModal } from "./mint";
 
-export { default as ActivitiesTable } from "./activities";
+export * from "./activities";

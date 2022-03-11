@@ -12,7 +12,11 @@ const MintNonModal = (props) => {
   const navigate = useNavigate();
 
   const increment = () => setCounter((prev) => prev + 1);
-  const decrement = () => setCounter((prev) => prev - 1);
+  const decrement = () => {
+    if (counter > 1) {
+      setCounter((prev) => prev - 1);
+    }
+  };
 
   const goBack = () => navigate(-1);
 

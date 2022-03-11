@@ -46,11 +46,11 @@ export const QuestionText = styled.p`
 `;
 
 export const QuestionIcon = styled.div`
-  width: 50px;
+  width: 40px;
   color: white;
-  @media only screen and (max-width: 1200px) {
+  /* @media only screen and (max-width: 1200px) {
     width: 40px;
-  }
+  } */
 
   @media only screen and (max-width: 900px) {
     width: 35px;
