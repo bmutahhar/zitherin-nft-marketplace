@@ -9,7 +9,7 @@ import axios from "axios";
 const ActivitiesTable = () => {
   const [activitiesData, setActivitiesData] = useState(activities);
   const [pageCount, setPageCount] = useState(1);
-  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
   const [rowsOnPage, setRowsOnPage] = useState([]);
   const [pageNum, setPageNum] = useState(1);
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
@@ -90,8 +90,9 @@ const ActivitiesTable = () => {
               {rowsOnPage.map((row, index) => (
                 <Styled.TableRow key={index}>
                   {Object.keys(row).map((key) => (
-                    <Styled.TD key={key}>{truncateStr(row[key], 15)}</Styled.TD>
+                    <Styled.TD key={key}>{truncateStr(row[key], 25)}</Styled.TD>
                   ))}
+                  {/* <Styled.Separator /> */}
                 </Styled.TableRow>
               ))}
             </Styled.TBody>

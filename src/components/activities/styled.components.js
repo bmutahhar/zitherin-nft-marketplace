@@ -38,14 +38,18 @@ export const NonModalWrapper = styled.div`
 export const ModalHeader = styled.div`
   width: 100%;
   height: 10%;
+  height: 10%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
 export const Body = styled.div`
+  max-height: 90%;
   height: 90%;
   width: 100%;
+  max-width: 100%;
+  overflow: auto;
   background: #392877;
   border-top-left-radius: 1.75rem;
   border-bottom-left-radius: 1.75rem;
@@ -55,6 +59,11 @@ export const Body = styled.div`
   justify-content: center;
   padding: 1rem;
   /* padding-bottom: 2rem; */
+
+  @media only screen and (min-width: 1920px) {
+    padding: 2rem;
+  }
+
   @media only screen and (max-width: 768px) {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -81,7 +90,7 @@ export const ActionButton = styled.button`
 
   &:hover {
     cursor: pointer;
-    color:rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
   }
 
   @media only screen and (max-width: 1200px) {
@@ -160,24 +169,37 @@ export const Table = styled.table`
   width: 100%;
   /* border: 2px solid red; */
   border-collapse: collapse;
-  /* table-layout:fixed; */
   thead tr {
     border: none;
   }
 `;
 
 export const TableRow = styled.tr`
-border-bottom: 1px solid grey;
+  /* border-bottom: 1px solid grey; */
+  position: relative;
+  &:last-of-type {
+    border: none;
+    &::before {
+      background: transparent;
+    }
+  }
 
-&:last-of-type{
-  border:none;
-}
+  &::before {
+    content: "";
+    width: 96%;
+    height: 1px;
+    background: grey;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 `;
 
 export const THead = styled.thead``;
 
 export const TBody = styled.tbody`
   /* border: 2px solid red; */
+  overflow-y: auto;
 `;
 
 export const TH = styled.th`
@@ -186,7 +208,7 @@ export const TH = styled.th`
   padding: 1rem 0.5rem 1rem 0.25rem;
   font-weight: 500;
   text-align: left;
-  text-transform:capitalize;
+  text-transform: capitalize;
 `;
 
 export const TD = styled.td`
@@ -204,6 +226,10 @@ export const TD = styled.td`
     }
   }
 
+  @media only screen and (min-width: 1920px) {
+    padding: 2rem 0.5rem 2rem 0.25rem;
+  }
+
   @media only screen and (max-width: 1200px) {
     font-size: 0.75rem;
   }
@@ -213,13 +239,34 @@ export const TD = styled.td`
   }
 `;
 
+export const Separator = styled.hr`
+  width: 96%;
+  height: 1px;
+  background: red;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* background: red; */
+`;
+
 export const PaginationRow = styled.div`
   width: 70%;
-  /* border: 1px solid red; */
+  border: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-bottom:1rem;
+  margin-bottom: 1rem;
+  margin: 0 auto 1rem;
+  @media only screen and (min-width: 1920px) {
+    height: 70vh;
+    width: 50%;
+    margin-top: 5rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    /* height: 95vh; */
+    width: 100%;
+  }
 `;
 
 export const ArrowButtons = styled.button`
@@ -231,9 +278,9 @@ export const ArrowButtons = styled.button`
   border-radius: 10px;
   margin: 0 0.25rem;
 
-  &:hover{
-    cursor:pointer;
-    background:#211451;
+  &:hover {
+    cursor: pointer;
+    background: #211451;
     transition: 0.3s ease-in-out;
   }
 `;
@@ -251,8 +298,8 @@ export const PageNum = styled.span`
   align-items: center;
   justify-content: center;
   font-size: 0.875rem;
-  font-weight:300;
-  color:white;
+  font-weight: 300;
+  color: white;
   padding: 0.75rem 1.875rem;
   margin: 0 0.5rem;
   border-radius: 10px;
@@ -263,6 +310,6 @@ export const PageCount = styled(PageNum)`
   border: none;
   background: transparent;
   border-radius: 0;
-  padding:0.25rem;
+  padding: 0.25rem;
   /* border: 1px solid red; */
 `;
