@@ -257,14 +257,12 @@ export const PaginationRow = styled.div`
   justify-content: flex-end;
   margin-bottom: 1rem;
   margin: 0 auto 1rem;
+  user-select: none;
   @media only screen and (min-width: 1920px) {
-    height: 70vh;
     width: 50%;
-    margin-top: 5rem;
   }
 
   @media only screen and (max-width: 768px) {
-    /* height: 95vh; */
     width: 100%;
   }
 `;

@@ -1,16 +1,23 @@
 import React from "react";
-import * as Styled from "./styled.components";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { connect } from "../../actions";
 import { PolygonButton } from "../buttons";
 import { icons } from "../../utils/constants/icons";
+import * as Styled from "./styled.components";
 
 const Sidebar = ({ toggleSiderbar }) => {
+  const { isConnected, username } = useSelector((state) => state.auth);
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const navigateTo = (path) => {
     navigate(path);
     toggleSiderbar();
+  };
+  const connectHandler = () => {
+    dispatch(connect("John Doe"));
   };
   return (
     <Styled.Container>
@@ -36,9 +43,24 @@ const Sidebar = ({ toggleSiderbar }) => {
         >
           Mint
         </Styled.NavItem>
-        <Styled.NavBtnContainer>
-          <PolygonButton>Connect Wallet</PolygonButton>
-        </Styled.NavBtnContainer>
+        {isConnected && (
+          <Styled.NavItem
+            to="/activities"
+            className={pathname === "/activities" ? "active" : ""}
+          >
+            Activities
+          </Styled.NavItem>
+        )}
+        {!isConnected && (
+          <Styled.NavBtnContainer>
+            <PolygonButton onClick={connectHandler}>
+              Connect Wallet
+            </PolygonButton>
+          </Styled.NavBtnContainer>
+        )}
+        {isConnected && username !== "" && (
+          <Styled.UserName>{username}</Styled.UserName>
+        )}
       </Styled.NavItems>
     </Styled.Container>
   );

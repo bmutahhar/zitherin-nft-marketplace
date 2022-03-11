@@ -69,3 +69,12 @@ export const CloseIconContainer = styled.div`
     cursor: pointer;
   }
 `;
+
+export const UserName = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin: 1rem;
+  color: white;
+`;
