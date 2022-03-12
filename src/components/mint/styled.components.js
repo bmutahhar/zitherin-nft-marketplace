@@ -3,11 +3,12 @@ import { PlainButton } from "../buttons";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* border:1px solid white; */
+  /* border: 1px solid white; */
 
   @media only screen and (min-width: 1920px) {
     align-items: flex-start;
@@ -17,8 +18,8 @@ export const Container = styled.div`
 
 export const NonModalWrapper = styled.div`
   width: 70%;
-  height: 90vh;
-  margin: 2rem auto;
+  height: 95vh;
+  margin: 3rem auto 2rem;
   /* border: 2px solid white; */
 
   @media only screen and (min-width: 1920px) {
@@ -259,7 +260,7 @@ export const CharacterContainer = styled.div`
   width: 85%;
   align-items: center;
   justify-items: center;
-  user-select:none;
+  user-select: none;
   /* border: 1px solid red; */
   @media only screen and (max-width: 900px) {
     grid-template-columns: 1fr 1fr;
@@ -321,9 +322,8 @@ export const CharacterImg = styled.img`
 export const Overlay = styled.div`
   position: absolute;
   top: 5px;
-  left:0;
-  right:0;
-
+  left: 0;
+  right: 0;
 
   @media only screen and (max-width: 1200px) {
     top: 10px;

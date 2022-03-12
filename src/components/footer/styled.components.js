@@ -2,17 +2,18 @@ import styled from "styled-components";
 
 export const Footer = styled.div`
   width: 100%;
-  height: 10%;
+  /* height: 10%; */
+  height: 80px;
   background: #011117;
   display: flex;
   align-items: center;
   justify-content: center;
 
   @media only screen and (max-width: 768px){
-    height: 30%;
+    height:60px;
   }
   @media only screen and (max-width: 400px){
-    height: 50%;
+    height: 50px;
   }
 `;
 

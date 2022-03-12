@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
-import * as Styled from "./styled.components";
 import { icons } from "../../utils/constants/icons";
 import { mintCharacters } from "../../mock";
 import { backgroundImages } from "../../utils/constants/images";
+import * as Styled from "./styled.components";
 
 const MintNonModal = (props) => {
   const [counter, setCounter] = useState(1);

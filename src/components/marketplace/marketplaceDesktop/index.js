@@ -126,7 +126,6 @@ export const MarketplaceDesktop = (props) => {
           </Styled.OwnAssetsContainer>
         </Styled.Content>
       </Styled.Main>
-      <Footer />
     </Styled.Container>
   );
 };

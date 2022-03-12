@@ -40,7 +40,6 @@ const MarketplaceMobile = (props) => {
             />
           ))}
         </Styled.AssetsContainer>
-        <Footer />
       </Styled.Container>
     </>
   );

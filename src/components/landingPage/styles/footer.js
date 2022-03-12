@@ -79,8 +79,8 @@ export const NewsLetterIcon = styled.div`
 export const CopyRights = styled.p`
   color: rgba(245, 245, 245, 0.7);
   font-weight: 300;
-  font-size: 1.5rem;
-  margin: 3rem 2rem;
+  font-size: 1rem;
+  margin:3rem auto 2rem;
   @media only screen and (max-width: 768px) {
     font-size: 1rem;
     margin: 2rem 1rem;

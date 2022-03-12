@@ -6,6 +6,7 @@ import {
   OwnAssetModal,
   NonOwnAssetModal,
   FilterModal,
+  Footer,
 } from "../components";
 
 const Marketplace = () => {
@@ -57,6 +58,7 @@ const Marketplace = () => {
           handleNonOwnAssetClick={handleNonOwnAssetClick}
           handleFilterButtonClick={handleFilterButtonClick}
         />
+        <Footer />
         {isOwnAssetModalOpen && (
           <OwnAssetModal
             isOpen={isOwnAssetModalOpen}
@@ -87,6 +89,7 @@ const Marketplace = () => {
         handleNonOwnAssetClick={handleNonOwnAssetClick}
         handleFilterButtonClick={handleFilterButtonClick}
       />
+      <Footer/>
       {isOwnAssetModalOpen && (
         <OwnAssetModal
           isOpen={isOwnAssetModalOpen}

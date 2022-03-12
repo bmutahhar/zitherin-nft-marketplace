@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
-import * as Styled from "./styled.components";
 import { icons } from "../../../utils/constants/icons";
 import { activities } from "../../../mock/activities";
 import { truncateStr } from "../../../utils/helpers";
 import axios from "axios";
+import * as Styled from "./styled.components";
 
 const ActivitiesTable = () => {
   const [activitiesData, setActivitiesData] = useState(activities);

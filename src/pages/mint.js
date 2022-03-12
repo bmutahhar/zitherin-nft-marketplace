@@ -1,8 +1,13 @@
 import React from "react";
-import { MintNonModal } from "../components";
+import { MintNonModal, Footer } from "../components";
 
 const Mint = () => {
-  return <MintNonModal />;
+  return (
+    <>
+      <MintNonModal />
+      <Footer />
+    </>
+  );
 };
 
 export default Mint;
