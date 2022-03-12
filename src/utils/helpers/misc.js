@@ -14,3 +14,5 @@ export const truncateStr = (fullStr, strLen, separator) => {
     fullStr.substr(fullStr.length - backChars)
   );
 };
+
+export const sleep = ms => new Promise(r => setTimeout(r, ms));

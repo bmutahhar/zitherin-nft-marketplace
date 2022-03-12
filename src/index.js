@@ -1,10 +1,12 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import App from "./App";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducers from "./reducers";
+import App from "./App";
 
 const store = createStore(
   reducers,
@@ -16,7 +18,9 @@ ReactDOM.render(
   <StrictMode>
     <Provider store={store}>
       <Router>
-        <App />
+        <DndProvider backend={HTML5Backend}>
+          <App />
+        </DndProvider>
       </Router>
     </Provider>
   </StrictMode>,

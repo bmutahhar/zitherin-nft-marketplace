@@ -132,7 +132,7 @@ export const PriceField = styled.input`
 
   &::placeholder {
     color: white;
-    opacity:0.8;
+    opacity:0.6;
   }
 `;
 

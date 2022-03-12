@@ -74,6 +74,21 @@ export const Content = styled.div`
   margin-top: 1rem;
 `;
 
+export const TokensContainer = styled.div`
+  width: 20%;
+  height: 100%;
+  overflow: hidden;
+  padding: 1rem 0;
+`;
+
+export const TokensWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding-right: 20px;
+  box-sizing: content-box;
+`;
+
 export const BuyAssetsContainer = styled.div`
   width: 100%;
   /* height: 50%; */

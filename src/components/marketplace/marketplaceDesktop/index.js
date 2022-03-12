@@ -1,61 +1,59 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import * as Styled from "./styles";
+import * as Styled from "./styled.components";
 import {
-  Footer,
   Search,
   FilterButton,
   SwitchButton,
   Asset,
+  Token,
 } from "../../../components";
 import { assets, tokens } from "../../../mock";
-import { backgroundImages } from "../../../utils/constants/images";
-
-const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1920 },
-    items: 6,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-  laptop: {
-    breakpoint: { max: 1920, min: 1440 },
-    items: 5,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-  laptopMedium: {
-    breakpoint: { max: 1440, min: 1150 },
-    items: 4,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-  tablet: {
-    breakpoint: { max: 1150, min: 850 },
-    items: 3,
-    slidesToSlide: 2, // optional, default to 1.
-  },
-  tabletSmall: {
-    breakpoint: { max: 850, min: 768 },
-    items: 2,
-    slidesToSlide: 2, // optional, default to 1.
-  },
-};
+import { carouselBreakpoints } from "../../../utils/constants/carousel";
+import { sleep } from "../../../utils/helpers/misc";
+import character6 from "../../../assets/characters/Character-6.png";
 
 export const MarketplaceDesktop = (props) => {
+  const [tokensData, setTokensData] = useState(tokens);
+  const [selectedToken, setSelectedToken] = useState(null);
+
+  const dropEndHandler = (asset, monitor) => {
+    if (monitor.didDrop()) {
+      const { token } = monitor.getDropResult();
+      setSelectedToken(token);
+      console.log("Oops! you dropped on me :)");
+      console.log("Asset id: ", asset.id);
+      console.log("Token id: ", token.id);
+    }
+  };
+
+  useEffect(() => {
+    if (selectedToken) {
+      const tokensCopy = tokensData.slice();
+      const tokenIndex = tokensCopy.indexOf(selectedToken);
+      selectedToken.token = character6;
+      tokensCopy[tokenIndex] = selectedToken;
+      setTokensData(tokensCopy);
+      sleep(2000).then(() => {
+        console.log("Updated the token!")
+        setSelectedToken(null);
+      });
+    }
+  }, [selectedToken]);
+
   return (
     <Styled.Container>
       <Styled.Main>
         <Styled.TokensContainer>
           <Styled.Title>Tokens</Styled.Title>
+
           <Styled.TokensWrapper>
             {tokens.map((item) => (
-              <Styled.TokenCard key={item.id}>
-                <Styled.Character>
-                  <Styled.CharacterImg src={item.token} />
-                </Styled.Character>
-                <Styled.Overlay>
-                  <Styled.OverlayImg src={backgroundImages.tokenOverly} />
-                </Styled.Overlay>
-              </Styled.TokenCard>
+              <Token
+                key={item.id}
+                token={item}
+                isLoading={selectedToken && selectedToken.id === item.id}
+              />
             ))}
           </Styled.TokensWrapper>
         </Styled.TokensContainer>
@@ -74,10 +72,10 @@ export const MarketplaceDesktop = (props) => {
             <Styled.AssetContainer>
               <Carousel
                 swipeable={true}
-                draggable={true}
+                draggable={false}
                 infinite={false}
                 keyBoardControl={true}
-                responsive={responsive}
+                responsive={carouselBreakpoints}
                 autoPlay={true}
                 removeArrowOnDeviceType={["tabletSmall"]}
                 itemClass="carousel-item-margin"
@@ -86,7 +84,8 @@ export const MarketplaceDesktop = (props) => {
                   <Asset
                     key={item.id}
                     asset={item}
-                    onClick={props.handleNonOwnAssetClick}
+                    onDoubleClick={props.handleNonOwnAssetClick}
+                    dropEndHandler={dropEndHandler}
                   />
                 ))}
               </Carousel>
@@ -100,16 +99,18 @@ export const MarketplaceDesktop = (props) => {
               </Styled.Group>
               <Styled.Group>
                 <SwitchButton label="Show assets of current token" />
-                <FilterButton  onClick={props.handleFilterButtonClick}>Filter</FilterButton>
+                <FilterButton onClick={props.handleFilterButtonClick}>
+                  Filter
+                </FilterButton>
               </Styled.Group>
             </Styled.Header>
             <Styled.AssetContainer>
               <Carousel
                 swipeable={true}
-                draggable={true}
+                draggable={false}
                 infinite={false}
                 keyBoardControl={true}
-                responsive={responsive}
+                responsive={carouselBreakpoints}
                 autoPlay={true}
                 removeArrowOnDeviceType={["tabletSmall"]}
                 itemClass="carousel-item-margin"
@@ -118,7 +119,8 @@ export const MarketplaceDesktop = (props) => {
                   <Asset
                     key={item.id}
                     asset={item}
-                    onClick={props.handleOwnAssetClick}
+                    onDoubleClick={props.handleOwnAssetClick}
+                    dropEndHandler={dropEndHandler}
                   />
                 ))}
               </Carousel>

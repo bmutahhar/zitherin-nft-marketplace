@@ -1,11 +1,21 @@
-import "./global.css";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { LandingPage, Marketplace, Mint, Activities } from "./pages";
 import { Navbar, ProtectedRoute } from "./components";
+import "./global.css";
+import "react-multi-carousel/lib/styles.css";
+import "react-loading-skeleton/dist/skeleton.css";
 
-export default function App() {
+
+const App = () => {
   const { isConnected } = useSelector((state) => state.auth);
+
+  // useEffect(() => {
+  //   document.addEventListener("contextmenu", (e) => {
+  //     e.preventDefault();
+  //   });
+  // }, []);
   return (
     <>
       <Navbar />
@@ -24,4 +34,6 @@ export default function App() {
       </Routes>
     </>
   );
-}
+};
+
+export default App;

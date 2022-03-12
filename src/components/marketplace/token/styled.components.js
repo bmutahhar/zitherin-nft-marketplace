@@ -1,20 +1,5 @@
 import styled from "styled-components";
 
-export const TokensContainer = styled.div`
-  width: 20%;
-  height: 100%;
-  overflow: hidden;
-  padding: 1rem 0;
-`;
-
-export const TokensWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  padding-right: 20px;
-  box-sizing: content-box;
-`;
-
 export const TokenCard = styled.div`
   margin: 4rem auto;
   width: 180px;
@@ -33,6 +18,7 @@ export const TokenCard = styled.div`
     bottom: 0;
     background: #1b1444;
     clip-path: polygon(24% 0, 100% 0%, 100% 100%, 0 100%, 0 27%);
+    ${({ isLoading }) => (isLoading ? "display:none;" : "")}
   }
 
   &:hover {

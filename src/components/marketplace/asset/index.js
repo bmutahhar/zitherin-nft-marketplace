@@ -1,11 +1,27 @@
 import React from "react";
+import { useDrag } from "react-dnd";
 import * as Styled from "./styled.components";
 import { backgroundImages } from "../../../utils/constants/images";
 import { icons } from "../../../utils/constants/icons";
 
-const Asset = ({ asset, onClick }) => {
+const Asset = ({ asset, onDoubleClick, dropEndHandler }) => {
+  const [collected, drag] = useDrag(() => ({
+    type: "ASSET",
+    item: { id: asset.id, image: asset.image },
+    collect: (monitor) => ({ isDragging: monitor.isDragging() }),
+    end: dropEndHandler,
+  }));
   return (
-    <Styled.AssetWrapper key={asset.id} onClick={() => onClick(asset)}>
+    <Styled.AssetWrapper
+      ref={drag}
+      {...collected}
+      onDoubleClick={() => onDoubleClick(asset)}
+      style={{
+        transform: collected.isDragging ? "scale(0.9)" : "none",
+        opacity: collected.isDragging ? 0.5 : 1,
+      }}
+
+    >
       <Styled.AssetCard>
         <Styled.Asset>
           <Styled.AssetImg src={asset.image} />

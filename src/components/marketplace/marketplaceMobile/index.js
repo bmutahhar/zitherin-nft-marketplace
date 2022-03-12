@@ -1,6 +1,6 @@
 import React from "react";
 import * as Styled from "./styled.components";
-import { FilterButton, Search, Asset, Footer } from "../../../components";
+import { FilterButton, Search, Asset } from "../../../components";
 import { assets } from "../../../mock";
 import { icons } from "../../../utils/constants/icons";
 
