@@ -11,11 +11,11 @@ import "react-loading-skeleton/dist/skeleton.css";
 const App = () => {
   const { isConnected } = useSelector((state) => state.auth);
 
-  // useEffect(() => {
-  //   document.addEventListener("contextmenu", (e) => {
-  //     e.preventDefault();
-  //   });
-  // }, []);
+  useEffect(() => {
+    document.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+    });
+  }, []);
   return (
     <>
       <Navbar />
