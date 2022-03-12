@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useMediaQuery } from "react-responsive";
+import axios from "axios";
 import {
   MarketplaceDesktop,
   MarketplaceMobile,
@@ -10,10 +11,9 @@ import {
   Footer,
 } from "../components";
 import {
-  setNonOwnAssetModalData,
-  setOwnAssetModalData,
-  openNonOwnAssetModal,
-  openOwnAssetModal,
+  setOwnAssetsData,
+  setNonOwnAssetsData,
+  // setTokensData,
 } from "../actions";
 
 const Marketplace = () => {
@@ -21,51 +21,38 @@ const Marketplace = () => {
   const modal = useSelector((state) => state.modal);
   const dispatch = useDispatch();
 
-  const [isOwnAssetModalOpen, setIsOwnAssetModalOpen] = useState(false);
-  const [ownAssetModalData, setOwnAssetModalData] = useState(null);
-
-  const [isNonOwnAssetModalOpen, setIsNonOwnAssetModalOpen] = useState(true);
-  const [nonOwnAssetModalData, setNonOwnAssetModalData] = useState(null);
-
-
-
-  const handleOwnAssetClick = (item) => {
-    if (!ownAssetModalData) {
-      setOwnAssetModalData(item);
-      setIsOwnAssetModalOpen(true);
+  const fetchData = async (endPoint) => {
+    try {
+      const data = await axios.get(
+        `${process.env.REACT_APP_API_URL}/${endPoint}`
+      );
+      return data.data;
+    } catch (err) {
+      console.log(err);
     }
   };
 
+  useEffect(() => {
+    // const ownAssetsData = fetchData("getUserTokensFake");
+    // const nonOwnAssetsData = fetchData("getNonOwnedTraitsFake");
+    Promise.all([
+      fetchData("getUserTokensFake"),
+      fetchData("getNonOwnedTraitsFake"),
+    ]).then((results) => {
+      dispatch(setOwnAssetsData(results[0]));
+      dispatch(setNonOwnAssetsData(results[1]));
+      console.log("User owned traits: ", results[0]);
+      console.log("Non user owned traits: ", results[1]);
+    });
+  }, []);
 
-
-  const handleNonOwnAssetClick = (item) => {
-    if (!modal.nonOwnAssetModalData) {
-      dispatch(setNonOwnAssetModalData(item));
-      dispatch(openNonOwnAssetModal());
-    }
-  };
-
-  if (isMobileOrTablet) {
-    return (
-      <>
-        <MarketplaceMobile
-          handleOwnAssetClick={handleOwnAssetClick}
-          handleNonOwnAssetClick={handleNonOwnAssetClick}
-        />
-        <Footer />
-        {modal.isOwnAssetModalOpen && <OwnAssetModal />}
-        {modal.isNonOwnAssetModalOpen && <NonOwnAssetModal />}
-        {modal.isFilterModalOpen && <FilterModal />}
-      </>
-    );
-  }
   return (
     <>
-      <MarketplaceDesktop />
-      <Footer />
+      {isMobileOrTablet ? <MarketplaceMobile /> : <MarketplaceDesktop />}
       {modal.isOwnAssetModalOpen && <OwnAssetModal />}
       {modal.isNonOwnAssetModalOpen && <NonOwnAssetModal />}
       {modal.isFilterModalOpen && <FilterModal />}
+      <Footer />
     </>
   );
 };

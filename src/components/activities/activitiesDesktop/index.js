@@ -3,7 +3,6 @@ import { useMediaQuery } from "react-responsive";
 import { icons } from "../../../utils/constants/icons";
 import { activities } from "../../../mock/activities";
 import { truncateStr } from "../../../utils/helpers";
-import axios from "axios";
 import * as Styled from "./styled.components";
 
 const ActivitiesTable = () => {
@@ -65,15 +64,7 @@ const ActivitiesTable = () => {
       setPageCount(1);
       setPageNum(1);
     }
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/fakeActivity`)
-      .then((resp) => {
-        console.log(resp.data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, [activitiesData, isExtraLargeScreen]);
+  }, [isExtraLargeScreen]);
 
   return (
     <Styled.Container>

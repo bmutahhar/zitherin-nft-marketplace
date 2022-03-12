@@ -12,7 +12,7 @@ import { FilterButton, Search, Asset } from "../../../components";
 import { assets } from "../../../mock";
 import { icons } from "../../../utils/constants/icons";
 
-const MarketplaceMobile = (props) => {
+const MarketplaceMobile = () => {
   const dispatch = useDispatch();
 
   const handleFilterButtonClick = () => {

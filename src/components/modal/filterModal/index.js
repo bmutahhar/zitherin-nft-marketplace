@@ -57,7 +57,7 @@ const FilterModal = () => {
       styles.width = "30%";
       setModalStyles({ ...modalStyles, content: styles });
     }
-  }, [isMobileOrTablet, modalStyles]);
+  }, [isMobileOrTablet]);
 
   return (
     <Modal
