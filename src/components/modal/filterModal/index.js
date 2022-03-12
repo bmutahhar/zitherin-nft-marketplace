@@ -4,7 +4,7 @@ import { useMediaQuery } from "react-responsive";
 import { icons } from "../../../utils/constants/icons";
 import * as Styled from "./styled.components";
 
-const modalStyles = {
+const initModalStyles = {
   overlay: {
     position: "fixed",
     top: 0,
@@ -36,34 +36,7 @@ const modalStyles = {
 Modal.setAppElement("#root");
 
 const FilterModal = (props) => {
-  const [modalStyles, setModalStyles] = useState({
-    overlay: {
-      position: "fixed",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: "rgba(0, 0, 0, 0.5)",
-      zIndex: 999999,
-    },
-    content: {
-      position: "absolute",
-      top: 0,
-      right: 0,
-      bottom: 0,
-      marginLeft: "auto",
-      border: "none",
-      borderRadius: 0,
-      background: "transparent",
-      overflow: "auto",
-      WebkitOverflowScrolling: "touch",
-      outline: "none",
-      padding: 0,
-      width: "30%",
-      height: "100%",
-      inset: 0,
-    },
-  });
+  const [modalStyles, setModalStyles] = useState(initModalStyles);
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
 
   useEffect(() => {
@@ -71,13 +44,12 @@ const FilterModal = (props) => {
       const styles = modalStyles.content;
       styles.width = "70%";
       setModalStyles({ ...modalStyles, content: styles });
-    }
-    else{
-        const styles = modalStyles.content;
+    } else {
+      const styles = modalStyles.content;
       styles.width = "30%";
       setModalStyles({ ...modalStyles, content: styles });
     }
-  }, [isMobileOrTablet]);
+  }, [isMobileOrTablet, modalStyles]);
 
   return (
     <Modal

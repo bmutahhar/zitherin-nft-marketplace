@@ -13,6 +13,10 @@ const ActivitiesTable = () => {
   const [rowsOnPage, setRowsOnPage] = useState([]);
   const [pageNum, setPageNum] = useState(1);
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
+  const isExtraLargeScreen = useMediaQuery({ query: "(min-width:1920px)" });
+  // const isLargeScreen = useMediaQuery({ query: "(max-width:1920px)" });
+  // const isMediumScreen = useMediaQuery({ query: "(max-width:1366px)" });
+  // const isSmallScreen = useMediaQuery({ query: "(max-width:1024px)" });
 
   const nextPage = () => {
     const nextPageNum = pageNum + 1;
@@ -41,12 +45,23 @@ const ActivitiesTable = () => {
     }
   };
 
+  const getRowsPerPage = () => {
+    if (isExtraLargeScreen) {
+      return 10;
+    } else {
+      return 5;
+    }
+  };
+
   useEffect(() => {
-    if (activitiesData.length > rowsPerPage) {
-      setRowsOnPage(activitiesData.slice(0, rowsPerPage));
-      setPageCount(Math.ceil(activitiesData.length / rowsPerPage));
+    const rowsToRender = getRowsPerPage();
+    if (activitiesData.length > rowsToRender) {
+      setRowsOnPage(activitiesData.slice(0, rowsToRender));
+      setRowsPerPage(rowsToRender);
+      setPageCount(Math.ceil(activitiesData.length / rowsToRender));
     } else {
       setRowsOnPage(activitiesData);
+      setRowsPerPage(rowsToRender);
       setPageCount(1);
       setPageNum(1);
     }
@@ -58,7 +73,7 @@ const ActivitiesTable = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [activitiesData, isExtraLargeScreen]);
 
   return (
     <Styled.Container>
