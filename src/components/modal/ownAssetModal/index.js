@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import { ModalLayout, TraitMiniCard } from "../../../components";
-import * as Styled from "./styled.components";
+import { useDispatch, useSelector } from "react-redux";
+import { closeOwnAssetModal } from "../../../actions";
 import { icons } from "../../../utils/constants/icons";
+import * as Styled from "./styled.components";
 
-const OwnAssetModal = (props) => {
+const OwnAssetModal = () => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
-  const { modalData } = props;
+  const modal = useSelector((state) => state.modal);
+  const modalData = modal.ownAssetModalData;
+  const dispatch = useDispatch();
+
+  const closeModal = () => {
+    dispatch(closeOwnAssetModal());
+  };
 
   const changeTabHandler = (index) => setActiveTabIndex(index);
   if (modalData) {
     return (
-      <ModalLayout isOpen={props.isOpen} closeHandler={props.closeHandler}>
+      <ModalLayout isOpen={modal.isOwnAssetModalOpen} closeHandler={closeModal}>
         <Styled.AssetImgPortion>
           <Styled.AssetImgContainer>
             <Styled.AssetImg src={modalData.image} />

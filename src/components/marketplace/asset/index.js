@@ -4,7 +4,7 @@ import * as Styled from "./styled.components";
 import { backgroundImages } from "../../../utils/constants/images";
 import { icons } from "../../../utils/constants/icons";
 
-const Asset = ({ asset, onDoubleClick, dropEndHandler }) => {
+const Asset = ({ asset, onClick, dropEndHandler }) => {
   const [collected, drag] = useDrag(() => ({
     type: "ASSET",
     item: { id: asset.id, image: asset.image },
@@ -15,7 +15,7 @@ const Asset = ({ asset, onDoubleClick, dropEndHandler }) => {
     <Styled.AssetWrapper
       ref={drag}
       {...collected}
-      onDoubleClick={() => onDoubleClick(asset)}
+      onClick={() => onClick(asset)}
       style={{
         transform: collected.isDragging ? "scale(0.9)" : "none",
         opacity: collected.isDragging ? 0.5 : 1,

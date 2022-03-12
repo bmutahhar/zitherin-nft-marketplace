@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Modal from "react-modal";
 import { useMediaQuery } from "react-responsive";
 import { icons } from "../../../utils/constants/icons";
+import { closeFilterModal } from "../../../actions";
 import * as Styled from "./styled.components";
 
 const initModalStyles = {
@@ -35,9 +37,15 @@ const initModalStyles = {
 
 Modal.setAppElement("#root");
 
-const FilterModal = (props) => {
+const FilterModal = () => {
   const [modalStyles, setModalStyles] = useState(initModalStyles);
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
+  const modal = useSelector((state) => state.modal);
+  const dispatch = useDispatch();
+
+  const closeModal = () => {
+    dispatch(closeFilterModal());
+  };
 
   useEffect(() => {
     if (isMobileOrTablet) {
@@ -53,8 +61,8 @@ const FilterModal = (props) => {
 
   return (
     <Modal
-      isOpen={props.isOpen}
-      onRequestClose={props.closeHandler}
+      isOpen={modal.isFilterModalOpen}
+      onRequestClose={closeModal}
       closeTimeoutMS={1000}
       style={modalStyles}
       shouldCloseOnOverlayClick={true}

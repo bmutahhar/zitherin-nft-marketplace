@@ -1,20 +1,31 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { ModalLayout, TraitMiniCard, PlainButton } from "../../../components";
-import * as Styled from "./styled.components";
+import { closeNonOwnAssetModal } from "../../../actions";
 import { icons } from "../../../utils/constants/icons";
+import * as Styled from "./styled.components";
 
-const NonOwnAssetModal = (props) => {
-  const { modalData } = props;
+const NonOwnAssetModal = () => {
   const [counter, setCounter] = useState(1);
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
+  const modal = useSelector((state) => state.modal);
+  const modalData = modal.nonOwnAssetModalData;
+  const dispatch = useDispatch();
 
   const increment = () => setCounter((prev) => prev + 1);
   const decrement = () => setCounter((prev) => prev - 1);
 
+  const closeModal = () => {
+    dispatch(closeNonOwnAssetModal());
+  };
+
   if (modalData) {
     return (
-      <ModalLayout isOpen={props.isOpen} closeHandler={props.closeHandler}>
+      <ModalLayout
+        isOpen={modal.isNonOwnAssetModalOpen}
+        closeHandler={closeModal}
+      >
         <Styled.AssetImgPortion>
           <Styled.AssetImgContainer>
             <Styled.AssetImg src={modalData.image} />

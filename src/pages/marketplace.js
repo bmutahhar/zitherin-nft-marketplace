@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import {
   MarketplaceDesktop,
@@ -8,9 +9,17 @@ import {
   FilterModal,
   Footer,
 } from "../components";
+import {
+  setNonOwnAssetModalData,
+  setOwnAssetModalData,
+  openNonOwnAssetModal,
+  openOwnAssetModal,
+} from "../actions";
 
 const Marketplace = () => {
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
+  const modal = useSelector((state) => state.modal);
+  const dispatch = useDispatch();
 
   const [isOwnAssetModalOpen, setIsOwnAssetModalOpen] = useState(false);
   const [ownAssetModalData, setOwnAssetModalData] = useState(null);
@@ -18,12 +27,7 @@ const Marketplace = () => {
   const [isNonOwnAssetModalOpen, setIsNonOwnAssetModalOpen] = useState(true);
   const [nonOwnAssetModalData, setNonOwnAssetModalData] = useState(null);
 
-  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
 
-  const closeOwnAssetModal = () => {
-    setIsOwnAssetModalOpen(false);
-    setOwnAssetModalData(null);
-  };
 
   const handleOwnAssetClick = (item) => {
     if (!ownAssetModalData) {
@@ -32,23 +36,14 @@ const Marketplace = () => {
     }
   };
 
-  const closeNonOwnAssetModal = () => {
-    setIsNonOwnAssetModalOpen(false);
-    setNonOwnAssetModalData(null);
-  };
+
 
   const handleNonOwnAssetClick = (item) => {
-    if (!nonOwnAssetModalData) {
-      setNonOwnAssetModalData(item);
-      setIsNonOwnAssetModalOpen(true);
+    if (!modal.nonOwnAssetModalData) {
+      dispatch(setNonOwnAssetModalData(item));
+      dispatch(openNonOwnAssetModal());
     }
   };
-
-  const handleFilterButtonClick = () => {
-    setIsFilterModalOpen(true);
-  };
-
-  const closeFilterModal = () => setIsFilterModalOpen(false);
 
   if (isMobileOrTablet) {
     return (
@@ -56,60 +51,21 @@ const Marketplace = () => {
         <MarketplaceMobile
           handleOwnAssetClick={handleOwnAssetClick}
           handleNonOwnAssetClick={handleNonOwnAssetClick}
-          handleFilterButtonClick={handleFilterButtonClick}
         />
         <Footer />
-        {isOwnAssetModalOpen && (
-          <OwnAssetModal
-            isOpen={isOwnAssetModalOpen}
-            closeHandler={closeOwnAssetModal}
-            modalData={ownAssetModalData}
-          />
-        )}
-        {isNonOwnAssetModalOpen && (
-          <NonOwnAssetModal
-            isOpen={isNonOwnAssetModalOpen}
-            closeHandler={closeNonOwnAssetModal}
-            modalData={nonOwnAssetModalData}
-          />
-        )}
-        {isFilterModalOpen && (
-          <FilterModal
-            isOpen={isFilterModalOpen}
-            closeHandler={closeFilterModal}
-          />
-        )}
+        {modal.isOwnAssetModalOpen && <OwnAssetModal />}
+        {modal.isNonOwnAssetModalOpen && <NonOwnAssetModal />}
+        {modal.isFilterModalOpen && <FilterModal />}
       </>
     );
   }
   return (
     <>
-      <MarketplaceDesktop
-        handleOwnAssetClick={handleOwnAssetClick}
-        handleNonOwnAssetClick={handleNonOwnAssetClick}
-        handleFilterButtonClick={handleFilterButtonClick}
-      />
-      <Footer/>
-      {isOwnAssetModalOpen && (
-        <OwnAssetModal
-          isOpen={isOwnAssetModalOpen}
-          closeHandler={closeOwnAssetModal}
-          modalData={ownAssetModalData}
-        />
-      )}
-      {isNonOwnAssetModalOpen && (
-        <NonOwnAssetModal
-          isOpen={isNonOwnAssetModalOpen}
-          closeHandler={closeNonOwnAssetModal}
-          modalData={nonOwnAssetModalData}
-        />
-      )}
-      {isFilterModalOpen && (
-        <FilterModal
-          isOpen={isFilterModalOpen}
-          closeHandler={closeFilterModal}
-        />
-      )}
+      <MarketplaceDesktop />
+      <Footer />
+      {modal.isOwnAssetModalOpen && <OwnAssetModal />}
+      {modal.isNonOwnAssetModalOpen && <NonOwnAssetModal />}
+      {modal.isFilterModalOpen && <FilterModal />}
     </>
   );
 };

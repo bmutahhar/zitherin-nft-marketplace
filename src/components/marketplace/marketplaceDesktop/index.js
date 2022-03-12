@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {  useDispatch } from "react-redux";
 import Carousel from "react-multi-carousel";
 import * as Styled from "./styled.components";
 import {
@@ -8,6 +9,13 @@ import {
   Asset,
   Token,
 } from "../../../components";
+import {
+  openFilterModal,
+  openNonOwnAssetModal,
+  openOwnAssetModal,
+  setNonOwnAssetModalData,
+  setOwnAssetModalData,
+} from "../../../actions";
 import { assets, tokens } from "../../../mock";
 import { carouselBreakpoints } from "../../../utils/constants/carousel";
 import { sleep } from "../../../utils/helpers/misc";
@@ -16,6 +24,7 @@ import character6 from "../../../assets/characters/Character-6.png";
 export const MarketplaceDesktop = (props) => {
   const [tokensData, setTokensData] = useState(tokens);
   const [selectedToken, setSelectedToken] = useState(null);
+  const dispatch = useDispatch();
 
   const dropEndHandler = (asset, monitor) => {
     if (monitor.didDrop()) {
@@ -27,6 +36,20 @@ export const MarketplaceDesktop = (props) => {
     }
   };
 
+  const handleFilterButtonClick = () => {
+    dispatch(openFilterModal());
+  };
+
+  const handleNonOwnAssetClick = (data) => {
+    dispatch(setNonOwnAssetModalData(data));
+    dispatch(openNonOwnAssetModal());
+  };
+
+  const handleOwnAssetClick = (data) => {
+    dispatch(setOwnAssetModalData(data));
+    dispatch(openOwnAssetModal());
+  };
+
   useEffect(() => {
     if (selectedToken) {
       const tokensCopy = tokensData.slice();
@@ -35,7 +58,7 @@ export const MarketplaceDesktop = (props) => {
       tokensCopy[tokenIndex] = selectedToken;
       setTokensData(tokensCopy);
       sleep(2000).then(() => {
-        console.log("Updated the token!")
+        console.log("Updated the token!");
         setSelectedToken(null);
       });
     }
@@ -65,7 +88,7 @@ export const MarketplaceDesktop = (props) => {
                 <Styled.Title>Assets to Buy</Styled.Title>
                 <Search />
               </Styled.Group>
-              <FilterButton onClick={props.handleFilterButtonClick}>
+              <FilterButton onClick={handleFilterButtonClick}>
                 Filter
               </FilterButton>
             </Styled.Header>
@@ -84,7 +107,7 @@ export const MarketplaceDesktop = (props) => {
                   <Asset
                     key={item.id}
                     asset={item}
-                    onDoubleClick={props.handleNonOwnAssetClick}
+                    onClick={handleNonOwnAssetClick}
                     dropEndHandler={dropEndHandler}
                   />
                 ))}
@@ -99,7 +122,7 @@ export const MarketplaceDesktop = (props) => {
               </Styled.Group>
               <Styled.Group>
                 <SwitchButton label="Show assets of current token" />
-                <FilterButton onClick={props.handleFilterButtonClick}>
+                <FilterButton onClick={handleFilterButtonClick}>
                   Filter
                 </FilterButton>
               </Styled.Group>
@@ -119,7 +142,7 @@ export const MarketplaceDesktop = (props) => {
                   <Asset
                     key={item.id}
                     asset={item}
-                    onDoubleClick={props.handleOwnAssetClick}
+                    onClick={handleOwnAssetClick}
                     dropEndHandler={dropEndHandler}
                   />
                 ))}
