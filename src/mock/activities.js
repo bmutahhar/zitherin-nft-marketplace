@@ -5,7 +5,6 @@ export const activities = [
     type: "Buy Asset",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "2",
@@ -13,7 +12,6 @@ export const activities = [
     type: "Mint",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "3",
@@ -21,7 +19,6 @@ export const activities = [
     type: "Claim Reward",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "4",
@@ -29,7 +26,6 @@ export const activities = [
     type: "Buy Asset",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "5",
@@ -37,7 +33,6 @@ export const activities = [
     type: "Mint",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "6",
@@ -45,7 +40,6 @@ export const activities = [
     type: "Claim Reward",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "7",
@@ -53,7 +47,6 @@ export const activities = [
     type: "Buy Asset",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "8",
@@ -61,7 +54,6 @@ export const activities = [
     type: "Mint",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "9",
@@ -69,7 +61,6 @@ export const activities = [
     type: "Claim Reward",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "10",
@@ -77,7 +68,6 @@ export const activities = [
     type: "Buy Asset",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "11",
@@ -85,7 +75,6 @@ export const activities = [
     type: "Mint",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "12",
@@ -93,7 +82,6 @@ export const activities = [
     type: "Claim Reward",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "13",
@@ -101,7 +89,6 @@ export const activities = [
     type: "Buy Asset",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "14",
@@ -109,7 +96,6 @@ export const activities = [
     type: "Mint",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "15",
@@ -117,7 +103,6 @@ export const activities = [
     type: "Claim Reward",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "16",
@@ -125,7 +110,6 @@ export const activities = [
     type: "Buy Asset",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "17",
@@ -133,7 +117,6 @@ export const activities = [
     type: "Mint",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "18",
@@ -141,7 +124,6 @@ export const activities = [
     type: "Claim Reward",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "19",
@@ -149,7 +131,6 @@ export const activities = [
     type: "Buy Asset",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "20",
@@ -157,7 +138,6 @@ export const activities = [
     type: "Mint",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "21",
@@ -165,7 +145,6 @@ export const activities = [
     type: "Claim Reward",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "22",
@@ -173,7 +152,6 @@ export const activities = [
     type: "Buy Asset",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "23",
@@ -181,7 +159,6 @@ export const activities = [
     type: "Mint",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
   {
     hash: "24",
@@ -189,6 +166,5 @@ export const activities = [
     type: "Claim Reward",
     method: "swapExactTokensForTokens",
     detail: "Labore fugiat magna adipisicing sit labore.",
-    action: "View Details",
   },
 ];

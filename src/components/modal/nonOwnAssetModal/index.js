@@ -40,15 +40,7 @@ const NonOwnAssetModal = () => {
                   ${modalData.usd} USD
                 </Styled.AssetUsdPrice>
               </Styled.AssetsPriceContainer>
-              <Styled.IncrementContainer>
-                <Styled.IncrementIcon onClick={decrement}>
-                  {icons.minus}
-                </Styled.IncrementIcon>
-                <Styled.IncrementCounter>{counter}</Styled.IncrementCounter>
-                <Styled.IncrementIcon onClick={increment}>
-                  {icons.plus}
-                </Styled.IncrementIcon>
-              </Styled.IncrementContainer>
+            
               <PlainButton>Buy Now</PlainButton>
             </>
           )}
@@ -59,20 +51,6 @@ const NonOwnAssetModal = () => {
               <Styled.AssetSubTitle>{modalData.battle}</Styled.AssetSubTitle>
               <Styled.AssetTitle>{modalData.name}</Styled.AssetTitle>
             </Styled.AssetTitleContainer>
-            <Styled.TraitContainer>
-              <TraitMiniCard
-                traitName="Hero"
-                traitValue="Common"
-                bgColor="#466bf7"
-                traitValueColor="#1B2960"
-              />
-              <TraitMiniCard
-                traitName="Skin"
-                traitValue="Normal"
-                bgColor="#00C5E2"
-                traitValueColor="#005E84"
-              />
-            </Styled.TraitContainer>
           </Styled.AssetHeader>
 
           <Styled.AssetDescription>
@@ -91,15 +69,7 @@ const NonOwnAssetModal = () => {
                   ${modalData.usd} USD
                 </Styled.AssetUsdPrice>
               </Styled.AssetsPriceContainer>
-              <Styled.IncrementContainer>
-                <Styled.IncrementIcon onClick={decrement}>
-                  {icons.minus}
-                </Styled.IncrementIcon>
-                <Styled.IncrementCounter>{counter}</Styled.IncrementCounter>
-                <Styled.IncrementIcon onClick={increment}>
-                  {icons.plus}
-                </Styled.IncrementIcon>
-              </Styled.IncrementContainer>
+            
               <PlainButton>Buy Now</PlainButton>
             </>
           )}

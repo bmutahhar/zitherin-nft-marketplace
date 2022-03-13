@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {  useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import Carousel from "react-multi-carousel";
 import * as Styled from "./styled.components";
 import {
@@ -20,8 +20,10 @@ import { assets, tokens } from "../../../mock";
 import { carouselBreakpoints } from "../../../utils/constants/carousel";
 import { sleep } from "../../../utils/helpers/misc";
 import character6 from "../../../assets/characters/Character-6.png";
+import "react-loading-skeleton/dist/skeleton.css";
 
 export const MarketplaceDesktop = (props) => {
+  const [isLoading, setIsLoading] = useState(true);
   const [tokensData, setTokensData] = useState(tokens);
   const [selectedToken, setSelectedToken] = useState(null);
   const dispatch = useDispatch();
@@ -49,6 +51,12 @@ export const MarketplaceDesktop = (props) => {
     dispatch(setOwnAssetModalData(data));
     dispatch(openOwnAssetModal());
   };
+
+  useEffect(() => {
+    sleep(2000).then(() => {
+      setIsLoading(false);
+    });
+  }, []);
 
   useEffect(() => {
     if (selectedToken) {
@@ -92,27 +100,36 @@ export const MarketplaceDesktop = (props) => {
                 Filter
               </FilterButton>
             </Styled.Header>
-            <Styled.AssetContainer>
-              <Carousel
-                swipeable={true}
-                draggable={false}
-                infinite={false}
-                keyBoardControl={true}
-                responsive={carouselBreakpoints}
-                autoPlay={true}
-                removeArrowOnDeviceType={["tabletSmall"]}
-                itemClass="carousel-item-margin"
-              >
-                {assets.map((item) => (
-                  <Asset
-                    key={item.id}
-                    asset={item}
-                    onClick={handleNonOwnAssetClick}
-                    dropEndHandler={dropEndHandler}
-                  />
+            {isLoading && (
+              <Styled.LoadingAssetContainer>
+                {[1, 2, 3, 4].map((key) => (
+                  <Asset key={key} isLoading={isLoading} />
                 ))}
-              </Carousel>
-            </Styled.AssetContainer>
+              </Styled.LoadingAssetContainer>
+            )}
+            {!isLoading && (
+              <Styled.AssetContainer>
+                <Carousel
+                  swipeable={true}
+                  draggable={false}
+                  infinite={false}
+                  keyBoardControl={true}
+                  responsive={carouselBreakpoints}
+                  autoPlay={false}
+                  removeArrowOnDeviceType={["tabletSmall"]}
+                  itemClass="carousel-item-margin"
+                >
+                  {assets.map((item) => (
+                    <Asset
+                      key={item.id}
+                      asset={item}
+                      onClick={handleNonOwnAssetClick}
+                      dropEndHandler={dropEndHandler}
+                    />
+                  ))}
+                </Carousel>
+              </Styled.AssetContainer>
+            )}
           </Styled.BuyAssetsContainer>
           <Styled.OwnAssetsContainer>
             <Styled.Header>
@@ -127,27 +144,36 @@ export const MarketplaceDesktop = (props) => {
                 </FilterButton>
               </Styled.Group>
             </Styled.Header>
-            <Styled.AssetContainer>
-              <Carousel
-                swipeable={true}
-                draggable={false}
-                infinite={false}
-                keyBoardControl={true}
-                responsive={carouselBreakpoints}
-                autoPlay={true}
-                removeArrowOnDeviceType={["tabletSmall"]}
-                itemClass="carousel-item-margin"
-              >
-                {assets.map((item) => (
-                  <Asset
-                    key={item.id}
-                    asset={item}
-                    onClick={handleOwnAssetClick}
-                    dropEndHandler={dropEndHandler}
-                  />
+            {isLoading && (
+              <Styled.LoadingAssetContainer>
+                {[1, 2, 3, 4].map((key) => (
+                  <Asset key={key} isLoading={isLoading} />
                 ))}
-              </Carousel>
-            </Styled.AssetContainer>
+              </Styled.LoadingAssetContainer>
+            )}
+            {!isLoading && (
+              <Styled.AssetContainer>
+                <Carousel
+                  swipeable={true}
+                  draggable={false}
+                  infinite={false}
+                  keyBoardControl={true}
+                  responsive={carouselBreakpoints}
+                  autoPlay={false}
+                  removeArrowOnDeviceType={["tabletSmall"]}
+                  itemClass="carousel-item-margin"
+                >
+                  {assets.map((item) => (
+                    <Asset
+                      key={item.id}
+                      asset={item}
+                      onClick={handleOwnAssetClick}
+                      dropEndHandler={dropEndHandler}
+                    />
+                  ))}
+                </Carousel>
+              </Styled.AssetContainer>
+            )}
           </Styled.OwnAssetsContainer>
         </Styled.Content>
       </Styled.Main>

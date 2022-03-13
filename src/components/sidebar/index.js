@@ -5,9 +5,10 @@ import { connect } from "../../actions";
 import { PolygonButton } from "../buttons";
 import { icons } from "../../utils/constants/icons";
 import * as Styled from "./styled.components";
+import { truncateStr } from "../../utils/helpers";
 
 const Sidebar = ({ toggleSiderbar }) => {
-  const { isConnected, username } = useSelector((state) => state.auth);
+  const { isConnected, ownerAddress } = useSelector((state) => state.auth);
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const Sidebar = ({ toggleSiderbar }) => {
     toggleSiderbar();
   };
   const connectHandler = () => {
-    dispatch(connect("John Doe"));
+    dispatch(connect("0x6ff5e29e06c948f57def80b3e34603cd23f6dee9"));
   };
   return (
     <Styled.Container>
@@ -58,8 +59,8 @@ const Sidebar = ({ toggleSiderbar }) => {
             </PolygonButton>
           </Styled.NavBtnContainer>
         )}
-        {isConnected && username !== "" && (
-          <Styled.UserName>{username}</Styled.UserName>
+        {isConnected && ownerAddress !== "" && (
+          <Styled.UserName>{truncateStr(ownerAddress,15)}</Styled.UserName>
         )}
       </Styled.NavItems>
     </Styled.Container>

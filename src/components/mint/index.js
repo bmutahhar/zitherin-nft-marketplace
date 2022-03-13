@@ -7,6 +7,7 @@ import { backgroundImages } from "../../utils/constants/images";
 import * as Styled from "./styled.components";
 
 const MintNonModal = (props) => {
+  const basePrice = 1;
   const [counter, setCounter] = useState(1);
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
   const navigate = useNavigate();
@@ -69,7 +70,7 @@ const MintNonModal = (props) => {
           </Styled.CharacterContainer>
 
           <Styled.AssetTitleContainer>
-            <Styled.AssetTitle>Total = 3 Matic</Styled.AssetTitle>
+            <Styled.AssetTitle>Total = {counter*basePrice} Matic</Styled.AssetTitle>
           </Styled.AssetTitleContainer>
           <Styled.MintButton>Mint</Styled.MintButton>
         </Styled.Body>

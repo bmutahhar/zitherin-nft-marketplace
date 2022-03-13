@@ -105,3 +105,13 @@ export const AssetContainer = styled.div`
   min-width: 100%;
   padding: 1rem 2rem;
 `;
+
+export const LoadingAssetContainer = styled.div`
+  width: 100%;
+  max-width:100%;
+  overflow-x: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding:0 2rem;
+`;

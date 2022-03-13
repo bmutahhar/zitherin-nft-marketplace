@@ -8,7 +8,7 @@ export const AssetImgPortion = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   @media only screen and (min-width: 1920px) {
     justify-content: flex-start;
@@ -34,7 +34,7 @@ export const AssetDetailsPortion = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: 0 1rem;
 
   @media only screen and (max-width: 1200px) {
@@ -50,7 +50,7 @@ export const AssetImgContainer = styled.div`
   border-radius: 1rem;
   padding: 2rem;
   width: 85%;
-  height: 50%;
+  height: 70%;
   background: #bb50ff24;
   display: flex;
   align-items: center;
@@ -201,7 +201,7 @@ export const AssetHeader = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 0.5rem 0;
   @media only screen and (min-width: 1920px) {
     padding: 1rem 0;
@@ -256,7 +256,7 @@ export const TraitContainer = styled.div`
 
 export const AssetDescription = styled.p`
   color: #f5f5f5;
-  font-size: 0.875rem;
+  font-size: 1rem;
   text-align: left;
   font-weight: 300;
   margin-bottom: 0.5rem;

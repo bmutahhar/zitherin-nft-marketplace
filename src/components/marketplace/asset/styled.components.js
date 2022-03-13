@@ -33,8 +33,8 @@ export const AssetWrapper = styled.div`
     width: 200px;
     height: 240px;
     &:hover {
-    transform: none;
-  }
+      transform: none;
+    }
   }
 
   @media only screen and (max-width: 500px) {
@@ -42,7 +42,7 @@ export const AssetWrapper = styled.div`
     width: 160px;
     height: 200px;
     margin: 0;
-  } 
+  }
   @media only screen and (max-width: 400px) {
     min-width: 200px;
     width: 200px;
@@ -168,7 +168,7 @@ export const EthIcon = styled.span`
   margin-right: 10px;
   @media only screen and (max-width: 500px) {
     margin-right: 5px;
-    width:12px;
+    width: 12px;
   }
 `;
 
@@ -202,5 +202,42 @@ export const AssetName = styled.span`
   user-select: none;
   @media only screen and (max-width: 500px) {
     font-size: 0.75rem;
+  }
+`;
+
+export const AssetLoader = styled.div`
+  min-width: 240px;
+  height: 280px;
+  margin: 1rem;
+  @media only screen and (min-width: 1920px) {
+    min-width: 300px;
+    height: 340px;
+  }
+
+  @media only screen and (max-width: 900px) {
+    min-width: 220px;
+    height: 260px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    min-width: 200px;
+    width: 200px;
+    height: 240px;
+    &:hover {
+      transform: none;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    min-width: 160px;
+    width: 160px;
+    height: 200px;
+    margin: 0;
+  }
+  @media only screen and (max-width: 400px) {
+    min-width: 200px;
+    width: 200px;
+    height: 240px;
+    margin: 0;
   }
 `;

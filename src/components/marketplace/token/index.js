@@ -3,7 +3,6 @@ import { useDrop } from "react-dnd";
 import * as Styled from "./styled.components";
 import { backgroundImages } from "../../../utils/constants/images";
 import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 
 const Token = ({ token, isLoading }) => {
   const [{ isOver }, drop] = useDrop(() => ({

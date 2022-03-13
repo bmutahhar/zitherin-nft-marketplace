@@ -1,16 +1,30 @@
 import React from "react";
 import { useDrag } from "react-dnd";
+import Skeleton from "react-loading-skeleton";
 import * as Styled from "./styled.components";
 import { backgroundImages } from "../../../utils/constants/images";
 import { icons } from "../../../utils/constants/icons";
 
-const Asset = ({ asset, onClick, dropEndHandler }) => {
+const Asset = ({ asset, onClick, dropEndHandler, isLoading }) => {
   const [collected, drag] = useDrag(() => ({
     type: "ASSET",
-    item: { id: asset.id, image: asset.image },
+    item: { id: asset ? asset.id : null, image: asset ? asset.image : null },
     collect: (monitor) => ({ isDragging: monitor.isDragging() }),
     end: dropEndHandler,
   }));
+
+  if (isLoading) {
+    console.log("Mutahhar");
+    return (
+      <Styled.AssetLoader className="Mutahhar">
+        <Skeleton
+          height={"100%"}
+          highlightColor={"#3b2a8b"}
+          baseColor={"#1b1444"}
+        />
+      </Styled.AssetLoader>
+    );
+  }
   return (
     <Styled.AssetWrapper
       ref={drag}
@@ -20,7 +34,6 @@ const Asset = ({ asset, onClick, dropEndHandler }) => {
         transform: collected.isDragging ? "scale(0.9)" : "none",
         opacity: collected.isDragging ? 0.5 : 1,
       }}
-
     >
       <Styled.AssetCard>
         <Styled.Asset>
@@ -42,9 +55,6 @@ const Asset = ({ asset, onClick, dropEndHandler }) => {
             <Styled.EthIcon>{icons.eth}</Styled.EthIcon>
             {asset.price} ETH
           </Styled.Price>
-        </Styled.DetailsRow>
-        <Styled.DetailsRow end={1}>
-          <Styled.UsdPrice>${asset.usd} USD</Styled.UsdPrice>
         </Styled.DetailsRow>
       </Styled.AssetDetails>
     </Styled.AssetWrapper>

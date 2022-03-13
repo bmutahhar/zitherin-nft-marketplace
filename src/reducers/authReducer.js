@@ -1,14 +1,14 @@
 const initState = {
   isConnected: false,
-  username: "",
+  ownerAddress: "",
 };
 
 const authReducer = (state = initState, action) => {
   switch (action.type) {
     case "CONNECT":
-      return { ...state, isConnected: true, username: action.payload };
+      return { ...state, isConnected: true, ownerAddress: action.payload };
     case "DISCONNECT":
-      return { ...state, isConnected: false, username: "" };
+      return { ...state, isConnected: false, ownerAddress: "" };
     default:
       return state;
   }

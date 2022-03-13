@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { icons } from "../../../utils/constants/icons";
 import { activities } from "../../../mock/activities";
@@ -13,9 +14,9 @@ const ActivitiesTable = () => {
   const [pageNum, setPageNum] = useState(1);
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
   const isExtraLargeScreen = useMediaQuery({ query: "(min-width:1920px)" });
-  // const isLargeScreen = useMediaQuery({ query: "(max-width:1920px)" });
-  // const isMediumScreen = useMediaQuery({ query: "(max-width:1366px)" });
-  // const isSmallScreen = useMediaQuery({ query: "(max-width:1024px)" });
+  const navigate = useNavigate();
+
+  const goBack = () => navigate(-1);
 
   const nextPage = () => {
     const nextPageNum = pageNum + 1;
@@ -71,9 +72,9 @@ const ActivitiesTable = () => {
       <Styled.NonModalWrapper>
         <Styled.ModalHeader>
           {!isMobileOrTablet && (
-            <Styled.ActionButton>
-              This Month
+            <Styled.ActionButton onClick={goBack}>
               <Styled.ActionIcon>{icons.arrowLeft}</Styled.ActionIcon>
+              Go back
             </Styled.ActionButton>
           )}
           <Styled.TabHeader>

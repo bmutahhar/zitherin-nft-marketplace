@@ -38,23 +38,7 @@ export const AssetsContainer = styled.div`
   }
 `;
 
-export const TokensOpener = styled.div`
-  position: sticky;
-  bottom: 0;
-  z-index: 100;
-  width: 100%;
-  background: #011117;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  border-top-left-radius: 1.25rem;
-  border-top-right-radius: 1.25rem;
-  font-size: 0.625rem;
-  font-weight: 100;
-  color: white;
-  padding: 0.5rem;
-`;
+
 
 export const ArrowUpIcon = styled.span`
   display: flex;
@@ -62,4 +46,17 @@ export const ArrowUpIcon = styled.span`
   justify-content: center;
   width: 20px;
   color: white;
+`;
+
+export const LoadingAssetContainer = styled.div`
+  width: 100%;
+  padding: 1rem 0.5rem;
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+  overflow-y: auto;
+  max-height: 100vh;
 `;

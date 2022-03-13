@@ -73,20 +73,15 @@ export const ActionButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* border: 2px solid red; */
   padding: 1rem 2rem;
   padding-left: 0;
-  margin-left: 0.5rem;
   background: transparent;
   border: none;
   outline: none;
   color: white;
-  font-size: 0.875rem;
-  letter-spacing: 1px;
-
+  font-size: 1.25rem;
   &:hover {
     cursor: pointer;
-    color: rgba(255, 255, 255, 0.8);
   }
 
   @media only screen and (max-width: 1200px) {
@@ -95,13 +90,11 @@ export const ActionButton = styled.button`
 `;
 
 export const ActionIcon = styled.span`
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(-90deg);
-  margin-left: 10px;
 `;
 
 export const TabHeader = styled.div`
@@ -213,14 +206,7 @@ export const TD = styled.td`
   padding: 1.5rem 0.5rem 1.5rem 0.25rem;
   color: white;
   text-align: left;
-  &:last-of-type {
-    color: #6efffa;
-    &:hover {
-      cursor: pointer;
-      color: #26c7c1;
-      transition: 0.3s ease-in-out;
-    }
-  }
+
 
   @media only screen and (min-width: 1920px) {
     padding: 2rem 0.5rem 2rem 0.25rem;

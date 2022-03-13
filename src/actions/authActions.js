@@ -1,3 +1,3 @@
 // auth actions
-export const connect = (username) => ({ type: "CONNECT", payload: username });
+export const connect = (address) => ({ type: "CONNECT", payload: address });
 export const disconnect = () => ({ type: "DISCONNECT" });

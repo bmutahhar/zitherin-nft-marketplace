@@ -9,12 +9,13 @@ import { connect } from "../../actions";
 import Avatar from "react-avatar";
 import Sidebar from "../sidebar";
 import * as Styled from "./styled.components";
+import { truncateStr } from "../../utils/helpers";
 
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { pathname } = useLocation();
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
-  const { isConnected, username } = useSelector((state) => state.auth);
+  const { isConnected, ownerAddress } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   const toggleSiderbar = () => {
@@ -22,7 +23,7 @@ const Navbar = () => {
   };
 
   const connectHandler = () => {
-    dispatch(connect("John Doe"));
+    dispatch(connect("0x6ff5e29e06c948f57def80b3e34603cd23f6dee9"));
   };
 
   if (isMobileOrTablet && sidebarOpen) {
@@ -66,9 +67,9 @@ const Navbar = () => {
 
       {isConnected && (
         <Styled.AvatarContainer>
-          <Styled.UserName>{username}</Styled.UserName>
+          <Styled.UserName>{truncateStr(ownerAddress,15)}</Styled.UserName>
           <Avatar
-            name={username}
+            name={ownerAddress}
             round
             size={50}
             color="#392877"
