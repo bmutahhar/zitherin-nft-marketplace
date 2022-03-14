@@ -9,20 +9,34 @@ export const FAQContainer = styled.div`
   align-items: center;
 `;
 
-export const Question = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
-  margin: 1rem;
+export const Accordion = styled.div`
   width: 100%;
-  height: 100%;
-  border: none;
-  border-bottom: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: max-content;
+  margin: 0.5rem 0;
+  /* border: none; */
+  /* border-bottom: 1px solid grey; */
+  border: 1px solid green;
+  &:hover{
+    cursor: pointer;
+  }
 
   &:last-of-type {
     border: none;
   }
+`;
+
+export const Question = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid white;
+  padding:1rem 0.5rem;
 `;
 
 export const QuestionText = styled.p`
@@ -59,4 +73,16 @@ export const QuestionIcon = styled.div`
   @media only screen and (max-width: 768px) {
     width: 30px;
   }
+`;
+
+export const Answer = styled.p`
+  display: block;
+  color: white;
+  text-align: left;
+  font-size: 1.25rem;
+  font-weight: 300;
+  width: 100%;
+  height:max-content;
+  border: 1px solid red;
+  padding: 1rem 0.5rem;
 `;
