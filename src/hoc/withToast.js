@@ -26,7 +26,12 @@ const withToast = (Component) => (props) => {
   return (
     <>
       <Component {...newProps} />
-      <Toaster position="bottom-center" gutter={8} toastOptions={toastStyles} />
+      <Toaster
+        position="bottom-center"
+        containerStyle={{ bottom: "5%" }}
+        gutter={8}
+        toastOptions={toastStyles}
+      />
     </>
   );
 };

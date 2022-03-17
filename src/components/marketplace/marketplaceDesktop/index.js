@@ -22,8 +22,7 @@ import { sleep } from "../../../utils/helpers/misc";
 import character6 from "../../../assets/characters/Character-6.png";
 import "react-loading-skeleton/dist/skeleton.css";
 
-export const MarketplaceDesktop = (props) => {
-  const [isLoading, setIsLoading] = useState(true);
+export const MarketplaceDesktop = ({ loading }) => {
   const [tokensData, setTokensData] = useState(tokens);
   const [selectedToken, setSelectedToken] = useState(null);
   const dispatch = useDispatch();
@@ -51,12 +50,6 @@ export const MarketplaceDesktop = (props) => {
     dispatch(setOwnAssetModalData(data));
     dispatch(openOwnAssetModal());
   };
-
-  useEffect(() => {
-    sleep(2000).then(() => {
-      setIsLoading(false);
-    });
-  }, []);
 
   useEffect(() => {
     if (selectedToken) {
@@ -100,14 +93,14 @@ export const MarketplaceDesktop = (props) => {
                 Filter
               </FilterButton>
             </Styled.Header>
-            {isLoading && (
+            {loading && (
               <Styled.LoadingAssetContainer>
                 {[1, 2, 3, 4].map((key) => (
-                  <Asset key={key} isLoading={isLoading} />
+                  <Asset key={key} isLoading={loading} />
                 ))}
               </Styled.LoadingAssetContainer>
             )}
-            {!isLoading && (
+            {!loading && (
               <Styled.AssetContainer>
                 <Carousel
                   swipeable={true}
@@ -144,14 +137,14 @@ export const MarketplaceDesktop = (props) => {
                 </FilterButton>
               </Styled.Group>
             </Styled.Header>
-            {isLoading && (
+            {loading && (
               <Styled.LoadingAssetContainer>
                 {[1, 2, 3, 4].map((key) => (
-                  <Asset key={key} isLoading={isLoading} />
+                  <Asset key={key} isLoading={loading} />
                 ))}
               </Styled.LoadingAssetContainer>
             )}
-            {!isLoading && (
+            {!loading && (
               <Styled.AssetContainer>
                 <Carousel
                   swipeable={true}
