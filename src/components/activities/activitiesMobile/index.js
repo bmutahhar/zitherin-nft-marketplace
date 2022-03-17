@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import moment from "moment";
+import { useSelector } from "react-redux";
 import * as Styled from "./styled.components";
 import { icons } from "../../../utils/constants/icons";
 import { activities } from "../../../mock/activities";
@@ -8,6 +8,7 @@ import { truncateStr } from "../../../utils/helpers";
 
 const ActivitiesMobile = () => {
   const navigate = useNavigate();
+  const activitiesData = useSelector((state) => state.activities);
 
   const goBack = () => navigate(-1);
 
@@ -19,33 +20,33 @@ const ActivitiesMobile = () => {
         </Styled.HeaderIcon>
         <Styled.HeaderText>My Activities</Styled.HeaderText>
       </Styled.Header>
-      {activities.map((item, index) => (
-        <Styled.ContentCard key={index}>
+      {activitiesData.map((item) => (
+        <Styled.ContentCard key={item.id}>
           <Styled.ContentRow>
-            <Styled.FieldValue>{truncateStr(item.hash, 20)}</Styled.FieldValue>
             <Styled.FieldValue>
-              {moment(item.date).format("DD MMM YYYY")}
+              {truncateStr(String(item.id), 20)}
             </Styled.FieldValue>
+            <Styled.FieldValue>{item.chain}</Styled.FieldValue>
           </Styled.ContentRow>
           <Styled.ContentRow>
             <Styled.ContentColumn>
-              <Styled.FieldName>Type</Styled.FieldName>
+              <Styled.FieldName>Name</Styled.FieldName>
               <Styled.FieldValue>
-                {truncateStr(item.type, 20)}
+                {truncateStr(item.name, 20)}
               </Styled.FieldValue>
             </Styled.ContentColumn>
             <Styled.ContentColumn>
-              <Styled.FieldName>Method</Styled.FieldName>
+              <Styled.FieldName>Value</Styled.FieldName>
               <Styled.FieldValue>
-                {truncateStr(item.method, 20)}
+                {truncateStr(item.value, 20)}
               </Styled.FieldValue>
             </Styled.ContentColumn>
           </Styled.ContentRow>
           <Styled.ContentRow>
             <Styled.ContentColumn>
-              <Styled.FieldName>Details</Styled.FieldName>
+              <Styled.FieldName>Description</Styled.FieldName>
               <Styled.FieldValue>
-                {truncateStr(item.detail, 20)}
+                {truncateStr(item.description, 40)}
               </Styled.FieldValue>
             </Styled.ContentColumn>
           </Styled.ContentRow>
