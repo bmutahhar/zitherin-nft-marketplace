@@ -20,8 +20,8 @@ export const Accordion = styled.div`
   margin: 0.5rem 0;
   /* border: none; */
   /* border-bottom: 1px solid grey; */
-  border: 1px solid green;
-  &:hover{
+  /* border: 1px solid green; */
+  &:hover {
     cursor: pointer;
   }
 
@@ -35,8 +35,8 @@ export const Question = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  border: 1px solid white;
-  padding:1rem 0.5rem;
+  /* border: 1px solid white; */
+  padding: 1rem 0.5rem;
 `;
 
 export const QuestionText = styled.p`
@@ -82,7 +82,8 @@ export const Answer = styled.p`
   font-size: 1.25rem;
   font-weight: 300;
   width: 100%;
-  height:max-content;
-  border: 1px solid red;
-  padding: 1rem 0.5rem;
+  height: max-content;
+  /* border: 1px solid red; */
+  padding: 2rem 0.5rem;
+  transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 `;

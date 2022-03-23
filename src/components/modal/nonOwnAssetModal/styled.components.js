@@ -33,7 +33,7 @@ export const AssetDetailsPortion = styled.div`
   width: 60%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   margin: 0 1rem;
 

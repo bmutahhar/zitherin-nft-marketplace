@@ -14,9 +14,8 @@ const Asset = ({ asset, onClick, dropEndHandler, isLoading }) => {
   }));
 
   if (isLoading) {
-    console.log("Mutahhar");
     return (
-      <Styled.AssetLoader className="Mutahhar">
+      <Styled.AssetLoader>
         <Skeleton
           height={"100%"}
           highlightColor={"#3b2a8b"}
@@ -42,18 +41,18 @@ const Asset = ({ asset, onClick, dropEndHandler, isLoading }) => {
         <Styled.AssetOverlay>
           <Styled.AssetOverlayImg src={backgroundImages.tokenOverly} />
         </Styled.AssetOverlay>
-        <Styled.AssetName>{asset.name}</Styled.AssetName>
+        <Styled.AssetName>{asset.traitName}</Styled.AssetName>
       </Styled.AssetCard>
       <Styled.AssetDetails>
         <Styled.DetailsRow>
-          <Styled.FieldName>{asset.battle}</Styled.FieldName>
+          <Styled.FieldName>{asset.traitUri}</Styled.FieldName>
           <Styled.Bids>{asset.bids.length} Bids</Styled.Bids>
         </Styled.DetailsRow>
         <Styled.DetailsRow>
           <Styled.FieldName>Price</Styled.FieldName>
           <Styled.Price>
             <Styled.EthIcon>{icons.eth}</Styled.EthIcon>
-            {asset.price} ETH
+            {Number(asset.price).toFixed(2)} ETH
           </Styled.Price>
         </Styled.DetailsRow>
       </Styled.AssetDetails>

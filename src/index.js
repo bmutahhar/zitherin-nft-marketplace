@@ -7,6 +7,8 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducers from "./reducers";
 import App from "./App";
+import "react-multi-carousel/lib/styles.css";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const store = createStore(
   reducers,

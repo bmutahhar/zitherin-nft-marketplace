@@ -34,13 +34,13 @@ const NonOwnAssetModal = () => {
             <>
               <Styled.AssetsPriceContainer>
                 <Styled.AssetCryptoPrice>
-                  {modalData.price} ETH
+                  {Number(modalData.price).toFixed(4)} ETH
                 </Styled.AssetCryptoPrice>
-                <Styled.AssetUsdPrice>
+                {/* <Styled.AssetUsdPrice>
                   ${modalData.usd} USD
-                </Styled.AssetUsdPrice>
+                </Styled.AssetUsdPrice> */}
               </Styled.AssetsPriceContainer>
-            
+
               <PlainButton>Buy Now</PlainButton>
             </>
           )}
@@ -48,15 +48,13 @@ const NonOwnAssetModal = () => {
         <Styled.AssetDetailsPortion>
           <Styled.AssetHeader>
             <Styled.AssetTitleContainer>
-              <Styled.AssetSubTitle>{modalData.battle}</Styled.AssetSubTitle>
-              <Styled.AssetTitle>{modalData.name}</Styled.AssetTitle>
+              <Styled.AssetSubTitle>{modalData.traitUri}</Styled.AssetSubTitle>
+              <Styled.AssetTitle>{modalData.traitName}</Styled.AssetTitle>
             </Styled.AssetTitleContainer>
           </Styled.AssetHeader>
 
           <Styled.AssetDescription>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s
+            {modalData.traitValue}
           </Styled.AssetDescription>
 
           {isMobileOrTablet && (
@@ -69,7 +67,7 @@ const NonOwnAssetModal = () => {
                   ${modalData.usd} USD
                 </Styled.AssetUsdPrice>
               </Styled.AssetsPriceContainer>
-            
+
               <PlainButton>Buy Now</PlainButton>
             </>
           )}
@@ -81,7 +79,7 @@ const NonOwnAssetModal = () => {
             <Styled.BidContainer>
               <Styled.BidBox>
                 <Styled.BidField
-                  placeholder="E.g. 121 ETH"
+                  placeholder="E.g. 12.1 ETH"
                   id="bid"
                   name="bid"
                 />

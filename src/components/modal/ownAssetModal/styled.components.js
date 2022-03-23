@@ -18,7 +18,7 @@ export const AssetDetailsPortion = styled.div`
   width: 60%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   margin: 0 1rem;
   @media only screen and (max-width: 768px) {

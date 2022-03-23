@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as Styled from "./styles";
 import { faqData } from "../../utils/constants/faq";
+import { icons } from "../../utils/constants/icons";
 
 const LandingFAQ = () => {
   const [expandedItemId, setExpandedItemId] = useState(null);
@@ -27,7 +28,9 @@ const LandingFAQ = () => {
           >
             <Styled.Question>
               <Styled.QuestionText>{item.question}</Styled.QuestionText>
-              <Styled.QuestionIcon>{item.icon}</Styled.QuestionIcon>
+              <Styled.QuestionIcon>
+                {expandedItemId === item.id ? icons.minus : icons.plus}
+              </Styled.QuestionIcon>
             </Styled.Question>
             {expandedItemId === item.id && (
               <Styled.Answer>{item.answer}</Styled.Answer>

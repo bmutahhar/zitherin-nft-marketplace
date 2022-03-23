@@ -16,16 +16,21 @@ import {
   setNonOwnAssetModalData,
   setOwnAssetModalData,
 } from "../../../actions";
-import { assets, tokens } from "../../../mock";
 import { carouselBreakpoints } from "../../../utils/constants/carousel";
 import { sleep } from "../../../utils/helpers/misc";
 import character6 from "../../../assets/characters/Character-6.png";
 import "react-loading-skeleton/dist/skeleton.css";
 
-export const MarketplaceDesktop = (props) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [tokensData, setTokensData] = useState(tokens);
-  const [selectedToken, setSelectedToken] = useState(null);
+export const MarketplaceDesktop = ({
+  isLoading,
+  tokens,
+  ownAssetData,
+  nonOwnAssetData,
+  selectedToken,
+  setSelectedToken,
+}) => {
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [selectedToken, setSelectedToken] = useState(null);
   const dispatch = useDispatch();
 
   const dropEndHandler = (asset, monitor) => {
@@ -52,41 +57,30 @@ export const MarketplaceDesktop = (props) => {
     dispatch(openOwnAssetModal());
   };
 
-  useEffect(() => {
-    sleep(2000).then(() => {
-      setIsLoading(false);
-    });
-  }, []);
-
-  useEffect(() => {
-    if (selectedToken) {
-      const tokensCopy = tokensData.slice();
-      const tokenIndex = tokensCopy.indexOf(selectedToken);
-      selectedToken.token = character6;
-      tokensCopy[tokenIndex] = selectedToken;
-      setTokensData(tokensCopy);
-      sleep(2000).then(() => {
-        console.log("Updated the token!");
-        setSelectedToken(null);
-      });
-    }
-  }, [selectedToken]);
-
   return (
     <Styled.Container>
       <Styled.Main>
         <Styled.TokensContainer>
           <Styled.Title>Tokens</Styled.Title>
+          {isLoading && (
+            <Styled.TokensWrapper>
+              {[1, 2, 3, 4, 5].map((item) => (
+                <Token key={item} isLoading={isLoading} />
+              ))}
+            </Styled.TokensWrapper>
+          )}
 
-          <Styled.TokensWrapper>
-            {tokens.map((item) => (
-              <Token
-                key={item.id}
-                token={item}
-                isLoading={selectedToken && selectedToken.id === item.id}
-              />
-            ))}
-          </Styled.TokensWrapper>
+          {!isLoading && (
+            <Styled.TokensWrapper>
+              {tokens.map((item) => (
+                <Token
+                  key={item.id}
+                  token={item}
+                  isLoading={selectedToken && selectedToken.id === item.id}
+                />
+              ))}
+            </Styled.TokensWrapper>
+          )}
         </Styled.TokensContainer>
         <Styled.Separator />
         <Styled.Content>
@@ -119,7 +113,7 @@ export const MarketplaceDesktop = (props) => {
                   removeArrowOnDeviceType={["tabletSmall"]}
                   itemClass="carousel-item-margin"
                 >
-                  {assets.map((item) => (
+                  {nonOwnAssetData.map((item) => (
                     <Asset
                       key={item.id}
                       asset={item}
@@ -163,7 +157,7 @@ export const MarketplaceDesktop = (props) => {
                   removeArrowOnDeviceType={["tabletSmall"]}
                   itemClass="carousel-item-margin"
                 >
-                  {assets.map((item) => (
+                  {ownAssetData.map((item) => (
                     <Asset
                       key={item.id}
                       asset={item}

@@ -4,22 +4,14 @@ export const TokenCard = styled.div`
   margin: 4rem auto;
   width: 180px;
   height: 220px;
-  position: relative;
-  z-index: 0;
   transition: 0.3s ease;
-
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #1b1444;
-    clip-path: polygon(24% 0, 100% 0%, 100% 100%, 0 100%, 0 27%);
-    ${({ isLoading }) => (isLoading ? "display:none;" : "")}
-  }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #1b1444;
+  clip-path: polygon(24% 0, 100% 0%, 100% 100%, 0 100%, 0 27%);
 
   &:hover {
     transform: scale(1.1);
@@ -48,15 +40,20 @@ export const TokenCard = styled.div`
   }
 `;
 
+export const TokenLoadingCard = styled(TokenCard)`
+  display: block;
+  position: initial;
+  clip-path: none;
+  background:transparent;
+  `;
+
 export const Character = styled.div`
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  right: 0;
+  display: flex;
+  align-items: flex-end;
 `;
 
 export const CharacterImg = styled.img`
-  width: 100%;
+  max-width: 100%;
 `;
 
 export const Overlay = styled.div`

@@ -3,6 +3,7 @@ import { useDrop } from "react-dnd";
 import * as Styled from "./styled.components";
 import { backgroundImages } from "../../../utils/constants/images";
 import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const Token = ({ token, isLoading }) => {
   const [{ isOver }, drop] = useDrop(() => ({
@@ -20,14 +21,16 @@ const Token = ({ token, isLoading }) => {
   }));
 
   if (isLoading) {
+    console.log("loading");
     return (
-        <Styled.TokenCard isLoading={isLoading}>
-      <Skeleton
-        height={"100%"}
-        highlightColor={"#3b2a8b"}
-        baseColor={"#1b1444"}
-      />
-        </Styled.TokenCard>
+      <Styled.TokenLoadingCard isLoading={isLoading}>
+        <Skeleton
+          height={"100%"}
+          highlightColor={"#3b2a8b"}
+          baseColor={"#1b1444"}
+          enableAnimation={true}
+        />
+      </Styled.TokenLoadingCard>
     );
   }
   return (
@@ -39,7 +42,7 @@ const Token = ({ token, isLoading }) => {
       }}
     >
       <Styled.Character>
-        <Styled.CharacterImg src={token.token} />
+        <Styled.CharacterImg src={token.image} />
       </Styled.Character>
       <Styled.Overlay>
         <Styled.OverlayImg src={backgroundImages.tokenOverly} />

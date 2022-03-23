@@ -60,8 +60,13 @@ export const AssetCard = styled.div`
   position: relative;
   z-index: 0;
   /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1b1444;
+  clip-path: polygon(24% 0, 100% 0%, 100% 100%, 0 100%, 0 27%);
 
-  &::before {
+  /* &::before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -71,7 +76,7 @@ export const AssetCard = styled.div`
     bottom: 0;
     background: #1b1444;
     clip-path: polygon(24% 0, 100% 0%, 100% 100%, 0 100%, 0 27%);
-  }
+  } */
 
   @media only screen and (max-width: 768px) {
     height: 60%;
@@ -79,14 +84,14 @@ export const AssetCard = styled.div`
 `;
 
 export const Asset = styled.div`
-  position: absolute;
+  /* position: absolute;
   user-select: none;
   top: -10px;
   left: 0;
   right: 0;
   @media only screen and (max-width: 768px) {
     top: 0;
-  }
+  } */
 `;
 
 export const AssetImg = styled.img`
