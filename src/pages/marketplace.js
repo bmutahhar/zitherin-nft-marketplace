@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { withToast } from "../hoc";
 import {
@@ -21,10 +21,21 @@ const Marketplace = ({ successToast, errorToast }) => {
   const [ownAssetData, setOwnAssetsData] = useState([]);
   const [nonOwnAssetData, setNonOwnAssetData] = useState([]);
   const [selectedToken, setSelectedToken] = useState(null);
+  const [selectedAsset, setSelectedAsset] = useState(null);
 
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
   const modal = useSelector((state) => state.modal);
-  const dispatch = useDispatch();
+
+  const dropEndHandler = (asset, monitor) => {
+    if (monitor.didDrop()) {
+      const { token } = monitor.getDropResult();
+      setSelectedAsset(asset);
+      setSelectedToken(token);
+      console.log("Oops! you dropped on me :)");
+      console.log("Asset id: ", asset.id);
+      console.log("Token id: ", token.id);
+    }
+  };
 
   const fetchData = async (endPoint) => {
     try {
@@ -44,8 +55,6 @@ const Marketplace = ({ successToast, errorToast }) => {
       fetchData("getUserTokensFake"),
       fetchData("getNonOwnedTraitsFake"),
     ]).then((results) => {
-      // dispatch(setOwnAssetsData(results[0]));
-      // dispatch(setNonOwnAssetsData(results[1]));
       const ownAssets = [];
       const nonOwnAssets = results[1];
       const tokens = results[0];
@@ -57,22 +66,25 @@ const Marketplace = ({ successToast, errorToast }) => {
       setTokensData(tokens);
       setIsLoading(false);
       successToast("Data fetched successfully!");
-      console.log("User owned traits: ", ownAssets);
-      console.log("Non user owned traits: ", results[1]);
-      console.log("Tokens: ", tokens);
     });
   }, []);
 
   useEffect(() => {
-    console.log(tokensData);
-    if (selectedToken) {
+    if (selectedToken !== null && selectedAsset !== null) {
       const tokensCopy = tokensData.slice();
       const tokenIndex = tokensCopy.indexOf(selectedToken);
-      selectedToken.image = character6;
-      tokensCopy[tokenIndex] = selectedToken;
-      setTokensData(tokensCopy);
-      sleep(2000).then(() => {
-        console.log("Updated the token!");
+      let updatedData;
+      console.log(1);
+      Promise.all([
+        fetchData(
+          `getUpdatedCharacterFake/${selectedToken.id}/${selectedAsset.id}`
+        ),
+      ]).then((results) => {
+        updatedData = results[0];
+        selectedToken.image = updatedData.imageUrl;
+        tokensCopy[tokenIndex] = selectedToken;
+        setTokensData(tokensCopy);
+        setSelectedAsset(null);
         setSelectedToken(null);
       });
     }
@@ -90,7 +102,7 @@ const Marketplace = ({ successToast, errorToast }) => {
         nonOwnAssetData={nonOwnAssetData}
         tokens={tokensData}
         selectedToken={selectedToken}
-        setSelectedToken={setSelectedToken}
+        dropEndHandler={dropEndHandler}
       />
       {modal.isOwnAssetModalOpen && <OwnAssetModal />}
       {modal.isNonOwnAssetModalOpen && <NonOwnAssetModal />}

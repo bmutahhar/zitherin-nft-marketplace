@@ -12,27 +12,7 @@ export const FAQContainer = styled.div`
 
 export const Accordion = styled.div`
   width: 100%;
-<<<<<<< HEAD
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: max-content;
-  margin: 0.5rem 0;
-  /* border: none; */
-  /* border-bottom: 1px solid grey; */
-  /* border: 1px solid green; */
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:last-of-type {
-    border: none;
-  }
-=======
   border-bottom: 1px solid grey;
->>>>>>> f5c3e1d143bb1cdd0020fbe90edbd5c6b582c449
 `;
 
 export const Question = styled.div`
@@ -40,10 +20,6 @@ export const Question = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-<<<<<<< HEAD
-  /* border: 1px solid white; */
-  padding: 1rem 0.5rem;
-=======
   padding: 3rem 0rem;
   &:hover {
     cursor: pointer;
@@ -52,7 +28,6 @@ export const Question = styled.div`
   &:last-of-type {
     border: none;
   }
->>>>>>> f5c3e1d143bb1cdd0020fbe90edbd5c6b582c449
 `;
 
 export const QuestionText = styled.p`
@@ -109,12 +84,6 @@ export const AnswerText = styled.p`
   font-size: 1.125rem;
   font-weight: 300;
   width: 100%;
-<<<<<<< HEAD
-  height: max-content;
-  /* border: 1px solid red; */
-  padding: 2rem 0.5rem;
-  transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-=======
   /* border: 1px solid red; */
   padding: 0 0 2rem 0;
   transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
@@ -129,5 +98,4 @@ export const AnswerText = styled.p`
   @media only screen and (max-width: 768px) {
     font-size: 0.875rem;
   }
->>>>>>> f5c3e1d143bb1cdd0020fbe90edbd5c6b582c449
 `;

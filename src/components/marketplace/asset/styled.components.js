@@ -205,6 +205,8 @@ export const AssetName = styled.span`
   padding-left: 1rem;
   border-left: 5px solid #ff94d5;
   user-select: none;
+  text-transform:uppercase;
+  text-align:left;
   @media only screen and (max-width: 500px) {
     font-size: 0.75rem;
   }

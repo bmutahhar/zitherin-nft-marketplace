@@ -20,7 +20,8 @@ const Activities = ({ successToast, errorToast }) => {
         `${process.env.REACT_APP_API_URL}/fakeActivity`
       );
       if (data.status === 200) {
-        dispatch(setActivities(data.data));
+        const tableData = data.data.sort((a, b) => b.id - a.id);
+        dispatch(setActivities(tableData));
         setLoading(false);
         successToast("Data loaded successfully!");
       } else {

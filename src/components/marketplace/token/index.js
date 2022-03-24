@@ -1,4 +1,5 @@
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 import { useDrop } from "react-dnd";
 import * as Styled from "./styled.components";
 import { backgroundImages } from "../../../utils/constants/images";
@@ -6,6 +7,8 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 const Token = ({ token, isLoading }) => {
+  const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
+
   const [{ isOver }, drop] = useDrop(() => ({
     // The type (or types) to accept - strings or symbols
     accept: "ASSET",
@@ -20,21 +23,25 @@ const Token = ({ token, isLoading }) => {
     },
   }));
 
+  const TokenType = isMobileOrTablet ? Styled.TokenMobile : Styled.TokenDesktop;
+  const TokenLoadingType = isMobileOrTablet
+    ? Styled.TokenLoadingMobile
+    : Styled.TokenLoadingDesktop;
+
   if (isLoading) {
-    console.log("loading");
     return (
-      <Styled.TokenLoadingCard isLoading={isLoading}>
+      <TokenLoadingType isLoading={isLoading}>
         <Skeleton
           height={"100%"}
           highlightColor={"#3b2a8b"}
           baseColor={"#1b1444"}
           enableAnimation={true}
         />
-      </Styled.TokenLoadingCard>
+      </TokenLoadingType>
     );
   }
   return (
-    <Styled.TokenCard
+    <TokenType
       ref={drop}
       style={{
         opacity: isOver ? 0.4 : 1,
@@ -47,7 +54,7 @@ const Token = ({ token, isLoading }) => {
       <Styled.Overlay>
         <Styled.OverlayImg src={backgroundImages.tokenOverly} />
       </Styled.Overlay>
-    </Styled.TokenCard>
+    </TokenType>
   );
 };
 

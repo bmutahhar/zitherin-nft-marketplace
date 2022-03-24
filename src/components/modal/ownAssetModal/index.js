@@ -30,20 +30,6 @@ const OwnAssetModal = () => {
               <Styled.AssetSubTitle>{modalData.traitUri}</Styled.AssetSubTitle>
               <Styled.AssetTitle>{modalData.traitName}</Styled.AssetTitle>
             </Styled.AssetTitleContainer>
-            {/* <Styled.TraitContainer>
-              <TraitMiniCard
-                traitName="Hero"
-                traitValue="Common"
-                bgColor="#466bf7"
-                traitValueColor="#1B2960"
-              />
-              <TraitMiniCard
-                traitName="Skin"
-                traitValue="Normal"
-                bgColor="#00C5E2"
-                traitValueColor="#005E84"
-              />
-            </Styled.TraitContainer> */}
           </Styled.AssetHeader>
 
           <Styled.AssetDescription>
@@ -67,16 +53,18 @@ const OwnAssetModal = () => {
             </Styled.TabsContainer>
             <Styled.ScrollBox>
               <Styled.Bids>
-                {modalData.bids.map((item, index) => (
-                  <Styled.Bid key={item.id}>
-                    <Styled.BidNumber>0{index + 1}</Styled.BidNumber>
-                    <Styled.BidPrice>
-                      <Styled.EthIcon>{icons.eth}</Styled.EthIcon>
-                      {item.price} ETH
-                    </Styled.BidPrice>
-                    <Styled.BidAction>Accept</Styled.BidAction>
-                  </Styled.Bid>
-                ))}
+                {modalData.bids && modalData.bids.length > 0
+                  ? modalData.bids.map((item, index) => (
+                      <Styled.Bid key={item.id}>
+                        <Styled.BidNumber>0{index + 1}</Styled.BidNumber>
+                        <Styled.BidPrice>
+                          <Styled.EthIcon>{icons.eth}</Styled.EthIcon>
+                          {item.price} ETH
+                        </Styled.BidPrice>
+                        <Styled.BidAction>Accept</Styled.BidAction>
+                      </Styled.Bid>
+                    ))
+                  : "No Bids Yet"}
               </Styled.Bids>
             </Styled.ScrollBox>
           </Styled.BidsPriceContainer>

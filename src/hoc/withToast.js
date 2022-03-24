@@ -1,7 +1,9 @@
 import React from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { useMediaQuery } from "react-responsive";
 
 const withToast = (Component) => (props) => {
+  const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
   const successToast = (msg) => toast.success(msg);
   const errorToast = (msg) => toast.error(msg);
   const newProps = {
@@ -27,7 +29,7 @@ const withToast = (Component) => (props) => {
     <>
       <Component {...newProps} />
       <Toaster
-        position="bottom-left"
+        position={isMobileOrTablet ? "bottom-center" : "bottom-left"}
         containerStyle={{ bottom: "5%" }}
         gutter={8}
         toastOptions={toastStyles}

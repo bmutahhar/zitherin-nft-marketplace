@@ -27,21 +27,9 @@ export const MarketplaceDesktop = ({
   ownAssetData,
   nonOwnAssetData,
   selectedToken,
-  setSelectedToken,
+  dropEndHandler
 }) => {
-  // const [isLoading, setIsLoading] = useState(true);
-  // const [selectedToken, setSelectedToken] = useState(null);
   const dispatch = useDispatch();
-
-  const dropEndHandler = (asset, monitor) => {
-    if (monitor.didDrop()) {
-      const { token } = monitor.getDropResult();
-      setSelectedToken(token);
-      console.log("Oops! you dropped on me :)");
-      console.log("Asset id: ", asset.id);
-      console.log("Token id: ", token.id);
-    }
-  };
 
   const handleFilterButtonClick = () => {
     dispatch(openFilterModal());
@@ -72,13 +60,15 @@ export const MarketplaceDesktop = ({
 
           {!isLoading && (
             <Styled.TokensWrapper>
-              {tokens.map((item) => (
-                <Token
-                  key={item.id}
-                  token={item}
-                  isLoading={selectedToken && selectedToken.id === item.id}
-                />
-              ))}
+              {tokens.length > 0
+                ? tokens.map((item) => (
+                    <Token
+                      key={item.id}
+                      token={item}
+                      isLoading={selectedToken && selectedToken.id === item.id}
+                    />
+                  ))
+                : "No Tokens Found"}
             </Styled.TokensWrapper>
           )}
         </Styled.TokensContainer>
@@ -103,25 +93,29 @@ export const MarketplaceDesktop = ({
             )}
             {!isLoading && (
               <Styled.AssetContainer>
-                <Carousel
-                  swipeable={true}
-                  draggable={false}
-                  infinite={false}
-                  keyBoardControl={true}
-                  responsive={carouselBreakpoints}
-                  autoPlay={false}
-                  removeArrowOnDeviceType={["tabletSmall"]}
-                  itemClass="carousel-item-margin"
-                >
-                  {nonOwnAssetData.map((item) => (
-                    <Asset
-                      key={item.id}
-                      asset={item}
-                      onClick={handleNonOwnAssetClick}
-                      dropEndHandler={dropEndHandler}
-                    />
-                  ))}
-                </Carousel>
+                {nonOwnAssetData.length > 0 ? (
+                  <Carousel
+                    swipeable={true}
+                    draggable={false}
+                    infinite={false}
+                    keyBoardControl={true}
+                    responsive={carouselBreakpoints}
+                    autoPlay={false}
+                    removeArrowOnDeviceType={["tabletSmall"]}
+                    itemClass="carousel-item-margin"
+                  >
+                    {nonOwnAssetData.map((item) => (
+                      <Asset
+                        key={item.id}
+                        asset={item}
+                        onClick={handleNonOwnAssetClick}
+                        dropEndHandler={dropEndHandler}
+                      />
+                    ))}
+                  </Carousel>
+                ) : (
+                  "No Assets Found"
+                )}
               </Styled.AssetContainer>
             )}
           </Styled.BuyAssetsContainer>
@@ -147,25 +141,29 @@ export const MarketplaceDesktop = ({
             )}
             {!isLoading && (
               <Styled.AssetContainer>
-                <Carousel
-                  swipeable={true}
-                  draggable={false}
-                  infinite={false}
-                  keyBoardControl={true}
-                  responsive={carouselBreakpoints}
-                  autoPlay={false}
-                  removeArrowOnDeviceType={["tabletSmall"]}
-                  itemClass="carousel-item-margin"
-                >
-                  {ownAssetData.map((item) => (
-                    <Asset
-                      key={item.id}
-                      asset={item}
-                      onClick={handleOwnAssetClick}
-                      dropEndHandler={dropEndHandler}
-                    />
-                  ))}
-                </Carousel>
+                {ownAssetData.length > 0 ? (
+                  <Carousel
+                    swipeable={true}
+                    draggable={false}
+                    infinite={false}
+                    keyBoardControl={true}
+                    responsive={carouselBreakpoints}
+                    autoPlay={false}
+                    removeArrowOnDeviceType={["tabletSmall"]}
+                    itemClass="carousel-item-margin"
+                  >
+                    {ownAssetData.map((item) => (
+                      <Asset
+                        key={item.id}
+                        asset={item}
+                        onClick={handleOwnAssetClick}
+                        dropEndHandler={dropEndHandler}
+                      />
+                    ))}
+                  </Carousel>
+                ) : (
+                  "No Assets Found"
+                )}
               </Styled.AssetContainer>
             )}
           </Styled.OwnAssetsContainer>

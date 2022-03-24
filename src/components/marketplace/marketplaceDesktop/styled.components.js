@@ -12,7 +12,7 @@ export const Container = styled.div`
 export const Title = styled.h5`
   font-size: 1.5rem;
   font-weight: 500;
-  margin: 0 3rem;
+  margin: 1rem 3rem;
   color: #f5f5f5;
   text-align: left;
   margin-right: auto;
@@ -87,6 +87,9 @@ export const TokensWrapper = styled.div`
   overflow: auto;
   padding-right: 20px;
   box-sizing: content-box;
+  color:white;
+  font-size:1.125rem;
+
 `;
 
 export const BuyAssetsContainer = styled.div`
@@ -104,6 +107,9 @@ export const OwnAssetsContainer = styled.div`
 export const AssetContainer = styled.div`
   min-width: 100%;
   padding: 1rem 2rem;
+  color:white;
+  font-size:1.125rem;
+  
 `;
 
 export const LoadingAssetContainer = styled.div`
