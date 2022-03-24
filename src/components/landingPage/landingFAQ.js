@@ -32,9 +32,13 @@ const LandingFAQ = () => {
                 {expandedItemId === item.id ? icons.minus : icons.plus}
               </Styled.QuestionIcon>
             </Styled.Question>
-            {expandedItemId === item.id && (
-              <Styled.Answer>{item.answer}</Styled.Answer>
-            )}
+            <Styled.Answer
+              style={{
+                maxHeight: expandedItemId === item.id ? "250px" : "0px",
+              }}
+            >
+              <Styled.AnswerText>{item.answer}</Styled.AnswerText>
+            </Styled.Answer>
           </Styled.Accordion>
         ))}
       </Styled.FAQContainer>

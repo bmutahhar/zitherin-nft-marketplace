@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useMediaQuery } from "react-responsive";
-import axios from "axios";
+import { withToast } from "../hoc";
 import {
   MarketplaceDesktop,
   MarketplaceMobile,
@@ -12,9 +12,10 @@ import {
 } from "../components";
 import character6 from "../assets/characters/Character-6.png";
 import { sleep } from "../utils/helpers";
+import axios from "axios";
 import "react-loading-skeleton/dist/skeleton.css";
 
-const Marketplace = () => {
+const Marketplace = ({ successToast, errorToast }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [tokensData, setTokensData] = useState([]);
   const [ownAssetData, setOwnAssetsData] = useState([]);
@@ -33,12 +34,12 @@ const Marketplace = () => {
       return data.data;
     } catch (err) {
       console.log(err);
+      errorToast("Error while fetch data for marketplace!");
+      return [];
     }
   };
 
   useEffect(() => {
-    // const ownAssetsData = fetchData("getUserTokensFake");
-    // const nonOwnAssetsData = fetchData("getNonOwnedTraitsFake");
     Promise.all([
       fetchData("getUserTokensFake"),
       fetchData("getNonOwnedTraitsFake"),
@@ -55,6 +56,7 @@ const Marketplace = () => {
       setNonOwnAssetData(nonOwnAssets);
       setTokensData(tokens);
       setIsLoading(false);
+      successToast("Data fetched successfully!");
       console.log("User owned traits: ", ownAssets);
       console.log("Non user owned traits: ", results[1]);
       console.log("Tokens: ", tokens);
@@ -98,4 +100,4 @@ const Marketplace = () => {
   );
 };
 
-export default Marketplace;
+export default withToast(Marketplace);

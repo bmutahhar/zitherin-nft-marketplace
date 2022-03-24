@@ -38,8 +38,6 @@ export const AssetsContainer = styled.div`
   }
 `;
 
-
-
 export const ArrowUpIcon = styled.span`
   display: flex;
   align-items: center;
@@ -59,4 +57,7 @@ export const LoadingAssetContainer = styled.div`
   gap: 1rem;
   overflow-y: auto;
   max-height: 100vh;
+  @media only screen and (max-width: 400px) {
+    grid-template-columns: 1fr;
+  }
 `;

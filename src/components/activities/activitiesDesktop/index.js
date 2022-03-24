@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
+import { useSelector } from "react-redux";
 import { icons } from "../../../utils/constants/icons";
 import { activities } from "../../../mock/activities";
 import { truncateStr } from "../../../utils/helpers";
 import * as Styled from "./styled.components";
 
 const ActivitiesTable = () => {
-  const [activitiesData, setActivitiesData] = useState(activities);
   const [pageCount, setPageCount] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [rowsOnPage, setRowsOnPage] = useState([]);
   const [pageNum, setPageNum] = useState(1);
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 768px)" });
   const isExtraLargeScreen = useMediaQuery({ query: "(min-width:1920px)" });
+  const activitiesData = useSelector((state) => state.activities);
   const navigate = useNavigate();
+  const tableColumns = ["id", "name", "value", "chain", "description"];
 
   const goBack = () => navigate(-1);
 
@@ -32,14 +34,10 @@ const ActivitiesTable = () => {
   const previousPage = () => {
     const prevPageNum = pageNum - 1;
     if (pageNum > 1) {
-      console.log(rowsOnPage);
-      console.log((prevPageNum - 1) * rowsPerPage);
-      console.log(pageNum * rowsPerPage);
       const updatedRows = activitiesData.slice(
         (prevPageNum - 1) * rowsPerPage,
         prevPageNum * rowsPerPage
       );
-      console.log(updatedRows);
       setRowsOnPage(updatedRows);
       setPageNum(prevPageNum);
     }
@@ -65,7 +63,7 @@ const ActivitiesTable = () => {
       setPageCount(1);
       setPageNum(1);
     }
-  }, [isExtraLargeScreen]);
+  }, [isExtraLargeScreen, activitiesData]);
 
   return (
     <Styled.Container>
@@ -88,18 +86,19 @@ const ActivitiesTable = () => {
           <Styled.Table>
             <Styled.THead>
               <Styled.TableRow>
-                {Object.keys(activitiesData[0]).map((key) => (
-                  <Styled.TH key={key}>{key}</Styled.TH>
+                {tableColumns.map((item) => (
+                  <Styled.TH key={item}>{item}</Styled.TH>
                 ))}
               </Styled.TableRow>
             </Styled.THead>
             <Styled.TBody>
               {rowsOnPage.map((row, index) => (
                 <Styled.TableRow key={index}>
-                  {Object.keys(row).map((key) => (
-                    <Styled.TD key={key}>{truncateStr(row[key], 25)}</Styled.TD>
+                  {tableColumns.map((key) => (
+                    <Styled.TD key={key}>
+                      {truncateStr(String(row[key]), 25)}
+                    </Styled.TD>
                   ))}
-                  {/* <Styled.Separator /> */}
                 </Styled.TableRow>
               ))}
             </Styled.TBody>

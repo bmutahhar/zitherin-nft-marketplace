@@ -13,9 +13,7 @@ import { sleep } from "../../../utils/helpers/misc";
 import { assets } from "../../../mock";
 import { icons } from "../../../utils/constants/icons";
 
-const MarketplaceMobile = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
+const MarketplaceMobile = ({ loading }) => {
   const dispatch = useDispatch();
 
   const handleFilterButtonClick = () => {
@@ -32,12 +30,6 @@ const MarketplaceMobile = () => {
     dispatch(openOwnAssetModal());
   };
 
-  useEffect(() => {
-    sleep(2000).then(() => {
-      setIsLoading(false);
-    });
-  }, []);
-
   return (
     <>
       <Styled.Container>
@@ -46,14 +38,14 @@ const MarketplaceMobile = () => {
           fullWidth={true}
           rightIcon={<FilterButton onClick={handleFilterButtonClick} />}
         />
-        {isLoading && (
+        {loading && (
           <Styled.LoadingAssetContainer>
             {[1, 2, 3, 4].map((key) => (
-              <Asset key={key} isLoading={isLoading} />
+              <Asset key={key} isLoading={loading} />
             ))}
           </Styled.LoadingAssetContainer>
         )}
-        {!isLoading && (
+        {!loading && (
           <Styled.AssetsContainer>
             {assets.map((asset) => (
               <Asset
@@ -70,14 +62,14 @@ const MarketplaceMobile = () => {
           fullWidth={true}
           rightIcon={<FilterButton onClick={handleFilterButtonClick} />}
         />
-        {isLoading && (
+        {loading && (
           <Styled.LoadingAssetContainer>
             {[1, 2, 3, 4].map((key) => (
-              <Asset key={key} isLoading={isLoading} />
+              <Asset key={key} isLoading={loading} />
             ))}
           </Styled.LoadingAssetContainer>
         )}
-        {!isLoading && (
+        {!loading && (
           <Styled.AssetsContainer>
             {assets.map((asset) => (
               <Asset
