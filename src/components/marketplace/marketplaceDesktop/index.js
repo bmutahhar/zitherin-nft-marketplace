@@ -107,7 +107,7 @@ export const MarketplaceDesktop = ({
                   >
                     {nonOwnAssetData.map((item) => (
                       <Asset
-                        key={item.id}
+                        key={item.onChainId}
                         asset={item}
                         onClick={handleNonOwnAssetClick}
                         dropEndHandler={dropEndHandler}
@@ -159,7 +159,7 @@ export const MarketplaceDesktop = ({
                   >
                     {ownAssetData.map((item) => (
                       <Asset
-                        key={item.id}
+                        key={item.onChainId}
                         asset={item}
                         onClick={handleOwnAssetClick}
                         dropEndHandler={dropEndHandler}

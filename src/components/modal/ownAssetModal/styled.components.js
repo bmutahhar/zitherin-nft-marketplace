@@ -306,6 +306,13 @@ export const AssetsPriceContainer = styled.div`
     color: #fbba15;
     font-size: 1.25rem;
     font-weight: 600;
+    @media only screen and (min-width: 1920px) {
+      font-size: 1.5rem;
+    }
+
+    @media only screen and (max-width: 900px) {
+      font-size: 1rem;
+    }
   }
 
   @media only screen and (max-width: 1200px) {
