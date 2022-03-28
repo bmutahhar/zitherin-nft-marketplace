@@ -27,7 +27,7 @@ export const MarketplaceDesktop = ({
   ownAssetData,
   nonOwnAssetData,
   selectedToken,
-  dropEndHandler
+  dropEndHandler,
 }) => {
   const dispatch = useDispatch();
 
@@ -99,6 +99,7 @@ export const MarketplaceDesktop = ({
                     draggable={false}
                     infinite={false}
                     keyBoardControl={true}
+                    shouldResetAutoplay={false}
                     responsive={carouselBreakpoints}
                     autoPlay={false}
                     removeArrowOnDeviceType={["tabletSmall"]}
@@ -125,12 +126,15 @@ export const MarketplaceDesktop = ({
                 <Styled.Title>My Assets</Styled.Title>
                 <Search />
               </Styled.Group>
-              <Styled.Group>
+              {/* <Styled.Group>
                 <SwitchButton label="Show assets of current token" />
                 <FilterButton onClick={handleFilterButtonClick}>
                   Filter
                 </FilterButton>
-              </Styled.Group>
+              </Styled.Group> */}
+              <FilterButton onClick={handleFilterButtonClick}>
+                Filter
+              </FilterButton>
             </Styled.Header>
             {isLoading && (
               <Styled.LoadingAssetContainer>
@@ -148,6 +152,7 @@ export const MarketplaceDesktop = ({
                     infinite={false}
                     keyBoardControl={true}
                     responsive={carouselBreakpoints}
+                    shouldResetAutoplay={false}
                     autoPlay={false}
                     removeArrowOnDeviceType={["tabletSmall"]}
                     itemClass="carousel-item-margin"

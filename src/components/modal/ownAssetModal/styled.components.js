@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { PlainButton } from "../../../components";
 
 export const AssetImgPortion = styled.div`
   background: transparent;
@@ -26,7 +27,6 @@ export const AssetDetailsPortion = styled.div`
     padding: 1rem 0;
   }
 `;
-
 
 export const AssetImgContainer = styled.div`
   border-radius: 1rem;
@@ -200,6 +200,7 @@ export const Bids = styled.div`
   overflow-y: auto;
   padding-right: 20px;
   box-sizing: content-box;
+  color: white;
   @media only screen and (min-width: 1920px) {
     padding: 0.5rem;
     padding-left: 0rem;
@@ -272,5 +273,88 @@ export const BidAction = styled.button`
 
   @media only screen and (max-width: 1200px) {
     font-size: 0.75rem;
+  }
+`;
+
+export const PriceContainer = styled(ScrollBox)`
+  background: #22184a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 1rem;
+`;
+
+export const AssetsPriceContainer = styled.div`
+  width: 95%;
+  background: #121238;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin-bottom: 1.25rem;
+  border: none;
+  outline: none;
+  position: relative;
+  &::after {
+    position: absolute;
+    /* border: 1px solid red; */
+    content: "ETH";
+    right: 15px;
+    color: #fbba15;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    margin-bottom: 1rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    padding: 5px 0;
+    border-radius: 0.5rem;
+  }
+`;
+
+export const AssetCryptoPrice = styled.input`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fbba15;
+  margin: 0.25rem;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: center;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: #fbba15;
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 1920px) {
+    font-size: 1.5rem;
+  }
+
+  @media only screen and (max-width: 900px) {
+    font-size: 1rem;
+  }
+`;
+
+export const UpdateButton = styled(PlainButton)`
+  width: 60%;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
   }
 `;

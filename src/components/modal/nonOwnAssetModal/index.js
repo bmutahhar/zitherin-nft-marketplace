@@ -11,7 +11,6 @@ const NonOwnAssetModal = () => {
   const modalData = modal.nonOwnAssetModalData;
   const dispatch = useDispatch();
 
-
   const closeModal = () => {
     dispatch(closeNonOwnAssetModal());
   };
@@ -78,6 +77,7 @@ const NonOwnAssetModal = () => {
                   placeholder="E.g. 12.1 ETH"
                   id="bid"
                   name="bid"
+                  type="text"
                 />
                 <Styled.BidButtonContainer>
                   <Styled.BidButton>Bid</Styled.BidButton>

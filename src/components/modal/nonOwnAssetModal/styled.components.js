@@ -324,47 +324,36 @@ export const Tab = styled.div`
 export const BidContainer = styled.div`
   /* border: 1px solid red; */
   width: 100%;
-  height: 170px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #22184a;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   border-top-right-radius: 12px;
   padding: 1rem;
-  @media only screen and (min-width: 1920px) {
-    height: 190px;
-  }
-  @media only screen and (max-width: 1200px) {
-    height: 150px;
-    padding: 0.5rem;
-  }
 `;
 
 export const BidBox = styled.div`
-  width: 95%;
-  height: 90%;
+  width: 100%;
+  /* height: 90%; */
   border-radius: 12px;
   background: #121238;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* border: 1px solid red; */
 `;
 
-export const BidField = styled.textarea`
-  width: 100%;
-  height: 70%;
+export const BidField = styled.input`
+  width: 90%;
+  /* height: 70%; */
   color: white;
   border: none;
   font-size: 1rem;
-  padding: 0.5rem;
+  padding: 1rem;
   outline: none;
   text-align: left;
   background: transparent;
-  resize: none;
+  /* border: 1px solid white; */
 
   &::placeholder {
     font-size: 0.875rem;
@@ -373,12 +362,12 @@ export const BidField = styled.textarea`
 `;
 
 export const BidButtonContainer = styled.div`
-  width: 100%;
-  height: 30%;
+  width: 10%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 0 0.5rem;
+  /* border: 1px solid green; */
 `;
 
 export const BidButton = styled.button`

@@ -10,8 +10,6 @@ import {
   FilterModal,
   Footer,
 } from "../components";
-import character6 from "../assets/characters/Character-6.png";
-import { sleep } from "../utils/helpers";
 import axios from "axios";
 import "react-loading-skeleton/dist/skeleton.css";
 
